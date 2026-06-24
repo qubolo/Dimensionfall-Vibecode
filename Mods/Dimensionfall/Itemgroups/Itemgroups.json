@@ -1822,6 +1822,66 @@
 				"max": 1,
 				"min": 1,
 				"probability": 100
+			},
+			{
+				"id": "pistol_9mm",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 5,
+				"min": 5,
+				"probability": 100
+			},
+			{
+				"id": "bullet_9mm",
+				"max": 60,
+				"min": 60,
+				"probability": 100
+			},
+			{
+				"id": "rifle_m4a1",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "hunting_rifle",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "hunting_rifle_magazine",
+				"max": 3,
+				"min": 3,
+				"probability": 100
+			},
+			{
+				"id": "round_308",
+				"max": 30,
+				"min": 30,
+				"probability": 100
+			},
+			{
+				"id": "combat_knife",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "stone_spear",
+				"max": 1,
+				"min": 1,
+				"probability": 100
 			}
 		],
 		"mode": "Collection",

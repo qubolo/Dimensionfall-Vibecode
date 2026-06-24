@@ -734,18 +734,56 @@ func _apply_held_sprite() -> void:
 	var ritem: RItem = Runtimedata.items.by_id(item_id)
 	if ritem and ritem.sprite:
 		texture = ritem.sprite
-		# Scale the held sprite to a realistic on-screen size relative to the player
-		# (the player sprite is ~0.77 units tall). Normalize by the sprite's longest
-		# side so weapons of different pixel resolutions end up a consistent world size.
+		
+		# 1. Calculate Base Size dynamically
+		var base_size: float = HELD_WEAPON_WORLD_SIZE
+		var is_ranged = equipped_item.get_property("Ranged") != null
+		var is_melee = equipped_item.get_property("Melee") != null
+		
+		if is_melee:
+			var melee_props = equipped_item.get_property("Melee")
+			var reach = float(melee_props.get("reach", 1.0))
+			# Typical knife is reach 1 (0.4 world size), spear is reach 2 (~0.8 world size)
+			base_size = max(0.3, HELD_WEAPON_WORLD_SIZE * reach * 0.8)
+		elif is_ranged:
+			var volume = equipped_item.get_property("volume")
+			if volume != null and float(volume) > 10.0:
+				base_size = HELD_WEAPON_WORLD_SIZE * 1.8  # Rifles and shotguns
+			else:
+				base_size = HELD_WEAPON_WORLD_SIZE * 1.0  # Pistols
+		
+		# 2. Normalize by longest side of sprite
 		var tex_size: Vector2 = ritem.sprite.get_size()
 		var longest: float = max(tex_size.x, tex_size.y)
 		if longest > 0.0:
-			pixel_size = HELD_WEAPON_WORLD_SIZE / longest
-		# The fire axe's icon has the handle and blade on the wrong ends for the in-hand
-		# view, so mirror it horizontally when held (swaps the handle and blade around).
-		# Other weapons keep their default orientation.
-		flip_h = item_id == "fire_axe"
+			pixel_size = base_size / longest
+			
+		# 3. Flip Horizontal & Offset
+		var x_offset_percent = 0.0 # Percentage of image width to shift handle
+		
+		if is_ranged:
+			flip_h = true  # Firearms currently face inwards, so flip them to point outwards
+			if base_size > HELD_WEAPON_WORLD_SIZE * 1.5:
+				# Rifles have handle further back
+				x_offset_percent = 0.25 
+		else:
+			# Melee Items
+			if item_id in ["fire_axe", "stone_spear", "long_stick"]:
+				flip_h = true
+				x_offset_percent = 0.35 # Long weapons are held near the back
+			elif item_id == "crowbar":
+				flip_h = false
+				x_offset_percent = -0.3 # Hold crowbar handle
+			else:
+				flip_h = false
+				
 		flip_v = false
+		
+		# Apply calculated offset (if flipped, handle is on the right, so move texture left with negative offset)
+		if flip_h:
+			offset.x = -(tex_size.x * x_offset_percent)
+		else:
+			offset.x = tex_size.x * x_offset_percent
 
 
 # Setup the properties for ranged weapons
