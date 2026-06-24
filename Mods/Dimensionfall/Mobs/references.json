@@ -1,0 +1,269 @@
+{
+	"armored_zombie": {
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"basic_zombie_1": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"basic_zombie_2": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"bloated_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"bone_thrower": {
+		"maps": [
+			"underground_lab"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"brute_zombie": {
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"charred_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"decayed_zombie": {
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"disruptor_drone": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"radio_tower",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		],
+		"quests": [
+			"quest_radio_signal_01"
+		]
+	},
+	"feral_zombie": {
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"fresh_zombie": {
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"heavy_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"iron_stalker": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"radio_tower",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	},
+	"limping_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"outpost_guardian": {
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	},
+	"rushing_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"rust_sentinel": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"radio_tower",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	},
+	"scavenger_skitter": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"radio_tower",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	},
+	"scrapwalker": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"radio_tower",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	},
+	"skeleton_zombie": {
+		"maps": [
+			"urbanroad_cross",
+			"urbanroad_corner",
+			"urbanroad_t",
+			"underground_lab"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"spitter_zombie": {
+		"maps": [
+			"underground_lab"
+		],
+		"mobfactions": [
+			"security_robots"
+		],
+		"mobgroups": [
+			"basic_zombies"
+		]
+	},
+	"venom_crawler": {
+		"maps": [
+			"RockyHill_SE",
+			"RockyHill_NW",
+			"RockyHill_NE",
+			"RockyHill_SW"
+		],
+		"mobfactions": [
+			"zombie"
+		],
+		"mobgroups": [
+			"security_robots"
+		]
+	}
+}

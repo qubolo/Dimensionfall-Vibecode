@@ -1,0 +1,1950 @@
+[
+	{
+		"description": "Anything you can find in a kitchen cupboard",
+		"id": "kitchen_cupboard",
+		"items": [
+			{
+				"id": "canned_food",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_plastic_water",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_plastic_empty",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "screwdriver",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bandage_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_antibiotics",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "can_beer",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_disinfectant",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_antidote",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "dried_fruit_mix",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "jar_honey",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "combat_knife",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			}
+		],
+		"mode": "Collection",
+		"name": "Kitchen cupboard",
+		"sprite": "canned_food_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Loot that's dropped by a mob",
+		"id": "mob_loot",
+		"items": [
+			{
+				"id": "bullet_9mm",
+				"max": 20,
+				"min": 10,
+				"probability": 20
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "steel_scrap",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "plank_2x4",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Mob loot",
+		"sprite": "machete_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "What you would find in a cabinet in a house, for example in the living room",
+		"id": "cabinet_general",
+		"items": [
+			{
+				"id": "steel_scrap",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bullet_9mm",
+				"max": 20,
+				"min": 10,
+				"probability": 5
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 1,
+				"min": 1,
+				"probability": 3
+			},
+			{
+				"id": "pistol_9mm",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			},
+			{
+				"id": "bottle_plastic_water",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "hammer",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "screwdriver",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bandage_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "boots",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "can_oil",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "flashlight_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "battery_small",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "book_novel",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "rope_coil",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "adjustable_wrench",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "multi_tool",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "industrial_lubricant",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			},
+			{
+				"id": "tree_sap",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "spray_paint",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "combat_knife",
+				"max": 1,
+				"min": 1,
+				"probability": 8
+			},
+			{
+				"id": "fire_axe",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "hunting_rifle",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			}
+		],
+		"mode": "Collection",
+		"name": "General cabinet contents",
+		"sprite": "flashlight_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Items that will spawn when medium sized furniture is destroyed, like countertop, table",
+		"id": "destroyed_furniture_medium",
+		"items": [
+			{
+				"id": "plank_2x4",
+				"max": 3,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "steel_scrap",
+				"max": 1,
+				"min": 0,
+				"probability": 50
+			},
+			{
+				"id": "stick",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Medium destroyed furniture",
+		"sprite": "wreck_wood_generic_32.png",
+		"use_sprite": true
+	},
+	{
+		"description": "Items that will spawn when medium sized furniture is disassembled, like countertop, table",
+		"id": "disassembled_furniture_medium",
+		"items": [
+			{
+				"id": "plank_2x4",
+				"max": 5,
+				"min": 2,
+				"probability": 100
+			},
+			{
+				"id": "steel_scrap",
+				"max": 2,
+				"min": 1,
+				"probability": 80
+			}
+		],
+		"mode": "Collection",
+		"name": "Medium disassembled furniture",
+		"sprite": "plank.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Items you can find in a refrigerator in an urban home",
+		"id": "refrigerator",
+		"items": [
+			{
+				"id": "bottle_plastic_water",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "cheese",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "can_soda",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "can_energydrink",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "butter",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "eggs",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "carrot",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "apple",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "lettuce",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "tomato",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "vacuum_sealed_fish",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "slice_of_pizza",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bag_bacon",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_yogurt",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "tofu",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "can_beer",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "kiwi",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "uncooked_meat",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "meat_jerky",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			}
+		],
+		"mode": "Collection",
+		"name": "Refrigerator",
+		"sprite": "bottle_empty_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Items you can find in a wardrobe",
+		"id": "clothing_general",
+		"items": [
+			{
+				"id": "jacket",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "boots",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "shorts",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "gloves_leather",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "scarf",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "sweater",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "hat_baseball",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "socks",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "jeans",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "tshirt",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "waistbag",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "mailbag",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "backpack",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "safety_helmet",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			}
+		],
+		"mode": "Collection",
+		"name": "General clothing",
+		"sprite": "jacket_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Medium sized appliances you would find at an electronics store.",
+		"id": "electronics_store_medium",
+		"items": [
+			{
+				"id": "toaster",
+				"max": 1,
+				"min": 1,
+				"probability": 70
+			},
+			{
+				"id": "blender",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "coffee_maker",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "microwave_oven",
+				"max": 1,
+				"min": 1,
+				"probability": 35
+			},
+			{
+				"id": "pressure_cooker",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "bread_maker",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			}
+		],
+		"mode": "Collection",
+		"name": "Electronics store (medium appliances)",
+		"sprite": "microwave_oven_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Small products you would find at an electronics store.",
+		"id": "electronics_store_small",
+		"items": [
+			{
+				"id": "radio_two_way",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "battery_small",
+				"max": 3,
+				"min": 1,
+				"probability": 80
+			},
+			{
+				"id": "flashlight_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 45
+			},
+			{
+				"id": "radio_handheld",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "screwdriver",
+				"max": 1,
+				"min": 1,
+				"probability": 80
+			},
+			{
+				"id": "electrical_components",
+				"max": 5,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "circuit_board",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Electronics store (small products)",
+		"sprite": "screwdriver_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Products of mixed sizes you would find at an electronics store.",
+		"id": "electronics_store_mixed",
+		"items": [
+			{
+				"id": "radio_two_way",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "battery_small",
+				"max": 3,
+				"min": 1,
+				"probability": 80
+			},
+			{
+				"id": "flashlight_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 45
+			},
+			{
+				"id": "radio_handheld",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "screwdriver",
+				"max": 1,
+				"min": 1,
+				"probability": 80
+			},
+			{
+				"id": "electrical_components",
+				"max": 7,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "toaster",
+				"max": 1,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "blender",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "coffee_maker",
+				"max": 1,
+				"min": 1,
+				"probability": 35
+			},
+			{
+				"id": "microwave_oven",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "pressure_cooker",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "bread_maker",
+				"max": 1,
+				"min": 1,
+				"probability": 8
+			}
+		],
+		"mode": "Collection",
+		"name": "Electronics store (mixed products)",
+		"sprite": "electrical_components_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Drinks you can find in a vending in an urban shop",
+		"id": "vending_machine_drinks",
+		"items": [
+			{
+				"id": "bottle_plastic_water",
+				"max": 5,
+				"min": 1,
+				"probability": 80
+			},
+			{
+				"id": "can_soda",
+				"max": 10,
+				"min": 3,
+				"probability": 60
+			},
+			{
+				"id": "can_energydrink",
+				"max": 3,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "can_beer",
+				"max": 2,
+				"min": 1,
+				"probability": 40
+			}
+		],
+		"mode": "Collection",
+		"name": "Vending machine (drinks)",
+		"sprite": "can_beer_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Snacks you can find in a vending in an urban shop",
+		"id": "vending_machine_snacks",
+		"items": [
+			{
+				"id": "chocolate",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "pack_cigarettes",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Vending machine (snacks)",
+		"sprite": "chocolate_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "The tree was not cut, but destroyed by some source, leaving less resources then when it would be cut.",
+		"id": "tree_destroyed",
+		"items": [
+			{
+				"id": "log",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "branch",
+				"max": 5,
+				"min": 2,
+				"probability": 80
+			},
+			{
+				"id": "leaf",
+				"max": 25,
+				"min": 10,
+				"probability": 95
+			},
+			{
+				"id": "plant_remnants",
+				"max": 10,
+				"min": 5,
+				"probability": 95
+			},
+			{
+				"id": "long_stick",
+				"max": 3,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Destroyed tree",
+		"sprite": "log_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Items you can find in any field of grass",
+		"id": "generic_field_finds",
+		"items": [
+			{
+				"id": "sharp_stone",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "small_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "medium_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "pebble",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "flower_wild",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "leaf",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "plant_remnants",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "river_reed",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			}
+		],
+		"mode": "Distribution",
+		"name": "Generic field items",
+		"sprite": "leaves_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Stuff you might find in a forest",
+		"id": "generic_forest_finds",
+		"items": [
+			{
+				"id": "herbs_wild",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "long_stick",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "stick",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "small_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "pebble",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "acorn",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "pinecone",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "bird_egg",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "mushrooms_forest",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "berries_wild",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "small_stick",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "plant_remnants",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "pine_branch",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "leaf",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "branch",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "log",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			}
+		],
+		"mode": "Distribution",
+		"name": "Generic forest finds",
+		"sprite": "branches_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Does not spawn under normal circumstances. Only used for testing. Can be used for any testing purposes, just update the items to suit your needs.",
+		"id": "test_items",
+		"items": [
+			{
+				"id": "pistol_9mm",
+				"max": 4,
+				"min": 2,
+				"probability": 100
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 7,
+				"min": 2,
+				"probability": 100
+			},
+			{
+				"id": "bullet_9mm",
+				"max": 100,
+				"min": 100,
+				"probability": 100
+			},
+			{
+				"id": "bottle_antidote",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "sharp_stone",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "long_stick",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "plank_2x4",
+				"max": 4,
+				"min": 4,
+				"probability": 100
+			},
+			{
+				"id": "steel_scrap",
+				"max": 4,
+				"min": 4,
+				"probability": 100
+			},
+			{
+				"id": "flashlight_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			}
+		],
+		"mode": "Collection",
+		"name": "Test items",
+		"sprite": "screw_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "The player finds this rare pile of a M4A1 gun and ammo",
+		"id": "M4A1_gun_ammo",
+		"items": [
+			{
+				"id": "rifle_m4a1",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 5,
+				"min": 3,
+				"probability": 100
+			},
+			{
+				"id": "bullet_9mm",
+				"max": 100,
+				"min": 25,
+				"probability": 100
+			}
+		],
+		"mode": "Collection",
+		"name": "M4A1 Gun and ammo",
+		"sprite": "rifle_64_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "A cluttered pile of rocks",
+		"id": "debris_rock",
+		"items": [
+			{
+				"id": "small_rock",
+				"max": 10,
+				"min": 3,
+				"probability": 70
+			},
+			{
+				"id": "medium_rock",
+				"max": 2,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "gravel",
+				"max": 4,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "pebble",
+				"max": 12,
+				"min": 5,
+				"probability": 80
+			},
+			{
+				"id": "large_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			}
+		],
+		"mode": "Collection",
+		"name": "Rock debris",
+		"sprite": "rock_large_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Any debris in an urban environment, for example from a destroyed house",
+		"id": "debris_urban",
+		"items": [
+			{
+				"id": "steel_scrap",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "plank_2x4",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "rusted_metal_sheets",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "glass_shards",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "damaged_concrete_slab",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "medium_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "gravel",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "metal_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "ceramic_fragments",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "plastic_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "screw",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "nails",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 8
+			}
+		],
+		"mode": "Collection",
+		"name": "Urban debris",
+		"sprite": "rusted_metal_sheets_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Junk that's been left behind or dropped on purpose, littering the ground in an urban environment",
+		"id": "urban_litter",
+		"items": [
+			{
+				"id": "bottle_plastic_empty",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "guide_survival_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			},
+			{
+				"id": "plastic_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "metal_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "stale_bread",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "pebble",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			},
+			{
+				"id": "glass_shards",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "pack_cigarettes",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			}
+		],
+		"mode": "Collection",
+		"name": "Urban litter",
+		"sprite": "bottle_empty_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "A pile of damaged electronics found in some delapitated place.",
+		"id": "electronics_damaged",
+		"items": [
+			{
+				"id": "damaged_transmitter",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "metal_parts",
+				"max": 3,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "plastic_parts",
+				"max": 3,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "electrical_components",
+				"max": 3,
+				"min": 1,
+				"probability": 30
+			}
+		],
+		"mode": "Collection",
+		"name": "Damaged electronics",
+		"sprite": "transmitter_broken_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Electronic loot that's dropped by a mob",
+		"id": "loot_electronic",
+		"items": [
+			{
+				"id": "steel_scrap",
+				"max": 1,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "battery_small",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			},
+			{
+				"id": "electrical_components",
+				"max": 1,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "plastic_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "metal_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 21
+			},
+			{
+				"id": "circuit_board",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			}
+		],
+		"mode": "Collection",
+		"name": "Electronic Mob loot",
+		"sprite": "electrical_components_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Anything you can find in a first aid kit",
+		"id": "first_aid",
+		"items": [
+			{
+				"id": "bandage_basic",
+				"max": 3,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "bottle_antibiotics",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_disinfectant",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "bottle_antidote",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "painkiller",
+				"max": 2,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "antiseptic_wipes",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "adrenaline_shot",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "thermal_blanket",
+				"max": 1,
+				"min": 1,
+				"probability": 2
+			}
+		],
+		"mode": "Collection",
+		"name": "First aid",
+		"sprite": "bandage_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "The police station locker contains anything the police might need in their day-to-day duties",
+		"id": "police_station_locker",
+		"items": [
+			{
+				"id": "rifle_m4a1",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "pistol_magazine",
+				"max": 3,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "bullet_9mm",
+				"max": 25,
+				"min": 10,
+				"probability": 80
+			},
+			{
+				"id": "pistol_9mm",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "chugunov_mpap",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "chugunov_mpap_magazine",
+				"max": 1,
+				"min": 1,
+				"probability": 25
+			},
+			{
+				"id": "bandage_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 75
+			},
+			{
+				"id": "boots",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "flashlight_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "gas_mask",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "vest_ballistic",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			},
+			{
+				"id": "radio_two_way",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "gloves_leather",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "fire_axe",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "pump_shotgun",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "hunting_rifle",
+				"max": 1,
+				"min": 1,
+				"probability": 8
+			},
+			{
+				"id": "shell_12gauge",
+				"max": 8,
+				"min": 2,
+				"probability": 20
+			},
+			{
+				"id": "round_308",
+				"max": 10,
+				"min": 2,
+				"probability": 18
+			},
+			{
+				"id": "shotgun_tube",
+				"max": 1,
+				"min": 1,
+				"probability": 12
+			},
+			{
+				"id": "hunting_rifle_magazine",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			}
+		],
+		"mode": "Collection",
+		"name": "Police station locker",
+		"sprite": "pistol_magazine.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Loot that's dropped by a zombie. Contains personal belongings and gross parts.",
+		"id": "zombie_loot",
+		"items": [
+			{
+				"id": "zombie_organ",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "zombie_eye",
+				"max": 2,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "zombie_bone",
+				"max": 4,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "rotten_flesh_chunk",
+				"max": 4,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "wrist_watch",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "wallet",
+				"max": 1,
+				"min": 1,
+				"probability": 60
+			},
+			{
+				"id": "backpack",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "mailbag",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "waistbag",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			},
+			{
+				"id": "socks",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "shorts",
+				"max": 1,
+				"min": 1,
+				"probability": 25
+			},
+			{
+				"id": "gloves_leather",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "scarf",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "sweater",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			},
+			{
+				"id": "hat_baseball",
+				"max": 1,
+				"min": 1,
+				"probability": 25
+			},
+			{
+				"id": "jeans",
+				"max": 1,
+				"min": 1,
+				"probability": 30
+			},
+			{
+				"id": "tshirt",
+				"max": 1,
+				"min": 1,
+				"probability": 40
+			},
+			{
+				"id": "can_soda",
+				"max": 1,
+				"min": 1,
+				"probability": 15
+			},
+			{
+				"id": "can_energydrink",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "painkiller",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "chocolate",
+				"max": 1,
+				"min": 1,
+				"probability": 50
+			},
+			{
+				"id": "syringe",
+				"max": 1,
+				"min": 1,
+				"probability": 3
+			},
+			{
+				"id": "epipen",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "insulin",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "can_beer",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "boots",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "jacket",
+				"max": 1,
+				"min": 1,
+				"probability": 25
+			},
+			{
+				"id": "bottle_plastic_water",
+				"max": 1,
+				"min": 1,
+				"probability": 25
+			},
+			{
+				"id": "bottle_plastic_empty",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "pack_cigarettes",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			}
+		],
+		"mode": "Collection",
+		"name": "Mob loot",
+		"sprite": "zombie_eye_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "The player is looking to the tree and see what can be foraged.",
+		"id": "tree_forage",
+		"items": [
+			{
+				"id": "branch",
+				"max": 5,
+				"min": 2,
+				"probability": 80
+			},
+			{
+				"id": "leaf",
+				"max": 25,
+				"min": 10,
+				"probability": 95
+			},
+			{
+				"id": "long_stick",
+				"max": 3,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "pine_branch",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "stick",
+				"max": 3,
+				"min": 1,
+				"probability": 60
+			}
+		],
+		"mode": "Collection",
+		"name": "Tree foraging",
+		"sprite": "plant_remnants_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "A special itemgroup that will spawn these items in the player inventory on game start",
+		"id": "starting_items",
+		"items": [
+			{
+				"id": "bottle_plastic_water",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "bread",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "apple",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "can_soda",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "bandage_basic",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "bottle_antibiotics",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "pump_shotgun",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "shotgun_tube",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "shell_12gauge",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			},
+			{
+				"id": "fire_axe",
+				"max": 1,
+				"min": 1,
+				"probability": 100
+			}
+		],
+		"mode": "Collection",
+		"name": "Starting items",
+		"sprite": "jacket_32.png",
+		"use_sprite": false
+	},
+	{
+		"description": "Stuff you find at a gas station",
+		"id": "loot_gas_station",
+		"items": [
+			{
+				"id": "wallet",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "rusted_metal_sheets",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "damaged_concrete_slab",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "medium_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "small_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "large_rock",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "can_soda",
+				"max": 1,
+				"min": 1,
+				"probability": 21
+			},
+			{
+				"id": "metal_parts",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "gas_mask",
+				"max": 1,
+				"min": 1,
+				"probability": 20
+			},
+			{
+				"id": "jerrycan_gasoline",
+				"max": 1,
+				"min": 1,
+				"probability": 85
+			},
+			{
+				"id": "water_purification_tablets",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			},
+			{
+				"id": "rope_coil",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "steel_rebar",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "cement_bag",
+				"max": 1,
+				"min": 1,
+				"probability": 1
+			},
+			{
+				"id": "water_filter_straw",
+				"max": 1,
+				"min": 1,
+				"probability": 4
+			},
+			{
+				"id": "crowbar",
+				"max": 1,
+				"min": 1,
+				"probability": 10
+			},
+			{
+				"id": "pump_shotgun",
+				"max": 1,
+				"min": 1,
+				"probability": 5
+			},
+			{
+				"id": "shell_12gauge",
+				"max": 6,
+				"min": 2,
+				"probability": 15
+			}
+		],
+		"mode": "Collection",
+		"name": "Gas station loot",
+		"sprite": "jerrycan_gas_32.png",
+		"use_sprite": false
+	}
+]

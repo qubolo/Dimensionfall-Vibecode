@@ -1,0 +1,171 @@
+[gd_scene load_steps=21 format=3 uid="uid://dddjfurdx4wcs"]
+
+[ext_resource type="Script" uid="uid://kfod5yvuxyvw" path="res://Scripts/Documentation.gd" id="1_bo6h8"]
+[ext_resource type="Theme" uid="uid://1vfq5cs2ckel" path="res://Main_menu_buttons.tres" id="2_56yex"]
+[ext_resource type="Script" uid="uid://boepqvbyswpox" path="res://addons/markdownlabel/markdownlabel.gd" id="2_satcq"]
+[ext_resource type="Script" uid="uid://4qxpkfh6yh34" path="res://addons/markdownlabel/header_formats/h1_format.gd" id="3_63ons"]
+[ext_resource type="Script" uid="uid://dab7r5qa1xei4" path="res://addons/markdownlabel/header_formats/h2_format.gd" id="4_iqloi"]
+[ext_resource type="Script" uid="uid://dnbj76tpqvnee" path="res://addons/markdownlabel/header_formats/h3_format.gd" id="5_fmd7x"]
+[ext_resource type="Script" uid="uid://by5mcwwm381c4" path="res://addons/markdownlabel/header_formats/h4_format.gd" id="6_gbqcg"]
+[ext_resource type="Script" uid="uid://cumy4x5non1l0" path="res://addons/markdownlabel/header_formats/h5_format.gd" id="7_3sw1n"]
+[ext_resource type="Script" uid="uid://xqlqnlupdwdc" path="res://addons/markdownlabel/header_formats/h6_format.gd" id="8_lyqw1"]
+[ext_resource type="Texture2D" uid="uid://7l1nbygy5tts" path="res://Images/Main menu/AI_background_crt_computer.jpg" id="10_oynvu"]
+[ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="11_oynvu"]
+
+[sub_resource type="Gradient" id="Gradient_my8oh"]
+colors = PackedColorArray(0.651769, 0.651769, 0.651769, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2kumh"]
+gradient = SubResource("Gradient_my8oh")
+width = 5
+height = 400
+
+[sub_resource type="SystemFont" id="SystemFont_53ri7"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="Resource" id="Resource_n3x8q"]
+resource_local_to_scene = true
+script = ExtResource("3_63ons")
+font_size = 2.285
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_hudy4"]
+resource_local_to_scene = true
+script = ExtResource("4_iqloi")
+font_size = 1.714
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_kramt"]
+resource_local_to_scene = true
+script = ExtResource("5_fmd7x")
+font_size = 1.428
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_mdkcg"]
+resource_local_to_scene = true
+script = ExtResource("6_gbqcg")
+font_size = 1.142
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_8naro"]
+resource_local_to_scene = true
+script = ExtResource("7_3sw1n")
+font_size = 1.0
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[sub_resource type="Resource" id="Resource_hwu7s"]
+resource_local_to_scene = true
+script = ExtResource("8_lyqw1")
+font_size = 0.857
+is_bold = false
+is_italic = false
+is_underlined = false
+
+[node name="HelpMenu" type="Control" node_paths=PackedStringArray("categoryTree", "documentDisplay")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bo6h8")
+categoryTree = NodePath("VBoxContainer/ContentSplitContainer/VBoxContainer/CategoryTree")
+documentDisplay = NodePath("VBoxContainer/ContentSplitContainer/DocumentDisplay")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("10_oynvu")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(128, 62, 125, 76, 123, 89, 121, 104, 120, 115, 119, 127, 116, 157, 112, 205, 110, 262, 111, 326, 114, 380, 119, 438, 121, 451, 123, 460, 127, 466, 132, 470, 140, 474, 151, 477, 182, 481, 215, 483, 329, 487, 450, 491, 705, 490, 966, 483, 1013, 479, 1040, 469, 1058, 459, 1062, 445, 1065, 371, 1065, 149, 1065, 82, 1057, 69, 1032, 62, 543, 63)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111111
+anchor_top = 0.111111
+anchor_right = 0.914375
+anchor_bottom = 0.744
+offset_right = -0.360107
+offset_bottom = -0.11203
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_56yex")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 25
+text = "Help"
+
+[node name="ContentSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_icons/grabber = SubResource("GradientTexture2D_2kumh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ContentSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="CategoryLabel" type="Label" parent="VBoxContainer/ContentSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Categories"
+
+[node name="CategoryTree" type="Tree" parent="VBoxContainer/ContentSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DocumentDisplay" type="RichTextLabel" parent="VBoxContainer/ContentSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+theme_override_fonts/mono_font = SubResource("SystemFont_53ri7")
+bbcode_enabled = true
+text = "[font_size=22]Welcome to the documentation menu[/font_size]
+Select an item from the list to read more"
+script = ExtResource("2_satcq")
+markdown_text = "### Welcome to the documentation menu
+Select an item from the list to read more"
+h1 = SubResource("Resource_n3x8q")
+h2 = SubResource("Resource_hudy4")
+h3 = SubResource("Resource_kramt")
+h4 = SubResource("Resource_mdkcg")
+h5 = SubResource("Resource_8naro")
+h6 = SubResource("Resource_hwu7s")
+
+[node name="Uisfx" parent="." instance=ExtResource("11_oynvu")]
+root_path = NodePath("..")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="meta_clicked" from="VBoxContainer/ContentSplitContainer/DocumentDisplay" to="." method="_on_document_display_meta_clicked"]

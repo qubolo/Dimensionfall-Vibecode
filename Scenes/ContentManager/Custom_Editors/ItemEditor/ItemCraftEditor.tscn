@@ -1,0 +1,203 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7jwy5hpj2vyt"]
+
+[ext_resource type="Script" uid="uid://b4xhaqlgcskvg" path="res://Scripts/ItemCraftEditor.gd" id="1_6wvrt"]
+[ext_resource type="PackedScene" uid="uid://dsax7il2yggw8" path="res://Scenes/ContentManager/Custom_Widgets/DropEnabledTextEdit.tscn" id="2_bjy2a"]
+[ext_resource type="PackedScene" uid="uid://dmlbg7nolncnh" path="res://Scenes/ContentManager/Custom_Widgets/DropEntityTextEdit.tscn" id="3_mliuy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvald"]
+content_margin_left = 11.0
+content_margin_top = 11.0
+content_margin_right = 11.0
+content_margin_bottom = 11.0
+bg_color = Color(0.358505, 0.289355, 0.48639, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ItemCraftEditor" type="Control" node_paths=PackedStringArray("craftAmountNumber", "craftTimeNumber", "requiresLightCheckbox", "hand_craftable_check_box", "resourcesGridContainer", "recipesContainer", "required_skill_text_edit", "skill_level_requirement_spin_box", "skill_progression_text_edit", "skill_progression_spin_box", "skill_bonus_stat_text_edit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6wvrt")
+craftAmountNumber = NodePath("Craft/CraftAmountNumber")
+craftTimeNumber = NodePath("Craft/CraftTimeNumber")
+requiresLightCheckbox = NodePath("Craft/HBoxContainer2/RequiresLightCheckBox")
+hand_craftable_check_box = NodePath("Craft/HBoxContainer2/HandCraftableCheckBox")
+resourcesGridContainer = NodePath("Craft/PanelContainer/ResourcesGridContainer")
+recipesContainer = NodePath("Craft/HBoxContainer/RecipeContainerOptionButton")
+required_skill_text_edit = NodePath("Craft/SkillRequirementHBoxContainer/RequiredSkillNameDropEnabledTextEdit")
+skill_level_requirement_spin_box = NodePath("Craft/SkillRequirementHBoxContainer/SkillLevelRequirementSpinBox")
+skill_progression_text_edit = NodePath("Craft/SkillProgressionHBoxContainer/SkillProgressionNameDropEnabledTextEdit")
+skill_progression_spin_box = NodePath("Craft/SkillProgressionHBoxContainer/SkillProgressionSpinBox")
+skill_bonus_stat_text_edit = NodePath("Craft/SkillBonusStatTextEdit")
+
+[node name="Craft" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="TipLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Tip"
+
+[node name="TipLabel2" type="Label" parent="Craft"]
+layout_mode = 2
+text = "First, press the + button next to the selected recipe list to add a recipe. Next, drop 
+items from the list on the left to add them as requirements. Craft time and flags are 
+not implemented yet. You can also configure the skill requirement and skill reward."
+
+[node name="RecipeSelectLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Selected recipe:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Craft"]
+layout_mode = 2
+
+[node name="RecipeContainerOptionButton" type="OptionButton" parent="Craft/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Select the recipe you want to edit. Press the + button 
+to add a new recipe. Creating multiple recipes allows 
+the player to create the same item in different ways."
+
+[node name="AddRecipeButton" type="Button" parent="Craft/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Adds a new recipe to the recipe list."
+text = "+"
+
+[node name="RemoveRecipeButton" type="Button" parent="Craft/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Removes the recipe from the recipe list."
+text = "-"
+
+[node name="CraftAmountLabel2" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Craft amount"
+
+[node name="CraftAmountNumber" type="SpinBox" parent="Craft"]
+layout_mode = 2
+tooltip_text = "The width of this item in the inventory. A larger number means it will take up more horizontal inventory slots"
+min_value = 1.0
+max_value = 1000.0
+value = 1.0
+editable = false
+
+[node name="RequiredResourceLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Required materials"
+
+[node name="PanelContainer" type="PanelContainer" parent="Craft"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvald")
+
+[node name="ResourcesGridContainer" type="GridContainer" parent="Craft/PanelContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+columns = 3
+
+[node name="CraftTimeLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Craft time"
+
+[node name="CraftTimeNumber" type="SpinBox" parent="Craft"]
+layout_mode = 2
+tooltip_text = "The time it takes to craft in seconds"
+min_value = 1.0
+value = 10.0
+editable = false
+
+[node name="FlagsLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Flags"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Craft"]
+layout_mode = 2
+
+[node name="RequiresLightCheckBox" type="CheckBox" parent="Craft/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "Enable this if the item weapon occupies both hands when held. Disable this if the item occupies one hand when held"
+disabled = true
+text = "Requires light"
+
+[node name="HandCraftableCheckBox" type="CheckBox" parent="Craft/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "Checked: This item can be crafted by hand and by crafting stations.
+Unchecked: This item can only be crafted by crafting stations.
+Note: In order to be craftable by crafting stations, you have to edit 
+a furniture and add this item to the craftable items there."
+button_pressed = true
+text = "Hand craftable"
+
+[node name="SkillRequirementLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Skill needed:"
+
+[node name="SkillRequirementHBoxContainer" type="HBoxContainer" parent="Craft"]
+layout_mode = 2
+
+[node name="RequiredSkillNameDropEnabledTextEdit" parent="Craft/SkillRequirementHBoxContainer" instance=ExtResource("2_bjy2a")]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+tooltip_text = "Drag a skill from the list on the left onto this text box. The 
+player will need this skill to be able to unlock this recipe. 
+If no skill is entered, no skill requirement is applied."
+myplaceholdertext = "drop a skill from the list on the left"
+
+[node name="SkillLevelRequirementSpinBox" type="SpinBox" parent="Craft/SkillRequirementHBoxContainer"]
+layout_mode = 2
+tooltip_text = "The minimum skill level required for the player to 
+unlock this recipe. Only applies if a skill name is set."
+min_value = 1.0
+value = 1.0
+editable = false
+
+[node name="SkillProgressionLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Craft xp gained:"
+
+[node name="SkillProgressionHBoxContainer" type="HBoxContainer" parent="Craft"]
+layout_mode = 2
+
+[node name="SkillProgressionNameDropEnabledTextEdit" parent="Craft/SkillProgressionHBoxContainer" instance=ExtResource("2_bjy2a")]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+myplaceholdertext = "drop a skill from the list on the left"
+
+[node name="SkillProgressionSpinBox" type="SpinBox" parent="Craft/SkillProgressionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "The amount of XP the player will get when crafting this item.
+The xp will go towards the skill configured in the textbox. If no
+skill is set, the player does not receive XP for crafting this item.
+The amount can be a minimum of 1 and a maximum of 100."
+min_value = 1.0
+value = 1.0
+editable = false
+
+[node name="SkillBonusStatLabel" type="Label" parent="Craft"]
+layout_mode = 2
+text = "Skill bonus stat"
+
+[node name="SkillBonusStatTextEdit" parent="Craft" instance=ExtResource("3_mliuy")]
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "Drop a stat to increase the effective crafting skill."
+myplaceholdertext = "Drop a stat from the list"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="button_up" from="Craft/HBoxContainer/AddRecipeButton" to="." method="_on_add_recipe_button_button_up"]
+[connection signal="button_up" from="Craft/HBoxContainer/RemoveRecipeButton" to="." method="_on_remove_recipe_button_button_up"]

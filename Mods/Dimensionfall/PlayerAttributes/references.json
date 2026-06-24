@@ -1,0 +1,241 @@
+{
+	"food": {
+		"items": [
+			"condensed_milk",
+			"jar_pickles",
+			"bottle_yogurt",
+			"tofu",
+			"lettuce",
+			"tomato",
+			"vacuum_sealed_fish",
+			"slice_of_pizza",
+			"bread",
+			"bag_bacon",
+			"orange",
+			"stale_bread",
+			"bottle_ketchup",
+			"jar_mustard",
+			"jar_olives",
+			"chocolate",
+			"cheese",
+			"butter",
+			"eggs",
+			"carrot",
+			"potato",
+			"apple",
+			"mushrooms_forest",
+			"berries_wild",
+			"bird_egg",
+			"uncooked_meat",
+			"kiwi",
+			"zombie_organ",
+			"zombie_eye",
+			"rotten_flesh_chunk",
+			"meat_jerky",
+			"dried_fruit_mix",
+			"jar_honey",
+			"tree_sap"
+		]
+	},
+	"head_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"left_arm_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"bone_thrower"
+		]
+	},
+	"left_leg_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"poison": {
+		"items": [
+			"bottle_antidote",
+			"zombie_organ",
+			"zombie_eye",
+			"rotten_flesh_chunk"
+		],
+		"mobs": [
+			"venom_crawler",
+			"spitter_zombie"
+		]
+	},
+	"right_arm_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"right_leg_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"stun": {
+		"mobs": [
+			"disruptor_drone",
+			"iron_stalker"
+		]
+	},
+	"torso_health": {
+		"items": [
+			"bottle_disinfectant",
+			"epipen",
+			"insulin",
+			"painkiller",
+			"antiseptic_wipes",
+			"adrenaline_shot"
+		],
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"iron_stalker",
+			"scavenger_skitter",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"water": {
+		"items": [
+			"condensed_milk",
+			"jar_pickles",
+			"bottle_yogurt",
+			"lettuce",
+			"tomato",
+			"wine_bottle",
+			"orange",
+			"can_soda",
+			"can_energydrink",
+			"eggs",
+			"apple",
+			"berries_wild",
+			"bird_egg",
+			"kiwi",
+			"zombie_organ",
+			"zombie_eye",
+			"rotten_flesh_chunk",
+			"can_beer"
+		]
+	}
+}

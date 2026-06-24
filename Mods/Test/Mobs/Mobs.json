@@ -1,0 +1,104 @@
+[
+	{
+		"attacks": {
+			"melee": [
+				{
+					"damage_multiplier": 2.5,
+					"id": "generic_melee_attack",
+					"type": "melee"
+				}
+			],
+			"ranged": []
+		},
+		"default_faction": "",
+		"description": "Use this for testing purposes",
+		"faction_id": "generic_test_faction",
+		"health": 100,
+		"hearing_range": 1000,
+		"id": "generic_test_mob",
+		"idle_move_speed": 0.5,
+		"loot_group": "",
+		"move_speed": 1.0,
+		"name": "Test mob",
+		"sense_range": 50,
+		"sight_range": 200,
+		"sprite": "test_scrapwalker64.png"
+	},
+	{
+		"attacks": {
+			"melee": [
+				{
+					"damage_multiplier": 3.0,
+					"id": "generic_melee_attack"
+				}
+			],
+			"ranged": []
+		},
+		"default_faction": "",
+		"description": "Use this enemy for testing purposes",
+		"faction_id": "enemy_test_faction",
+		"health": 100,
+		"hearing_range": 1000,
+		"id": "generic_enemy_mob",
+		"idle_move_speed": 0.5,
+		"loot_group": "",
+		"move_speed": 1.0,
+		"name": "Enemy mob",
+		"sense_range": 50,
+		"sight_range": 200,
+		"sprite": "test_zombie_64_64.png"
+	},
+	{
+		"attacks": {
+			"melee": [],
+			"ranged": [
+				{
+					"damage_multiplier": 2.5,
+					"id": "generic_ranged_attack"
+				}
+			]
+		},
+		"default_faction": "",
+		"description": "Use this for testing ranged combat",
+		"faction_id": "generic_test_faction",
+		"health": 100,
+		"hearing_range": 1000,
+		"id": "generic_ranged_mob",
+		"idle_move_speed": 0.5,
+		"loot_group": "",
+		"move_speed": 1.0,
+		"name": "Ranged test mob",
+		"sense_range": 50,
+		"sight_range": 200,
+		"sprite": "test_disruptor_drone_48.png"
+	},
+	{
+		"attacks": {
+			"melee": [
+				{
+					"damage_multiplier": 1.0,
+					"id": "generic_melee_attack",
+					"type": "melee"
+				}
+			],
+			"ranged": []
+		},
+		"body_health": 100,
+		"brain_health": 30,
+		"default_faction": "",
+		"description": "Use this for testing the undead hit-region model.",
+		"faction_id": "generic_test_faction",
+		"health": 100,
+		"hearing_range": 1000,
+		"id": "generic_undead_mob",
+		"idle_move_speed": 0.5,
+		"legs_health": 40,
+		"loot_group": "",
+		"move_speed": 1.0,
+		"name": "Test undead mob",
+		"sense_range": 50,
+		"sight_range": 200,
+		"sprite": "test_scrapwalker64.png",
+		"undead": true
+	}
+]

@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://duoxs7mpo6x3t"]
+
+[ext_resource type="Script" uid="uid://186nrxvxnlpk" path="res://Scripts/ItemMeleeEditor.gd" id="1_pg18d"]
+[ext_resource type="PackedScene" uid="uid://dsax7il2yggw8" path="res://Scenes/ContentManager/Custom_Widgets/DropEnabledTextEdit.tscn" id="2_etmci"]
+[ext_resource type="PackedScene" uid="uid://dmlbg7nolncnh" path="res://Scenes/ContentManager/Custom_Widgets/DropEntityTextEdit.tscn" id="3_kgnfh"]
+
+[node name="ItemMeleeEditor" type="Control" node_paths=PackedStringArray("damage_spin_box", "reach_spin_box", "used_skill_text_edit", "skill_xp_spin_box", "damage_stat_text_edit", "accuracy_stat_text_edit")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pg18d")
+damage_spin_box = NodePath("Melee/DamageSpinbox")
+reach_spin_box = NodePath("Melee/ReachSpinbox")
+used_skill_text_edit = NodePath("Melee/UsedSkillHBoxContainer/UsedSkillTextEdit")
+skill_xp_spin_box = NodePath("Melee/UsedSkillHBoxContainer/SkillXPSpinBox")
+damage_stat_text_edit = NodePath("Melee/DamageStatTextEdit")
+accuracy_stat_text_edit = NodePath("Melee/AccuracyStatTextEdit")
+
+[node name="Melee" type="GridContainer" parent="."]
+layout_mode = 0
+size_flags_vertical = 3
+columns = 2
+
+[node name="DamageLabel" type="Label" parent="Melee"]
+layout_mode = 2
+text = "Damage"
+
+[node name="DamageSpinbox" type="SpinBox" parent="Melee"]
+layout_mode = 2
+tooltip_text = "The damage that the target will receive when it get's hit by this weapon"
+
+[node name="ReachLabel" type="Label" parent="Melee"]
+layout_mode = 2
+text = "Reach"
+
+[node name="ReachSpinbox" type="SpinBox" parent="Melee"]
+layout_mode = 2
+tooltip_text = "The melee range of the weapon in meters. A larger number means the wielder can attack over a larger distance."
+step = 0.1
+value = 1.0
+
+[node name="UsedSkillLabel" type="Label" parent="Melee"]
+layout_mode = 2
+text = "Skill:"
+
+[node name="UsedSkillHBoxContainer" type="HBoxContainer" parent="Melee"]
+layout_mode = 2
+
+[node name="UsedSkillTextEdit" parent="Melee/UsedSkillHBoxContainer" instance=ExtResource("2_etmci")]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+tooltip_text = "The skill used when attacking with this weapon. This determines how well 
+the player can control the weapon and deliver accurate hits."
+myplaceholdertext = "Drag a skill from the left menu"
+
+[node name="SkillXPLabel" type="Label" parent="Melee/UsedSkillHBoxContainer"]
+layout_mode = 2
+text = "XP per attack:"
+
+[node name="SkillXPSpinBox" type="SpinBox" parent="Melee/UsedSkillHBoxContainer"]
+layout_mode = 2
+tooltip_text = "The amount of xp the player gets per attack for the skill that is set.
+If no skill is set, the player gets no xp. "
+
+[node name="DamageStatLabel" type="Label" parent="Melee"]
+layout_mode = 2
+text = "Damage Stat"
+
+[node name="DamageStatTextEdit" parent="Melee" instance=ExtResource("3_kgnfh")]
+layout_mode = 2
+tooltip_text = "The stat that increases melee damage for this weapon."
+myplaceholdertext = "Drop a stat from the list"
+[node name="AccuracyStatLabel" type="Label" parent="Melee"]
+layout_mode = 2
+text = "Accuracy Stat"
+
+[node name="AccuracyStatTextEdit" parent="Melee" instance=ExtResource("3_kgnfh")]
+layout_mode = 2
+tooltip_text = "The stat that improves accuracy for this weapon."
+myplaceholdertext = "Drop a stat from the list"

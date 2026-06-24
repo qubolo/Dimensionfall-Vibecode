@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://65bjwo1b3je2"]
+
+[ext_resource type="Script" uid="uid://7rnt3osmxmtb" path="res://Scripts/ItemWearableEditor.gd" id="1_o5i08"]
+[ext_resource type="PackedScene" uid="uid://dmlbg7nolncnh" path="res://Scenes/ContentManager/Custom_Widgets/DropEntityTextEdit.tscn" id="2_7340g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3shf"]
+bg_color = Color(0.72927, 0.567349, 0.365251, 1)
+
+[node name="ItemWearableEditor" type="Control" node_paths=PackedStringArray("slot_editor", "attributes_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5i08")
+slot_editor = NodePath("Wearable/SlotDropEntityTextEdit")
+attributes_container = NodePath("Wearable/AttributesPanelContainer/AttributtesGridContainer")
+
+[node name="Wearable" type="GridContainer" parent="."]
+layout_mode = 0
+size_flags_vertical = 3
+columns = 2
+
+[node name="SlotLabel" type="Label" parent="Wearable"]
+layout_mode = 2
+text = "Wearable slot"
+
+[node name="SlotDropEntityTextEdit" parent="Wearable" instance=ExtResource("2_7340g")]
+layout_mode = 2
+tooltip_text = "The slot that this item will fit on. Drag a wearableslot from the list on the 
+left onto this field to set it. If no slot is set, it will not fit anywhere. In-game, 
+the player will be able to drag the item to this slot in the inventory window."
+myplaceholdertext = "Drop a Wearable Slot from the list on the left"
+
+[node name="PlayerAttributeLabel" type="Label" parent="Wearable"]
+layout_mode = 2
+text = "Affects attribute"
+
+[node name="AttributesPanelContainer" type="PanelContainer" parent="Wearable"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3shf")
+
+[node name="AttributtesGridContainer" type="GridContainer" parent="Wearable/AttributesPanelContainer"]
+layout_mode = 2
+tooltip_text = "Drag playerattributes to this panel to have this item modify it's max value while worn."
+columns = 3

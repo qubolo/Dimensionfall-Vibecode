@@ -1,0 +1,676 @@
+[gd_scene load_steps=10 format=3 uid="uid://cng4m3os6smj8"]
+
+[ext_resource type="Texture2D" uid="uid://c8ragmxitca47" path="res://Scenes/ContentManager/Mapeditor/Images/emptyTile.png" id="1_gm4uu"]
+[ext_resource type="Script" uid="uid://bpf47rtsql67k" path="res://Scenes/ContentManager/Custom_Editors/Scripts/FurnitureEditor.gd" id="1_wqqit"]
+[ext_resource type="PackedScene" uid="uid://b8i6wfk3fngy4" path="res://Scenes/ContentManager/Custom_Widgets/Editable_Item_List.tscn" id="2_ekwf5"]
+[ext_resource type="PackedScene" uid="uid://d1h1rpwt8f807" path="res://Scenes/ContentManager/Custom_Widgets/Sprite_Selector_Popup.tscn" id="3_o3k3a"]
+[ext_resource type="PackedScene" uid="uid://dsax7il2yggw8" path="res://Scenes/ContentManager/Custom_Widgets/DropEnabledTextEdit.tscn" id="4_fbact"]
+[ext_resource type="Texture2D" uid="uid://c31w0wuk8qabw" path="res://Defaults/Sprites/2.png" id="5_q64hk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61e60"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujqyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv8h1"]
+
+[node name="FurnitureEditor" type="Control" node_paths=PackedStringArray("tab_container", "furniture_image_display", "id_label", "name_edit", "description_edit", "categories_list", "furniture_selector", "image_name_label", "moveable_checkbox", "weight_label", "weight_spinbox", "edge_snapping_option", "door_option", "container_checkbox", "container_text_edit", "regeneration_label", "regeneration_spin_box", "sprite_mode_option_button", "destroy_container", "can_destroy_checkbox", "destruction_text_edit", "destruction_image_display", "destruction_sprite_label", "disassembly_container", "can_disassemble_checkbox", "disassembly_text_edit", "disassembly_image_display", "disassembly_sprite_label", "support_shape_option_button", "width_scale_label", "depth_scale_label", "radius_scale_label", "width_scale_spin_box", "depth_scale_spin_box", "radius_scale_spin_box", "height_spin_box", "color_picker", "sprite_texture_rect", "transparent_check_box", "crafting_items_container", "construction_items_container", "pool_spin_box", "drain_rate_spin_box", "transform_into_text_edit", "button_text_edit", "consumption_items_grid_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqqit")
+tab_container = NodePath("VBoxContainer/TabContainer")
+furniture_image_display = NodePath("VBoxContainer/TabContainer/General/FurnitureImageDisplay")
+id_label = NodePath("VBoxContainer/TabContainer/General/IDTextLabel")
+name_edit = NodePath("VBoxContainer/TabContainer/General/NameTextEdit")
+description_edit = NodePath("VBoxContainer/TabContainer/General/DescriptionTextEdit")
+categories_list = NodePath("VBoxContainer/TabContainer/General/Editable_Item_List")
+furniture_selector = NodePath("Sprite_selector")
+image_name_label = NodePath("VBoxContainer/TabContainer/General/ImageNameStringLabel")
+moveable_checkbox = NodePath("VBoxContainer/TabContainer/General/MoveableHboxContainer/UnmoveableCheckBox")
+weight_label = NodePath("VBoxContainer/TabContainer/General/MoveableHboxContainer/WeightLabel")
+weight_spinbox = NodePath("VBoxContainer/TabContainer/General/MoveableHboxContainer/WeightSpinBox")
+edge_snapping_option = NodePath("VBoxContainer/TabContainer/General/SnappingOptionButton")
+door_option = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/DoorOptionButton")
+container_checkbox = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/ContainerCheckBox")
+container_text_edit = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/ContainerTextEdit")
+regeneration_label = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/RegenerationLabel")
+regeneration_spin_box = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/RegenerationSpinBox")
+sprite_mode_option_button = NodePath("VBoxContainer/TabContainer/General/FunctionControlContainer/SpriteModeOptionButton")
+destroy_container = NodePath("VBoxContainer/TabContainer/General/DestructionHBoxContainer")
+can_destroy_checkbox = NodePath("VBoxContainer/TabContainer/General/DestructionHBoxContainer/CanDestroyCheckBox")
+destruction_text_edit = NodePath("VBoxContainer/TabContainer/General/DestructionHBoxContainer/DestructionTextEdit")
+destruction_image_display = NodePath("VBoxContainer/TabContainer/General/DestructionHBoxContainer/DestructionImageDisplay")
+destruction_sprite_label = NodePath("VBoxContainer/TabContainer/General/DestructionHBoxContainer/DestructionSpriteNameLabel")
+disassembly_container = NodePath("VBoxContainer/TabContainer/General/DisassembleHboxContainer")
+can_disassemble_checkbox = NodePath("VBoxContainer/TabContainer/General/DisassembleHboxContainer/CanDisassembleCheckBox")
+disassembly_text_edit = NodePath("VBoxContainer/TabContainer/General/DisassembleHboxContainer/DisassemblyTextEdit")
+disassembly_image_display = NodePath("VBoxContainer/TabContainer/General/DisassembleHboxContainer/DisassembleImageDisplay")
+disassembly_sprite_label = NodePath("VBoxContainer/TabContainer/General/DisassembleHboxContainer/DisassembleSpriteNameLabel")
+support_shape_option_button = NodePath("VBoxContainer/TabContainer/Shape/SupportShapeOptionButton")
+width_scale_label = NodePath("VBoxContainer/TabContainer/Shape/WidthScaleLabel")
+depth_scale_label = NodePath("VBoxContainer/TabContainer/Shape/DepthScaleLabel")
+radius_scale_label = NodePath("VBoxContainer/TabContainer/Shape/RadiusScaleLabel")
+width_scale_spin_box = NodePath("VBoxContainer/TabContainer/Shape/WidthScaleSpinBox")
+depth_scale_spin_box = NodePath("VBoxContainer/TabContainer/Shape/DepthScaleSpinBox")
+radius_scale_spin_box = NodePath("VBoxContainer/TabContainer/Shape/RadiusScaleSpinBox")
+height_spin_box = NodePath("VBoxContainer/TabContainer/Shape/HeigthSpinBox")
+color_picker = NodePath("VBoxContainer/TabContainer/Shape/HBoxContainer/ColorPicker")
+sprite_texture_rect = NodePath("VBoxContainer/TabContainer/Shape/HBoxContainer/SpriteTextureRect")
+transparent_check_box = NodePath("VBoxContainer/TabContainer/Shape/TransparentCheckBox")
+crafting_items_container = NodePath("VBoxContainer/TabContainer/Crafting/ItemsPanelContainer/ItemsScrollContainer/ItemsGridContainer")
+construction_items_container = NodePath("VBoxContainer/TabContainer/Construction/ConstructionItemsPanelContainer/ConstructionItemsScrollContainer/ConstructionItemsVBoxContainer/ConstructionItemsGridContainer")
+pool_spin_box = NodePath("VBoxContainer/TabContainer/Consumption/PoolSpinBox")
+drain_rate_spin_box = NodePath("VBoxContainer/TabContainer/Consumption/DrainRateSpinBox")
+transform_into_text_edit = NodePath("VBoxContainer/TabContainer/Consumption/TransformIntoDropEnabledTextEdit")
+button_text_edit = NodePath("VBoxContainer/TabContainer/Consumption/ButtonTextTextEdit")
+consumption_items_grid_container = NodePath("VBoxContainer/TabContainer/Consumption/ItemsPanelContainer/ItemsVBoxContainer/ItemsGridContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="General" type="GridContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+metadata/_tab_index = 0
+
+[node name="ImageLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Sprite:"
+
+[node name="FurnitureImageDisplay" type="TextureRect" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.4
+focus_next = NodePath("../NameTextEdit")
+focus_previous = NodePath("../Editable_Item_List")
+focus_mode = 2
+texture = ExtResource("1_gm4uu")
+expand_mode = 3
+
+[node name="ImageNameLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Sprite name:"
+
+[node name="ImageNameStringLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="IDLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "ID:"
+
+[node name="IDTextLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Name"
+
+[node name="NameTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+focus_next = NodePath("../DescriptionTextEdit")
+focus_previous = NodePath("../FurnitureImageDisplay")
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Description"
+
+[node name="DescriptionTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+focus_next = NodePath("../Editable_Item_List")
+focus_previous = NodePath("../NameTextEdit")
+wrap_mode = 1
+
+[node name="CategoriesLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Categories:"
+
+[node name="Editable_Item_List" parent="VBoxContainer/TabContainer/General" instance=ExtResource("2_ekwf5")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_next = NodePath("../FurnitureImageDisplay")
+focus_previous = NodePath("../DescriptionTextEdit")
+focus_mode = 2
+header = "Categories"
+
+[node name="MoveableLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Can move"
+
+[node name="MoveableHboxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="UnmoveableCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/General/MoveableHboxContainer"]
+layout_mode = 2
+tooltip_text = "Check this if the furniture should be moveable, like a chair. Leave this unchecked if the furniture should not move, like a fence"
+text = "Moveable"
+
+[node name="WeightLabel" type="Label" parent="VBoxContainer/TabContainer/General/MoveableHboxContainer"]
+layout_mode = 2
+text = "| Weight"
+
+[node name="WeightSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/MoveableHboxContainer"]
+layout_mode = 2
+tooltip_text = "Specify the weight in kg for this furniture. A larger number 
+means it will be heavier and harder to push. A smaller 
+number means it will be lighter and easier to push. Only 
+applies to moveable furniture`"
+min_value = 0.1
+step = 0.1
+value = 1.0
+
+[node name="DisassembleLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Disassembly:"
+
+[node name="DisassembleHboxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="CanDisassembleCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the player will be able to disassemble the furniture. If this is unchecked, the player is not able to disassemble this furniture"
+text = "Can disassemble"
+
+[node name="DisassembleLootGroupLabel" type="Label" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer"]
+layout_mode = 2
+text = "| Loot group:"
+
+[node name="DisassemblyTextEdit" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer" instance=ExtResource("4_fbact")]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "Drag an itemgroup from the left menu onto this field. When this furniture
+is disassembled, items from that itemgroup will spawn. If no itemgroup
+is selected, no items will spawn after disassembly"
+myplaceholdertext = "Drag an itemgroup from the left to here"
+
+[node name="DisassembleSpriteLabel" type="Label" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer"]
+layout_mode = 2
+text = "| Disassembled sprite:"
+
+[node name="DisassembleImageDisplay" type="TextureRect" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.4
+tooltip_text = "Select the sprite that will represent the disassembled furniture"
+focus_next = NodePath("../../NameTextEdit")
+focus_previous = NodePath("../../Editable_Item_List")
+focus_mode = 2
+texture = ExtResource("1_gm4uu")
+expand_mode = 3
+
+[node name="DisassembleSpriteNameLabel" type="Label" parent="VBoxContainer/TabContainer/General/DisassembleHboxContainer"]
+layout_mode = 2
+
+[node name="DestructionLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Destruction:"
+
+[node name="DestructionHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="CanDestroyCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the player will be able to disassemble the furniture. If this is unchecked, the player is not able to disassemble this furniture"
+button_pressed = true
+text = "Can destroy"
+
+[node name="DestructionLootGroupLabel" type="Label" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer"]
+layout_mode = 2
+text = "| Loot group:"
+
+[node name="DestructionTextEdit" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer" instance=ExtResource("4_fbact")]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "Drag an itemgroup from the left menu onto this field. When this furniture
+is destroyed, items from that itemgroup will spawn. If no itemgroup
+is selected, no items will spawn after destruction"
+myplaceholdertext = "Drag an itemgroup from the left to here"
+
+[node name="DestructionSpriteLabel" type="Label" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer"]
+layout_mode = 2
+text = "| Destroyed sprite:"
+
+[node name="DestructionImageDisplay" type="TextureRect" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.4
+tooltip_text = "Select the sprite that will represent the disassembled furniture"
+focus_next = NodePath("../../NameTextEdit")
+focus_previous = NodePath("../../Editable_Item_List")
+focus_mode = 2
+texture = ExtResource("1_gm4uu")
+expand_mode = 3
+
+[node name="DestructionSpriteNameLabel" type="Label" parent="VBoxContainer/TabContainer/General/DestructionHBoxContainer"]
+layout_mode = 2
+
+[node name="SnappingLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Edge snapping"
+
+[node name="SnappingOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+tooltip_text = "Snapping direction for the furniture. This 
+determines in what direction the furniture will 
+snap to the edge of a block. The 'back' of the 
+furniture determines the direction.
+For example, if a fridge sprite has the back on the 
+north side, select north and the furniture will 
+snap to the north edge. Selecting none will center the sprite"
+selected = 0
+item_count = 5
+popup/item_0/text = "None"
+popup/item_1/text = "North"
+popup/item_1/id = 1
+popup/item_2/text = "East"
+popup/item_2/id = 2
+popup/item_3/text = "South"
+popup/item_3/id = 3
+popup/item_4/text = "West"
+popup/item_4/id = 4
+
+[node name="FunctionLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Function"
+
+[node name="FunctionControlContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="DoorLabel" type="Label" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+text = "Door:"
+
+[node name="DoorOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+tooltip_text = "Lets this furniture function as a door. The player can interact with it and it will open and close. Selecting None prevents this furniture from working as a door. Selecting Open will spawn this furniture in an open state. Selecting Closed will spawn this furniture in a closed state"
+selected = 0
+item_count = 3
+popup/item_0/text = "None"
+popup/item_1/text = "Open"
+popup/item_1/id = 1
+popup/item_2/text = "Closed"
+popup/item_2/id = 2
+
+[node name="ContainerCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.1
+tooltip_text = "Check this if the furniture should act as a 
+container. It will be empty, unless you 
+drag an itemgroup to the field on the 
+right. If this is checked off, the furniture 
+will not be able to contain items."
+text = "Container"
+
+[node name="ContainerTextEdit" parent="VBoxContainer/TabContainer/General/FunctionControlContainer" instance=ExtResource("4_fbact")]
+layout_mode = 2
+tooltip_text = "If container is checked on, you can drag an
+itemgroup to this field to fill the container with the
+contents of the itemgroup when it is
+spawned. If container is not checked on, it
+will not act as a container."
+myplaceholdertext = "Drag an itemgroup from the left to here"
+
+[node name="SpriteModeLabel" type="Label" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+text = "Sprite mode:"
+
+[node name="SpriteModeOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+tooltip_text = "Determines the initial sprite for the container.
+Default: Uses the sprite of the itemgroup or the default container sprite, depending on the itemgroup settings.
+Hide: Hides the container sprite completely.
+Random: Will pick a random item from the itemgroup and display the item's sprite as the container sprite
+Recommendation: 
+Default for inorganic furniture like cupboards. 
+Random for organic furniture like trees. 
+Hide for small or obvious containers like a campfire."
+selected = 0
+item_count = 3
+popup/item_0/text = "Default"
+popup/item_1/text = "Hide"
+popup/item_1/id = 1
+popup/item_2/text = "Random"
+popup/item_2/id = 2
+
+[node name="RegenerationLabel" type="Label" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+text = "Regeneration time (in-game days)"
+
+[node name="RegenerationSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/FunctionControlContainer"]
+layout_mode = 2
+tooltip_text = "The amount of in-game days that have to pass before the container regenerates the items from the itemgroup. 
+This is useful for plants that re-grow fruits or nuts. When regenerating, any existing items will disappear. If the 
+value is -1, the container does not regenerate. Only works for furniture that can't move. If you enter 1, the 
+container will reset when the player approaches it, no matter how many days have passed (but at least one)."
+min_value = -1.0
+max_value = 10000.0
+step = 0.1
+value = -1.0
+
+[node name="Shape" type="GridContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 1
+
+[node name="TipLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Pick a shape:"
+
+[node name="TipLabel2" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "This shape will be visible below the furniture sprite and will cast a shadow 
+if opague. Select a box or a cylinder as shape and pick a color from the 
+sprite to set a color. If light should pass trough, select transparent. The 
+scale of the shape will be relative to the sprite dimensions, so a scale of 50 
+on a sprite of size 100x50 will result in a shape with the size of 50x25."
+
+[node name="SupportshapeLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Support shape: "
+
+[node name="SupportShapeOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+tooltip_text = "Select the shape that will be below the furniture sprite in-game"
+selected = 0
+item_count = 2
+popup/item_0/text = "Box"
+popup/item_1/text = "Cylinder"
+popup/item_1/id = 1
+
+[node name="WidthScaleLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Scale width:"
+
+[node name="WidthScaleSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+tooltip_text = "The width of the shape relative to the sprite. 100 means the 
+shape is as wide as the sprite. 0 means the shape has no width."
+value = 100.0
+
+[node name="DepthScaleLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Scale depth:"
+
+[node name="DepthScaleSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+tooltip_text = "The depth of the shape relative to the sprite's height. 100 means the 
+shape is as deep as the sprite is high. 0 means the shape has no depth."
+value = 100.0
+
+[node name="RadiusScaleLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+visible = false
+layout_mode = 2
+text = "Scale radius:"
+
+[node name="RadiusScaleSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Shape"]
+visible = false
+layout_mode = 2
+tooltip_text = "The radius of the cylinder that will appear below the sprite. 100 
+means it is as wide as the sprite. 0 means the cylinder has no radius."
+value = 100.0
+
+[node name="HeightLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Height:"
+
+[node name="HeigthSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+tooltip_text = "The height of the furniture. This increases the vertical height of 
+the shape. It also increases the height of the furniture sprite 
+and the container (if this furniture is marked as a container). 0 
+means it has no height. 1 means it's as high as a wall."
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="ColorLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Color"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Shape"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="ColorPicker" type="ColorPicker" parent="VBoxContainer/TabContainer/Shape/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "The color of the shape. Pick one from the furniture 
+texture or expand the furniture/items category in the 
+content editor and pick a color from one of those sprites."
+picker_shape = 4
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
+
+[node name="SpriteTextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Shape/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_q64hk")
+
+[node name="TransparentLabel" type="Label" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+text = "Transparent"
+
+[node name="TransparentCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Shape"]
+layout_mode = 2
+tooltip_text = "Turning this on means light will pass trough the 
+furniture shape and will cast no shadow. Turning this off
+means no light passes trough and it will cast a shadow."
+text = "Enable for transparency, letting light pass trough"
+
+[node name="Crafting" type="GridContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 2
+
+[node name="HintTitleLabel" type="Label" parent="VBoxContainer/TabContainer/Crafting"]
+layout_mode = 2
+text = "Hint"
+
+[node name="HintLabelLabel" type="Label" parent="VBoxContainer/TabContainer/Crafting"]
+layout_mode = 2
+text = "Configure the items that can be crafted in this furniture. This will allow the 
+furniture to act as a crafting station. Only craftable items can be added to the list.
+Note: When you add an item, the furniture is automatically marked as a container."
+
+[node name="ItemsLabel" type="Label" parent="VBoxContainer/TabContainer/Crafting"]
+layout_mode = 2
+text = "Items"
+
+[node name="ItemsPanelContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Crafting"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_61e60")
+
+[node name="ItemsScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Crafting/ItemsPanelContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="ItemsGridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Crafting/ItemsPanelContainer/ItemsScrollContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="Construction" type="GridContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 3
+
+[node name="HintLabel" type="Label" parent="VBoxContainer/TabContainer/Construction"]
+layout_mode = 2
+text = "Hint"
+
+[node name="HintTextLabel" type="Label" parent="VBoxContainer/TabContainer/Construction"]
+layout_mode = 2
+text = "Configure the items that the player neerds to construct this furniture."
+
+[node name="ItemsLabel" type="Label" parent="VBoxContainer/TabContainer/Construction"]
+layout_mode = 2
+text = "Items"
+
+[node name="ConstructionItemsPanelContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Construction"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujqyk")
+
+[node name="ConstructionItemsScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Construction/ConstructionItemsPanelContainer"]
+layout_mode = 2
+
+[node name="ConstructionItemsVBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Construction/ConstructionItemsPanelContainer/ConstructionItemsScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ConstructionItemsGridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Construction/ConstructionItemsPanelContainer/ConstructionItemsScrollContainer/ConstructionItemsVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="Consumption" type="GridContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 4
+
+[node name="HintLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Hint:"
+
+[node name="HintTextLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "This allows you to configure the consumption mechanic for the furniture. When a furniture is consuming, items inside the container 
+will be destroyed in order to fill up the \"fuel pool\". The furniture only starts consuming if the \"fuel pool\" is greater then 0.
+Note: The furniture needs to be a container in order to consume items."
+
+[node name="PoolLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Pool:"
+
+[node name="PoolSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+tooltip_text = "The maximum capacity of the pool of fuel.
+0: This furniture does not consume
+>0: This furniture will consume items and add their fuel value to the pool"
+max_value = 1000.0
+
+[node name="DrainRateLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Drain rate"
+
+[node name="DrainRateSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+tooltip_text = "The amount to consume per in-game hour. For example, if the pool has a 
+capacity of 1000 and the drain rate is 100, it will be depleted in 10 in-game hours. For reference, one in-game day is about real-life 35 minutes."
+max_value = 10000.0
+
+[node name="TransformIntoLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Tranform into:"
+
+[node name="TransformIntoDropEnabledTextEdit" parent="VBoxContainer/TabContainer/Consumption" instance=ExtResource("4_fbact")]
+layout_mode = 2
+size_flags_vertical = 1
+tooltip_text = "The furniture to transform into when the pool is empty."
+myplaceholdertext = "Drop a furniture here"
+
+[node name="ButtonTextLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Button text"
+
+[node name="ButtonTextTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/Consumption"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+tooltip_text = "Allows you to set the (de)activate button text that will be visible in the furniture interface in-game. When the 
+(de)activate button is pressed, the furniture will tranform into the furniture listed in the \"Transform into\" property.
+empty: The activate button will not display
+not empty: The (de)activate button will be displayed in the furniture interaction interface in-game with the assigned text.
+Recommendation:
+If the pool capacity is 0: write something like \"Activate\"
+If the pool capacity is greater then 0: write something like \"Deactivate\"
+The existing pool value will transfer over, so no fuel is lost."
+
+[node name="ItemsLabel" type="Label" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+text = "Items:"
+
+[node name="ItemsPanelContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Consumption"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "Drag items from the list on the left to add them so they are consumed into the pool. Modify the fuel value to set how much they add to the 
+pool. An item will only be consumed when the entire fuel value can fit 
+into the current pool. In other words, if the pool capacity is 1000 and is 
+filled with 990 fuel, only items with a fuel value of 10 or less will fit."
+theme_override_styles/panel = SubResource("StyleBoxFlat_nv8h1")
+
+[node name="ItemsVBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Consumption/ItemsPanelContainer"]
+layout_mode = 2
+
+[node name="ItemsGridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Consumption/ItemsPanelContainer/ItemsVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="Sprite_selector" parent="." instance=ExtResource("3_o3k3a")]
+visible = false
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_button_up"]
+[connection signal="gui_input" from="VBoxContainer/TabContainer/General/FurnitureImageDisplay" to="." method="_on_furniture_image_display_gui_input"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/General/MoveableHboxContainer/UnmoveableCheckBox" to="." method="_on_unmoveable_check_box_toggled"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/General/DisassembleHboxContainer/CanDisassembleCheckBox" to="." method="_on_can_disassemble_check_box_toggled"]
+[connection signal="gui_input" from="VBoxContainer/TabContainer/General/DisassembleHboxContainer/DisassembleImageDisplay" to="." method="_on_disassemble_image_display_gui_input"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/General/DestructionHBoxContainer/CanDestroyCheckBox" to="." method="_on_can_destroy_check_box_toggled"]
+[connection signal="gui_input" from="VBoxContainer/TabContainer/General/DestructionHBoxContainer/DestructionImageDisplay" to="." method="_on_destruction_image_display_gui_input"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/General/FunctionControlContainer/ContainerCheckBox" to="." method="_on_container_check_box_toggled"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Shape/SupportShapeOptionButton" to="." method="_on_support_shape_option_button_item_selected"]
+[connection signal="sprite_selected_ok" from="Sprite_selector" to="." method="_on_sprite_selector_sprite_selected_ok"]

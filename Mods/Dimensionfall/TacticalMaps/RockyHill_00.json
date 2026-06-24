@@ -1,0 +1,18 @@
+{
+	"chunks": [
+		{
+			"id": "RockyHill_NW.json"
+		},
+		{
+			"id": "RockyHill_NE.json"
+		},
+		{
+			"id": "RockyHill_SW.json"
+		},
+		{
+			"id": "RockyHill_SE.json"
+		}
+	],
+	"mapheight": 2,
+	"mapwidth": 2
+}

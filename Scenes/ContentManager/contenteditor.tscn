@@ -1,0 +1,157 @@
+[gd_scene load_steps=20 format=3 uid="uid://480xqusluqrk"]
+
+[ext_resource type="Script" uid="uid://db86xpmnwjoqb" path="res://Scenes/ContentManager/Scripts/contenteditor.gd" id="1_65sl4"]
+[ext_resource type="PackedScene" uid="uid://bhh0v7x4fjsgi" path="res://Scenes/ContentManager/content_list.tscn" id="2_4f21i"]
+[ext_resource type="PackedScene" uid="uid://d3001f5xxpup1" path="res://Scenes/ContentManager/Mapeditor/mapeditor.tscn" id="3_q062s"]
+[ext_resource type="PackedScene" uid="uid://0r8ni3u0dosg" path="res://Scenes/ContentManager/Custom_Editors/TacticalMapEditor/TacticalMapEditor.tscn" id="4_5du0w"]
+[ext_resource type="PackedScene" uid="uid://vfj2if40vf10" path="res://Scenes/ContentManager/Custom_Editors/TerrainTileEditor.tscn" id="4_5nnw0"]
+[ext_resource type="PackedScene" uid="uid://drby7yfu8t38e" path="res://Scenes/ContentManager/Custom_Editors/MobEditor.tscn" id="5_86se2"]
+[ext_resource type="PackedScene" uid="uid://cng4m3os6smj8" path="res://Scenes/ContentManager/Custom_Editors/FurnitureEditor.tscn" id="5_r1dle"]
+[ext_resource type="PackedScene" uid="uid://dmpomdwta1pgq" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemEditor.tscn" id="7_i5608"]
+[ext_resource type="PackedScene" uid="uid://bw61ihylsl1p7" path="res://Scenes/ContentManager/Custom_Editors/ItemgroupEditor.tscn" id="9_mc021"]
+[ext_resource type="PackedScene" uid="uid://767oi7u7wkm5" path="res://Scenes/ContentManager/Custom_Editors/WearableslotEditor.tscn" id="10_nfqj6"]
+[ext_resource type="PackedScene" uid="uid://bcdt60dcs3sn1" path="res://Scenes/ContentManager/Custom_Editors/StatsEditor.tscn" id="11_lg6mj"]
+[ext_resource type="PackedScene" uid="uid://qn17yxy8fy0d" path="res://Scenes/ContentManager/Custom_Editors/SkillsEditor.tscn" id="12_orpls"]
+[ext_resource type="PackedScene" uid="uid://npceditor" path="res://Scenes/ContentManager/Custom_Editors/NpcEditor.tscn" id="20_npctscn"]
+[ext_resource type="PackedScene" uid="uid://b7k2j4d6wx4yy" path="res://Scenes/ContentManager/Custom_Editors/QuestEditor.tscn" id="13_gv2y0"]
+[ext_resource type="PackedScene" uid="uid://b07i30w3ey3aa" path="res://Scenes/ContentManager/Custom_Editors/PlayerAttributeEditor.tscn" id="14_uu117"]
+[ext_resource type="PackedScene" uid="uid://b3ggaal1e2obk" path="res://Scenes/ContentManager/Custom_Editors/OvermapAreaEditor.tscn" id="15_qbq5b"]
+[ext_resource type="PackedScene" uid="uid://bw14nfwdnu41d" path="res://Scenes/ContentManager/Custom_Editors/MobgroupsEditor.tscn" id="16_lrbdj"]
+[ext_resource type="PackedScene" uid="uid://d3xxrpq0ijw30" path="res://Scenes/ContentManager/Custom_Editors/MobfactionsEditor.tscn" id="17_mcu7c"]
+[ext_resource type="PackedScene" uid="uid://d3rielcw177vm" path="res://Scenes/ContentManager/Custom_Editors/AttacksEditor.tscn" id="18_v4s36"]
+[ext_resource type="PackedScene" uid="uid://cvr5g886g53be" path="res://Sounds/SFX/UI/UISFX.tscn" id="19_pn5oe"]
+
+[node name="contenteditor" type="Control" node_paths=PackedStringArray("select_mods", "content", "tabContainer", "type_selector_menu_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65sl4")
+select_mods = NodePath("HSplitContainer/ContentLists/SelectMods")
+contentList = ExtResource("2_4f21i")
+mapEditor = ExtResource("3_q062s")
+tacticalmapEditor = ExtResource("4_5du0w")
+terrainTileEditor = ExtResource("4_5nnw0")
+furnitureEditor = ExtResource("5_r1dle")
+itemEditor = ExtResource("7_i5608")
+mobEditor = ExtResource("5_86se2")
+npcEditor = ExtResource("20_npctscn")
+itemgroupEditor = ExtResource("9_mc021")
+wearableslotEditor = ExtResource("10_nfqj6")
+statsEditor = ExtResource("11_lg6mj")
+skillsEditor = ExtResource("12_orpls")
+questsEditor = ExtResource("13_gv2y0")
+playerattributesEditor = ExtResource("14_uu117")
+overmapareaEditor = ExtResource("15_qbq5b")
+mobgroupsEditor = ExtResource("16_lrbdj")
+mobfactionsEditor = ExtResource("17_mcu7c")
+attacksEditor = ExtResource("18_v4s36")
+content = NodePath("HSplitContainer/ContentLists/TabContainer2/Content/ScrollContainer/ContentList")
+tabContainer = NodePath("HSplitContainer/TabContainer")
+type_selector_menu_button = NodePath("HSplitContainer/ContentLists/TabContainer2/Content/Toolbar/TypeSelectorMenuButton")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 240
+metadata/_edit_use_anchors_ = true
+
+[node name="ContentLists" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="HSplitContainer/ContentLists"]
+layout_mode = 2
+text = "Back to menu"
+
+[node name="SelectMods" type="OptionButton" parent="HSplitContainer/ContentLists"]
+layout_mode = 2
+tooltip_text = "Select the mod you want edit"
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Core"
+popup/item_0/id = 0
+popup/item_1/text = "MyArcheryMod"
+popup/item_1/id = 1
+popup/item_2/text = "MyFarmMod"
+popup/item_2/id = 2
+
+[node name="TabContainer2" type="TabContainer" parent="HSplitContainer/ContentLists"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Content" type="VBoxContainer" parent="HSplitContainer/ContentLists/TabContainer2"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Toolbar" type="HBoxContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content"]
+layout_mode = 2
+
+[node name="TypeSelectorMenuButton" type="MenuButton" parent="HSplitContainer/ContentLists/TabContainer2/Content/Toolbar"]
+layout_mode = 2
+text = "☰"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContentList" type="VBoxContainer" parent="HSplitContainer/ContentLists/TabContainer2/Content/ScrollContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Recent" type="ItemList" parent="HSplitContainer/ContentLists/TabContainer2"]
+visible = false
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+item_count = 10
+max_columns = 2
+item_0/text = "Core"
+item_0/selectable = false
+item_1/text = "Plank"
+item_2/text = "Core"
+item_2/selectable = false
+item_3/text = "wheel"
+item_4/text = "core"
+item_5/text = "bat"
+item_6/text = "core"
+item_7/text = "snail"
+item_8/text = "core"
+item_9/text = "pistol_9mm"
+metadata/_tab_index = 1
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="Editor_Home" type="RichTextLabel" parent="HSplitContainer/TabContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=70]Content editor[/font_size]
+
+This is the content editor for CataX. 
+
+[font_size=22][b]Content selection[/b][/font_size]
+On the left side you can select one of the mods you want to work on. The content of the mod will be displayed in the selection lists below. 
+[ul]Double click an item in the list: opens the appropriate editor to the right.
+Click the + sign: Allows you to add new content to the mod. Enter the name and a new item will be available to edit[/ul]
+
+
+[font_size=22][b]Content editing[/b][/font_size]
+On the right a content editor will be displayed that allows you to edit the selected item. Multiple editors can be opened in tabs. Use the controls to edit the content and press save to save your edits"
+metadata/_tab_index = 0
+
+[node name="Uisfx" parent="." instance=ExtResource("19_pn5oe")]
+root_path = NodePath("..")
+
+[connection signal="button_up" from="HSplitContainer/ContentLists/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="item_selected" from="HSplitContainer/ContentLists/SelectMods" to="." method="_on_select_mods_item_selected"]

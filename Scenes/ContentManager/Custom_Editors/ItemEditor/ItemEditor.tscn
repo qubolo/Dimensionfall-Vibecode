@@ -1,0 +1,309 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmpomdwta1pgq"]
+
+[ext_resource type="Script" uid="uid://qdfglx1itjc1" path="res://Scripts/ItemEditor.gd" id="1_ef3j7"]
+[ext_resource type="Texture2D" uid="uid://c8ragmxitca47" path="res://Scenes/ContentManager/Mapeditor/Images/emptyTile.png" id="2_ghd7c"]
+[ext_resource type="PackedScene" uid="uid://d1h1rpwt8f807" path="res://Scenes/ContentManager/Custom_Widgets/Sprite_Selector_Popup.tscn" id="3_qb68r"]
+[ext_resource type="PackedScene" uid="uid://cbke1yb3m7dra" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemRangedEditor.tscn" id="3_qqmud"]
+[ext_resource type="PackedScene" uid="uid://27f4k2pq2odn" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemMagazineEditor.tscn" id="4_x8xa3"]
+[ext_resource type="PackedScene" uid="uid://c2uiumyeepree" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemAmmoEditor.tscn" id="5_mr1dn"]
+[ext_resource type="PackedScene" uid="uid://cq4t64qb15y27" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemFoodEditor.tscn" id="6_htafc"]
+[ext_resource type="PackedScene" uid="uid://b7jwy5hpj2vyt" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemCraftEditor.tscn" id="7_itht2"]
+[ext_resource type="PackedScene" uid="uid://65bjwo1b3je2" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemWearableEditor.tscn" id="8_4bxny"]
+[ext_resource type="PackedScene" uid="uid://duoxs7mpo6x3t" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemMeleeEditor.tscn" id="9_ucd7w"]
+[ext_resource type="PackedScene" uid="uid://cba63mf23i3ky" path="res://Scenes/ContentManager/Custom_Editors/ReferencesEditor.tscn" id="10_m8qfw"]
+[ext_resource type="PackedScene" uid="uid://dio1cpt7em6r2" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemMedicalEditor.tscn" id="11_il5yl"]
+[ext_resource type="PackedScene" uid="uid://onkmwt1te3be" path="res://Scenes/ContentManager/Custom_Editors/ItemEditor/ItemToolEditor.tscn" id="12_378eu"]
+
+[node name="ItemEditor" type="Control" node_paths=PackedStringArray("tab_container", "item_image_display", "id_text_label", "path_text_label", "name_text_edit", "description_text_edit", "item_selector", "volume_number_box", "weight_number_box", "stack_size_number_box", "max_stack_size_number_box", "types_container", "two_handed_check_box", "references_editor")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ef3j7")
+tab_container = NodePath("VBoxContainer/TabContainer")
+item_image_display = NodePath("VBoxContainer/TabContainer/Basic/ItemImageDisplay")
+id_text_label = NodePath("VBoxContainer/TabContainer/Basic/IDTextLabel")
+path_text_label = NodePath("VBoxContainer/TabContainer/Basic/PathTextLabel")
+name_text_edit = NodePath("VBoxContainer/TabContainer/Basic/NameTextEdit")
+description_text_edit = NodePath("VBoxContainer/TabContainer/Basic/DescriptionTextEdit")
+item_selector = NodePath("Sprite_selector")
+volume_number_box = NodePath("VBoxContainer/TabContainer/Basic/VolumeNumber")
+weight_number_box = NodePath("VBoxContainer/TabContainer/Basic/WeightNumber")
+stack_size_number_box = NodePath("VBoxContainer/TabContainer/Basic/StackSizeNumber")
+max_stack_size_number_box = NodePath("VBoxContainer/TabContainer/Basic/MaxStackSizeNumber")
+types_container = NodePath("VBoxContainer/TabContainer/Basic/TypesContainer")
+two_handed_check_box = NodePath("VBoxContainer/TabContainer/Basic/TwoHandedCheckBox")
+references_editor = NodePath("VBoxContainer/TabContainer/References")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Basic" type="GridContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+metadata/_tab_index = 0
+
+[node name="ImageLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Sprite:"
+
+[node name="ItemImageDisplay" type="TextureRect" parent="VBoxContainer/TabContainer/Basic"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.4
+texture = ExtResource("2_ghd7c")
+expand_mode = 3
+
+[node name="PathLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Sprite name"
+
+[node name="PathTextLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="IDLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "ID:"
+
+[node name="IDTextLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Name"
+
+[node name="NameTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/Basic"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+focus_next = NodePath("../DescriptionTextEdit")
+focus_previous = NodePath("../ItemImageDisplay")
+placeholder_text = "Scorpion	"
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Description"
+
+[node name="DescriptionTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+focus_previous = NodePath("../NameTextEdit")
+placeholder_text = "A very dangerous land animal often found in dry climates"
+wrap_mode = 1
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Volume"
+
+[node name="VolumeNumber" type="SpinBox" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+tooltip_text = "The volume of this item. For reference, a grain of sand is 0.01, a bullet is 0,1 and a rifle is 300"
+min_value = 0.01
+max_value = 1000.0
+step = 0.01
+value = 1.0
+
+[node name="WeightLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Weight"
+
+[node name="WeightNumber" type="SpinBox" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+tooltip_text = "The weight of this item in kg"
+min_value = 0.01
+max_value = 500.0
+step = 0.01
+value = 1.0
+
+[node name="StackSizeLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Stack size"
+
+[node name="StackSizeNumber" type="SpinBox" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+tooltip_text = "The amount of this item that will spawn in a stack by default"
+min_value = 1.0
+value = 1.0
+
+[node name="MaxStackSizeLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Max stack size"
+
+[node name="MaxStackSizeNumber" type="SpinBox" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+tooltip_text = "The maximum number of this item that will fit in a stack"
+min_value = 1.0
+value = 1.0
+
+[node name="TwoHandedLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Two handed"
+
+[node name="TwoHandedCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+tooltip_text = "Enable this if the item weapon occupies both hands when held. Disable this if the item occupies one hand when held"
+text = "Two handed"
+
+[node name="TypesLabel" type="Label" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+text = "Type(s)"
+
+[node name="TypesContainer" type="HFlowContainer" parent="VBoxContainer/TabContainer/Basic"]
+layout_mode = 2
+
+[node name="RangedWeaponCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as a ranged weapon and the ranged properties tab will be visible. Otherwise, this item will not function as a ranged weapon and the ranged properties tab will not be visible"
+text = "Ranged"
+
+[node name="MeleeCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as a melee weapon and the melee properties tab will be visible. Otherwise, this item will not function as a melee weapon and the melee properties tab will not be visible"
+text = "Melee"
+
+[node name="MedicalCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as a medical item, for example to be used for healing and the medical properties tab will be visible. Otherwise, this item will not function as a medical item and the medical properties tab will not be visible"
+text = "Medical"
+
+[node name="MagazineCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as a magazine for a gun or tool and the magazine properties tab will be visible. Otherwise, this item will not function as a magazine and the magazine properties tab will not be visible"
+text = "Magazine"
+
+[node name="AmmunitionCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as ammo for a magazine and the ammo properties tab will be visible. Otherwise, this item will not function as ammo and the ammo properties tab will not be visible"
+text = "Ammo"
+
+[node name="BookCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as a book and the book properties tab will be visible. Otherwise, this item will not function as a book and the book properties tab will not be visible"
+text = "Book"
+
+[node name="CraftableCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item can be crafted and recipe tab will be visible. Otherwise, this item cannot be crafted and the recipe tab will not be visible"
+text = "Craft"
+
+[node name="DisassembleCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item can be disassembled and disassembly tab will be visible. Otherwise, this item cannot be disassembled and the disassembly tab will not be visible"
+text = "Disassemble"
+
+[node name="WearableCheck" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item will be wearable and the wearable properties tab will be visible. Otherwise, this item will not be wearable and the wearable properties tab will not be visible"
+text = "Wearable"
+
+[node name="Food" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+tooltip_text = "If this is checked, the item functions as food and the food properties tab will be visible. Otherwise, this item will not function as food and the food properties tab will not be visible"
+text = "Food"
+
+[node name="Tool" type="CheckBox" parent="VBoxContainer/TabContainer/Basic/TypesContainer"]
+layout_mode = 2
+text = "Tool"
+
+[node name="Ranged" parent="VBoxContainer/TabContainer" instance=ExtResource("3_qqmud")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Magazine" parent="VBoxContainer/TabContainer" instance=ExtResource("4_x8xa3")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Ammo" parent="VBoxContainer/TabContainer" instance=ExtResource("5_mr1dn")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="Food" parent="VBoxContainer/TabContainer" instance=ExtResource("6_htafc")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Craft" parent="VBoxContainer/TabContainer" instance=ExtResource("7_itht2")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 5
+
+[node name="Wearable" parent="VBoxContainer/TabContainer" instance=ExtResource("8_4bxny")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 6
+
+[node name="Melee" parent="VBoxContainer/TabContainer" instance=ExtResource("9_ucd7w")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 7
+
+[node name="Medical" parent="VBoxContainer/TabContainer" instance=ExtResource("11_il5yl")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 8
+
+[node name="Tool" parent="VBoxContainer/TabContainer" instance=ExtResource("12_378eu")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 9
+
+[node name="References" parent="VBoxContainer/TabContainer" instance=ExtResource("10_m8qfw")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 10
+
+[node name="Sprite_selector" parent="." instance=ExtResource("3_qb68r")]
+visible = false
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_button_up"]
+[connection signal="gui_input" from="VBoxContainer/TabContainer/Basic/ItemImageDisplay" to="." method="_on_item_image_display_gui_input"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/RangedWeaponCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/MeleeCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/MedicalCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/MagazineCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/AmmunitionCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/BookCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/CraftableCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/DisassembleCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/WearableCheck" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/Food" to="." method="_on_type_check_button_up"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/Basic/TypesContainer/Tool" to="." method="_on_type_check_button_up"]
+[connection signal="sprite_selected_ok" from="Sprite_selector" to="." method="_on_sprite_selector_sprite_selected_ok"]

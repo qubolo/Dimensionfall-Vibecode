@@ -1,0 +1,867 @@
+class_name EquippedItem
+extends Sprite3D
+
+## 🔹 EQUIPPED ITEM HANDLER 🔹 ##
+## This script is intended to be used on a node functioning as a held item, which could be a weapon
+## This script handles items held by the player, including weapons & tools.
+## It tracks ammo, firing, melee combat, and tool functionality.
+
+# --- EXPORTS & REFERENCES ---
+@export var projectiles: Node3D  # Reference to the node that will hold existing projectiles
+@export var bullet_speed: float  # Variables to set the bullet speed
+@export var bullet_scene: PackedScene  # Reference to the scene that will be instantiated for a bullet
+# Will keep a weapon from firing when it's cooldown period has not passed yet
+@export var attack_cooldown_timer: Timer
+@export var slot_idx: int
+@export var melee_hitbox: Area3D
+@export var melee_collision_shape: CollisionShape3D
+@export var default_hand_position: Vector3
+@export var melee_attack_z_rotation_offset: float
+
+@export var player: CharacterBody3D  # Reference to the player node
+@export var hud: NodePath  # Reference to the hud node
+
+# Reference to the audio nodes
+@export var shoot_audio_player: AudioStreamPlayer3D
+@export var shoot_audio_randomizer: AudioStreamRandomizer
+@export var reload_audio_player: AudioStreamPlayer3D
+
+@export var flashlight_spotlight: SpotLight3D = null  # The light representing the flashlight
+
+# --- VARIABLES ---
+var equipped_item: InventoryItem  # Can be a weapon (melee or ranged) or some other item
+var equipment_slot: Control  # The equipment slot that holds this item
+
+var in_cooldown: bool = false
+var is_swinging: bool = false
+var _attack_tween: Tween  # Active melee swing animation, so a new attack can restart it
+# Target on-screen length (world units) of the longest side of a held weapon sprite.
+# The player sprite is ~0.77 units tall, so ~0.4 reads as a realistically sized weapon.
+const HELD_WEAPON_WORLD_SIZE: float = 0.4
+var reload_speed: float = 1.0
+var is_using_held_item: bool = false
+var entities_in_melee_range: Array = []  # Used to keep track of entities in melee range
+
+# --- RECOIL SETTINGS ---
+var default_recoil: float = 0.1
+var recoil_modifier: float = 0.0  # Tracks the current level of recoil applied to the weapon.
+var max_recoil: float = 0.0  # The maximum recoil value, derived from the Ranged.recoil property of the weapon.
+var recoil_increment: float = 0.0  # The amount by which recoil increases per shot, calculated to reach max_recoil after 25% of the max ammo is fired.
+var recoil_decrement: float = 0.0  # The amount by which recoil decreases per frame when the mouse button is not pressed.
+
+# --- FIRING SETTINGS ---
+var default_firing_speed: float = 0.25
+var default_reload_speed: float = 1.0
+
+
+func _ready():
+	clear_held_item()
+	_setup_signals()
+
+
+func _setup_signals() -> void:
+	melee_hitbox.body_entered.connect(_on_entered_melee_range)
+	melee_hitbox.body_exited.connect(_on_exited_melee_range)
+	melee_hitbox.body_shape_entered.connect(_on_body_shape_entered_melee_range)
+	melee_hitbox.body_shape_exited.connect(_on_body_shape_exited_melee_range)
+
+
+func get_cursor_world_position() -> Vector3:
+	var camera = get_tree().get_first_node_in_group("Camera")
+	var mouse_pos = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 1000
+
+	# Create a PhysicsRayQueryParameters3D object
+	var query = PhysicsRayQueryParameters3D.new()
+	query.from = from
+	query.to = to
+
+	# Perform the raycast
+	var space_state = get_world_3d().direct_space_state
+	var result = space_state.intersect_ray(query)
+
+	if result.size() != 0:  # Check if the result dictionary is not empty
+		return result.position
+	else:
+		return to
+
+
+# Helper function to check if the weapon can fire
+func can_fire_weapon() -> bool:
+	if not equipped_item:
+		return false
+	if equipped_item.get_property("Melee") != null:
+		return (
+			General.is_mouse_outside_hud
+			and not General.is_action_in_progress
+			and equipped_item
+			and not in_cooldown
+		)
+	if equipped_item.get_property("Ranged") != null:
+		return (
+			General.is_mouse_outside_hud
+			and not General.is_action_in_progress
+			and General.is_allowed_to_shoot
+			and equipped_item
+			and not in_cooldown
+			and (get_current_ammo() > 0 or not requires_ammo())
+		)
+	return false
+
+
+# Function to check if the weapon requires ammo (for ranged weapons)
+func requires_ammo() -> bool:
+	return not equipped_item.get_property("Ranged") == null
+
+
+# Function to handle firing logic for a weapon.
+func fire_weapon():
+	if not can_fire_weapon():
+		return  # Return if no weapon is equipped or no ammo.
+
+	if equipped_item.get_property("Melee") != null:
+		perform_melee_attack()
+	else:
+		perform_ranged_attack()
+
+	is_using_held_item = true
+
+
+func add_weapon_xp_on_use():
+	if equipped_item.get_property("Melee") != null:
+		var melee_properties = equipped_item.get_property("Melee")
+		var used_skill = melee_properties.get("used_skill", {})
+		var skill_id = used_skill.get("skill_id", "")
+		var xp_gain = used_skill.get("xp", 0)
+		player.add_skill_xp(skill_id, xp_gain)
+	elif equipped_item.get_property("Ranged") != null:
+		var rangedproperties = equipped_item.get_property("Ranged")
+		if rangedproperties.has("used_skill"):
+			var used_skill = rangedproperties.used_skill
+			player.add_skill_xp(used_skill.skill_id, used_skill.xp)
+
+
+# Return the accuracy based on skill level
+func calculate_accuracy() -> float:
+	var rangedproperties = equipped_item.get_property("Ranged")
+	var skillid = Helper.json_helper.get_nested_data(rangedproperties, "used_skill.skill_id")
+	var skill_level = player.get_skill_level(skillid)
+	var stat_value = 0
+	var accuracy_stat: String = rangedproperties.get("accuracy_stat", "")
+	if accuracy_stat != "" and player.has_method("get_stat"):
+		stat_value = player.get_stat(accuracy_stat)
+	# Minimum accuracy is 25%, maximum is 100% at level 30
+	var min_accuracy = 0.25
+	var max_accuracy = 1.0
+	var required_level = 30
+
+	var effective_level = skill_level + stat_value
+	if effective_level >= required_level:
+		return max_accuracy
+	else:
+		return min_accuracy + (max_accuracy - min_accuracy) * (effective_level / required_level)
+
+
+# Function to calculate direction with accuracy and recoil applied
+func calculate_direction(target_position: Vector3, spawn_position: Vector3) -> Vector3:
+	var accuracy = calculate_accuracy()
+	var direction = (target_position - spawn_position).normalized()
+
+	# Circular spread based on accuracy
+	var spread_angle = randf() * PI * 2
+	var spread_radius = sqrt(randf()) * (1.0 - accuracy) * 0.5
+	var random_offset = Vector3(cos(spread_angle), 0, sin(spread_angle)) * spread_radius
+
+	# Recoil offset (kickback that grows)
+	var recoil_angle = randf() * PI * 2
+	var recoil_radius = sqrt(randf()) * (recoil_modifier / 10.0)
+	var recoil_offset = Vector3(cos(recoil_angle), 0, sin(recoil_angle)) * recoil_radius
+
+	recoil_modifier = min(recoil_modifier + recoil_increment, max_recoil)  # Update recoil_modifier
+	return (direction + random_offset + recoil_offset).normalized()
+
+
+# The user performs a ranged attack
+func perform_ranged_attack():
+	# Update ammo and emit signal.
+	_subtract_ammo(1)
+
+	shoot_audio_player.stream = shoot_audio_randomizer
+	shoot_audio_player.play()
+
+	var bullet_instance = bullet_scene.instantiate()
+	bullet_instance.attack = _calculate_ranged_attack_data()
+	# Decrease the y position to ensure proper collision with mobs and furniture
+	var spawn_position = global_transform.origin + Vector3(0.0, -0.1, 0.0)
+	var cursor_position = get_cursor_world_position()
+	# Pass the aim geometry so undead mobs can resolve the struck body region
+	# (aim past the target = head/spine, aim short = legs). See Mob._resolve_hit_region.
+	bullet_instance.attack["aim_point"] = cursor_position
+	bullet_instance.attack["source_position"] = player.global_position
+	var direction = calculate_direction(cursor_position, spawn_position)
+	direction.y = 0  # Ensure the bullet moves parallel to the ground.
+
+	Helper.signal_broker.projectile_spawned.emit(bullet_instance, player.get_rid())
+	bullet_instance.global_transform.origin = spawn_position
+	bullet_instance.set_direction_and_speed(direction, bullet_speed)
+	in_cooldown = true
+	add_weapon_xp_on_use()
+	attack_cooldown_timer.start()
+	animate_ranged_attack()
+
+
+func _subtract_ammo(amount: int):
+	var magazine: InventoryItem = ItemManager.get_magazine(equipped_item)
+	if magazine:
+		# We duplicate() because Gloot might return the original Magazine array from the protoset
+		var magazineProperties = magazine.get_property("Magazine").duplicate()
+		var ammunition: int = int(magazineProperties["current_ammo"])
+		ammunition -= amount
+		magazineProperties["current_ammo"] = ammunition
+		magazine.set_property("Magazine", magazineProperties)
+		Helper.signal_broker.player_ammo_changed.emit(get_current_ammo(), get_max_ammo(), slot_idx)
+
+
+func get_current_ammo() -> int:
+	var magazine: InventoryItem = ItemManager.get_magazine(equipped_item)
+	if magazine:
+		var magazineProperties = magazine.get_property("Magazine")
+		if magazineProperties and magazineProperties.has("current_ammo"):
+			return int(magazineProperties["current_ammo"])
+		else:
+			return 0
+	else:
+		return 0
+
+
+func get_max_ammo() -> int:
+	var magazine: InventoryItem = ItemManager.get_magazine(equipped_item)
+	if magazine:
+		var magazineProperties = magazine.get_property("Magazine")
+		return int(magazineProperties["max_ammo"])
+	else:
+		return 0
+
+
+# When the user wants to reload the item
+func reload_weapon():
+	if equipped_item.get_property("Melee") != null:
+		return  # No action needed for melee weapons
+	if (
+		equipped_item
+		and not equipped_item.get_property("Ranged") == null
+		and not General.is_action_in_progress
+		and not ItemManager.find_compatible_magazine(equipped_item) == null
+	):
+		var magazine = ItemManager.get_magazine(equipped_item)
+		if not magazine:
+			ItemManager.start_reload(equipped_item, reload_speed)
+		elif get_current_ammo() < get_max_ammo():
+			ItemManager.start_reload(equipped_item, reload_speed)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	# Check if the left-hand weapon is reloading.
+	if is_weapon_reloading() and not reload_audio_player.playing:
+		reload_audio_player.play()  # Play reload sound for left-hand weapon.
+
+	# Decrease recoil when the mouse button is not pressed
+	if equipped_item and equipped_item.get_property("Ranged") != null:
+		if not is_using_held_item:
+			recoil_modifier = max(recoil_modifier - recoil_decrement * delta, 0.0)
+
+	# Visual cooldown indicator
+	if not attack_cooldown_timer.is_stopped() and not is_swinging:
+		var progress = attack_cooldown_timer.time_left / attack_cooldown_timer.wait_time
+		# Weapon glows bright red on cooldown and fades to normal color
+		modulate = Color(1, 1, 1).lerp(Color(3.0, 0.2, 0.2, 0.8), progress)
+	elif not is_swinging:
+		# If we just flashed (modulate > 1.0), lerp it back to normal quickly
+		if modulate.r > 1.0 or modulate.a < 1.0:
+			modulate = modulate.lerp(Color(1, 1, 1, 1), 10.0 * delta)
+		else:
+			modulate = Color(1, 1, 1, 1)
+
+	is_using_held_item = false
+
+
+func try_activate_equipped_item(_slot_idx: int):
+	if can_fire_weapon():
+		fire_weapon()
+
+
+# When a magazine is removed
+func on_magazine_removed():
+	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)
+
+
+# When a magazine is inserted
+func on_magazine_inserted():
+	if equipped_item:
+		var rangedProperties = equipped_item.get_property("Ranged")
+		# Update recoil properties
+		max_recoil = float(rangedProperties.get("recoil", default_recoil))
+		recoil_increment = max_recoil / (get_max_ammo() * 0.25)
+		recoil_decrement = 2 * recoil_increment
+
+		Helper.signal_broker.player_ammo_changed.emit(get_current_ammo(), get_max_ammo(), slot_idx)
+
+
+# Function to clear weapon properties for a specified hand
+func clear_held_item():
+	if (
+		equipped_item
+		and equipped_item.properties_changed.is_connected(_on_helditem_properties_changed)
+	):
+		equipped_item.properties_changed.disconnect(_on_helditem_properties_changed)
+		equipped_item.set_property("is_reloading", false)
+	disable_melee_collision_shape()
+	visible = false
+	equipped_item = null
+	in_cooldown = false
+	refresh_flashlight_visibility()
+	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)  # Emit signal to indicate no weapon is equipped
+
+
+func _on_left_attack_cooldown_timeout():
+	in_cooldown = false
+
+
+func _on_right_attack_cooldown_timeout():
+	in_cooldown = false
+
+
+func _on_hud_item_equipment_slot_was_cleared(
+	_slot_idx: int, _equippedItem: InventoryItem, _slot: Control
+):
+	clear_held_item()
+
+
+# The slot has equipped something and we store it in the correct EquippedItem
+func _on_hud_item_was_equipped(_slot_idx: int, equippedItem: InventoryItem, slot: Control):
+	equip_item(equippedItem, slot)
+
+
+# Function to check if the weapon can be reloaded
+func can_weapon_reload() -> bool:
+	# Check if the weapon is a ranged weapon
+	if equipped_item and equipped_item.get_property("Ranged"):
+		# Check if neither mouse button is pressed
+		if not is_using_held_item:
+			# Check if the weapon is not currently reloading and if a compatible magazine is available in the inventory
+			if (
+				not is_weapon_reloading()
+				and not ItemManager.find_compatible_magazine(equipped_item) == null
+			):
+				# Additional checks can be added here if needed
+				return true
+	return false
+
+
+# When the properties of the held item change
+func _on_helditem_properties_changed():
+	if equipped_item and equipped_item.get_property("Ranged"):
+		if equipped_item.get_property("current_magazine") == null:
+			on_magazine_removed()
+		else:
+			on_magazine_inserted()
+
+
+func is_weapon_reloading() -> bool:
+	if equipped_item and equipped_item.get_property("Ranged"):
+		if equipped_item.get_property("is_reloading") == null:
+			return false
+		else:
+			return bool(equipped_item.get_property("is_reloading"))
+	return false
+
+
+# Something has entered melee range
+func _on_entered_melee_range(body):
+	if body.is_in_group("mobs") or body.is_in_group("furniture"):  # Check if the body is a mob or furniture
+		entities_in_melee_range.append(body)
+
+
+# Something left melee range
+func _on_exited_melee_range(body):
+	if body in entities_in_melee_range:
+		entities_in_melee_range.erase(body)
+
+
+func _on_body_shape_entered_melee_range(
+	body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int
+):
+	# Body will have a value if the body shape is in the scene tree. This function should
+	# only handle shapes that are outside the scene tree, like StaticFurnitureSrv
+	if body:
+		return
+	entities_in_melee_range.append(body_rid)
+
+
+func _on_body_shape_exited_melee_range(
+	body_rid: RID, _body: Node, _body_shape_index: int, _local_shape_index: int
+):
+	if entities_in_melee_range.has(body_rid):
+		entities_in_melee_range.erase(body_rid)
+
+
+# Animates a melee attack. The motion depends on the weapon's "attack_motion":
+# - "swing" (default, e.g. axe/club/machete): winds up, then sweeps through a wide
+#   arc, reading as a chopping/slashing motion.
+# - "stab" (e.g. spear/knife): drives the weapon straight forward and pulls it back,
+#   reading as a thrust.
+func animate_attack():
+	# Resolve the weapon's motion style and reach.
+	var motion: String = "swing"
+	var reach: float = 1.0
+	if equipped_item and equipped_item.get_property("Melee") != null:
+		var melee: Dictionary = equipped_item.get_property("Melee")
+		motion = melee.get("attack_motion", "swing")
+		reach = max(1.0, float(melee.get("reach", 1.0)))
+
+	# Restart cleanly if the player swings again before the previous swing finishes.
+	if _attack_tween and _attack_tween.is_running():
+		_attack_tween.kill()
+
+	# The weapon rests at default_hand_position with no z-rotation. We animate
+	# relative to that and always return to it.
+	var base_pos: Vector3 = default_hand_position
+	# Left and right hands swing in mirrored directions (sign of the export).
+	var dir: float = 1.0 if melee_attack_z_rotation_offset >= 0.0 else -1.0
+
+	is_swinging = true
+	modulate = Color(2.2, 2.2, 2.2, 1.0)  # Bright hit flash; _process restores it after
+
+	var total_time = attack_cooldown_timer.wait_time
+
+	_attack_tween = create_tween()
+	if motion == "stab":
+		# Thrust forward (local -x is "forward" for the held weapon), then recover.
+		var thrust: Vector3 = base_pos
+		thrust.x -= 0.22 + reach * 0.12
+		var t_out = min(0.06, total_time * 0.3)
+		var t_in = total_time - t_out
+		(
+			_attack_tween
+			. tween_property(self, "position", thrust, t_out)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_OUT)
+		)
+		_attack_tween.parallel().tween_property(self, "rotation_degrees:z", 6.0 * dir, t_out)
+		(
+			_attack_tween
+			. chain()
+			. tween_property(self, "position", base_pos, t_in)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_IN)
+		)
+		_attack_tween.parallel().tween_property(self, "rotation_degrees:z", 0.0, t_in)
+	else:
+		# Wind up backwards, sweep forward through a wide arc, then recover.
+		var lunge: Vector3 = base_pos
+		lunge.x -= 0.10 + reach * 0.08
+		var t_windup = min(0.06, total_time * 0.2)
+		var t_swing = min(0.09, total_time * 0.3)
+		var t_recover = total_time - t_windup - t_swing
+
+		(
+			_attack_tween
+			. tween_property(self, "rotation_degrees:z", 40.0 * dir, t_windup)
+			. set_trans(Tween.TRANS_SINE)
+			. set_ease(Tween.EASE_OUT)
+		)
+		(
+			_attack_tween
+			. chain()
+			. tween_property(self, "rotation_degrees:z", -100.0 * dir, t_swing)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_IN)
+		)
+		(
+			_attack_tween
+			. parallel()
+			. tween_property(self, "position", lunge, t_swing)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_OUT)
+		)
+		(
+			_attack_tween
+			. chain()
+			. tween_property(self, "rotation_degrees:z", 0.0, t_recover)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_IN_OUT)
+		)
+		(
+			_attack_tween
+			. parallel()
+			. tween_property(self, "position", base_pos, t_recover)
+			. set_trans(Tween.TRANS_QUAD)
+			. set_ease(Tween.EASE_IN_OUT)
+		)
+
+	# Snap back to the exact resting transform and hand modulate control to _process.
+	_attack_tween.chain().tween_callback(
+		func():
+			position = base_pos
+			rotation_degrees.z = 0.0
+			is_swinging = false
+	)
+
+
+# Animates a ranged attack with a quick kickback recoil
+func animate_ranged_attack():
+	var tween = get_tree().create_tween().set_loops(1)
+	var original_position = default_hand_position
+	var target_position = default_hand_position
+
+	# Kickback moves the weapon BACKWARDS (so positive X)
+	target_position.x += 0.05
+
+	is_swinging = true
+	# Flash slightly white
+	self.modulate = Color(2.0, 2.0, 2.0, 1.0)
+
+	var swing_time = 0.05
+	var return_time = max(0.05, attack_cooldown_timer.wait_time - swing_time)
+
+	# Kickback (Parallel)
+	tween.set_parallel(true)
+	var kickback_rotation = -melee_attack_z_rotation_offset * 0.3  # opposite of melee swing
+	(
+		tween
+		. tween_property(
+			self, "rotation_degrees:z", rotation_degrees.z + kickback_rotation, swing_time
+		)
+		. set_trans(Tween.TRANS_QUAD)
+		. set_ease(Tween.EASE_OUT)
+	)
+	(
+		tween
+		. tween_property(self, "position", target_position, swing_time)
+		. set_trans(Tween.TRANS_QUAD)
+		. set_ease(Tween.EASE_OUT)
+	)
+
+	# Return backward (Parallel, chained)
+	tween.chain().set_parallel(true)
+	(
+		tween
+		. tween_property(self, "rotation_degrees:z", rotation_degrees.z, return_time)
+		. set_trans(Tween.TRANS_QUAD)
+		. set_ease(Tween.EASE_IN_OUT)
+	)
+	(
+		tween
+		. tween_property(self, "position", original_position, return_time)
+		. set_trans(Tween.TRANS_QUAD)
+		. set_ease(Tween.EASE_IN_OUT)
+	)
+	tween.tween_property(self, "modulate", Color(1, 1, 1, 1), return_time)
+
+	# Reset state
+	tween.chain().tween_callback(func(): is_swinging = false)
+	tween.tween_callback(reset_attack_position.bind(original_position, rotation_degrees))
+
+
+# Return the weapon sprite to its original position after animating
+func reset_attack_position(original_position, original_rotation_degrees):
+	position = original_position
+	rotation_degrees = original_rotation_degrees
+
+
+# Function to perform a melee attack
+func perform_melee_attack():
+	if not equipped_item or equipped_item.get_property("Melee") == null:
+		print_debug("Error: No melee weapon equipped.")
+		return
+
+	# Start cooldown to prevent spamming attacks
+	_start_attack_cooldown()
+
+	# Prepare attack parameters
+	var attack_data = _calculate_melee_attack_data()
+
+	# Iterate through all entities in melee range and process attacks
+	for entity in entities_in_melee_range:
+		_attempt_melee_attack(entity, attack_data)
+
+	# Play attack animation and grant XP
+	animate_attack()
+	add_weapon_xp_on_use()
+
+
+# --------------------------
+# 🔹 HELPER FUNCTIONS BELOW
+# --------------------------
+
+
+# Start cooldown after an attack
+func _start_attack_cooldown() -> void:
+	in_cooldown = true
+	attack_cooldown_timer.start()
+
+
+# Calculate melee attack damage and hit chance
+func _calculate_melee_attack_data() -> Dictionary:
+	var melee_properties = equipped_item.get_property("Melee")
+	var damage = melee_properties.get("damage", 0)
+	var skill_id = melee_properties.get("used_skill", {}).get("skill_id", "")
+	var skill_level = player.get_skill_level(skill_id)
+
+	# Add bonuses based on stats
+	var damage_stat_bonus = 0
+	var accuracy_stat_bonus = 0
+	if player.has_method("get_stat"):
+		# Add damage bonus based on selected stat OR strength if nothing is configured for the item
+		var damage_stat_id = melee_properties.get("damage_stat", "strength")
+		damage_stat_bonus = player.get_stat(damage_stat_id)
+		damage += damage_stat_bonus
+		# Add accuracy bonus based on selected stat OR dexterity if nothing is configured for the item
+		var accuracy_stat_id = melee_properties.get("accuracy_stat", "dexterity")
+		accuracy_stat_bonus = player.get_stat(accuracy_stat_id)
+	var hit_chance = 0.65 + ((skill_level + accuracy_stat_bonus) / 100.0) * (1.0 - 0.65)
+	# aim_point/source_position let undead mobs work out which body region was struck
+	# (aim past the target = head/spine, aim short = legs). See Mob._resolve_hit_region.
+	return {
+		"damage": damage,
+		"hit_chance": hit_chance,
+		"source": player,
+		"aim_point": get_cursor_world_position(),
+		"source_position": player.global_position
+	}
+
+
+# Calculate ranged attack damage and hit chance.
+# Damage comes from the loaded ammo (e.g. a 12 gauge slug hits harder than a 9mm
+# round) rather than a fixed value, so different calibers feel different.
+func _calculate_ranged_attack_data() -> Dictionary:
+	var damage: float = 10.0  # Fallback when the ammo can't be resolved
+	var magazine: InventoryItem = ItemManager.get_magazine(equipped_item)
+	if magazine:
+		var magazine_properties = magazine.get_property("Magazine")
+		if magazine_properties and magazine_properties.has("used_ammo"):
+			var rammo: RItem = Runtimedata.items.by_id(magazine_properties["used_ammo"])
+			if rammo and rammo.ammo:
+				damage = rammo.ammo.damage
+	return {"damage": damage, "hit_chance": 100, "source": player}
+
+
+# Attempts to hit an entity, ensuring no obstacles are in the way
+func _attempt_melee_attack(entity, attack_data: Dictionary) -> void:
+	var target_position: Vector3
+	var target_rid: RID
+
+	# Determine the entity's position and physics RID
+	if entity is Node3D:
+		target_position = entity.global_position
+		target_rid = entity.get_rid()
+	elif entity is RID:
+		target_position = (
+			PhysicsServer3D.body_get_state(entity, PhysicsServer3D.BODY_STATE_TRANSFORM).origin
+		)
+		target_rid = entity
+	else:
+		return  # Skip unknown entity types
+
+	# Check if an obstacle blocks the attack
+	if _is_obstacle_between(target_position, target_rid):
+		return  # Skip attack if something is in the way
+
+	# Apply attack to the entity
+	if entity is RID:
+		Helper.signal_broker.melee_attacked_rid.emit(entity, attack_data)
+	else:
+		entity.get_hit(attack_data)
+
+
+# Checks if an obstacle is between the player and the target
+func _is_obstacle_between(target_position: Vector3, target_rid: RID) -> bool:
+	var obstacle_layers = (1 << 0) | (1 << 1) | (1 << 2) | (1 << 6)  # Layers to check for obstacles
+	var adjusted_player_position = player.global_position - Vector3(0, 0.5, 0)  # Adjust height for short objects
+
+	var result = Helper.raycast(
+		adjusted_player_position, target_position, obstacle_layers, [player]
+	)
+
+	return result and result.rid != target_rid  # True if something else is blocking the attack
+
+
+# The player has equipped an item in one of the equipment slots
+# equippedItem is an InventoryItem
+# slot is a Control node that represents the equipment slot
+func equip_item(equippedItem: InventoryItem, slot: Control):
+	equipped_item = equippedItem
+	equipment_slot = slot
+	equipment_slot.equippedItem = self
+
+	# Clear any existing configurations
+	clear_melee_collision_shape()
+
+	# Show the actual item the player is holding (e.g. a fire axe) instead of a
+	# generic weapon image.
+	_apply_held_sprite()
+
+	# Check if the equipped item is a ranged weapon
+	if equippedItem.get_property("Ranged") != null:
+		# Set properties specific to ranged weapons
+		setup_ranged_weapon_properties(equippedItem)
+
+	elif equippedItem.get_property("Melee") != null:
+		# Set properties specific to melee weapons
+		setup_melee_weapon_properties(equippedItem)
+
+	elif equippedItem.get_property("Tool") != null:
+		# Set properties specific to tool items
+		setup_tool_item_properties(equippedItem)
+
+	else:
+		# If the item is neither melee nor ranged, handle as a generic item
+		visible = false
+		clear_held_item()  # Clears any existing setup if the item is not a weapon
+
+
+# Sets the held sprite to the equipped item's own sprite, so the player visibly
+# holds the actual weapon/tool rather than a generic image. The sprite is the same
+# icon used in the inventory; its on-screen orientation can be tuned separately.
+func _apply_held_sprite() -> void:
+	if not equipped_item:
+		return
+	var item_id = equipped_item.get("prototype_id")
+	if item_id == null or item_id == "":
+		return
+	var ritem: RItem = Runtimedata.items.by_id(item_id)
+	if ritem and ritem.sprite:
+		texture = ritem.sprite
+		# Scale the held sprite to a realistic on-screen size relative to the player
+		# (the player sprite is ~0.77 units tall). Normalize by the sprite's longest
+		# side so weapons of different pixel resolutions end up a consistent world size.
+		var tex_size: Vector2 = ritem.sprite.get_size()
+		var longest: float = max(tex_size.x, tex_size.y)
+		if longest > 0.0:
+			pixel_size = HELD_WEAPON_WORLD_SIZE / longest
+		# The fire axe's icon has the handle and blade on the wrong ends for the in-hand
+		# view, so mirror it horizontally when held (swaps the handle and blade around).
+		# Other weapons keep their default orientation.
+		flip_h = item_id == "fire_axe"
+		flip_v = false
+
+
+# Setup the properties for ranged weapons
+func setup_ranged_weapon_properties(equippedItem: InventoryItem):
+	var ranged_properties = equippedItem.get_property("Ranged")
+	var firing_speed = ranged_properties.get("firing_speed", default_firing_speed)
+	attack_cooldown_timer.wait_time = float(firing_speed)
+	reload_speed = float(ranged_properties.get("reload_speed", default_reload_speed))
+	visible = true
+	Helper.signal_broker.player_ammo_changed.emit(0, 0, slot_idx)  # Signal to update ammo display for ranged weapons
+	equipped_item.properties_changed.connect(_on_helditem_properties_changed)
+
+
+# Setup the properties for melee weapons
+func setup_melee_weapon_properties(equippedItem: InventoryItem):
+	var melee_properties = equippedItem.get_property("Melee")
+	visible = true
+	Helper.signal_broker.player_ammo_changed.emit(-1, -1, slot_idx)  # Indicate no ammo needed for melee weapons
+
+	var reach = melee_properties.get("reach", 0)  # Default reach to 0 if not specified
+	if reach > 0:
+		configure_melee_collision_shape(reach)
+	else:
+		disable_melee_collision_shape()
+
+	var melee_skill_id = melee_properties.get("used_skill", {}).get("skill_id", "")
+	var skill_level = player.get_skill_level(melee_skill_id)
+
+	# Extract weight to determine swing speed. Default to 1.0 if not found.
+	var weight = equippedItem.get_property("weight")
+	if weight == null:
+		weight = 1.0
+
+	# Base speed 0.5s + 0.2s per weight unit. Fast for knife (0.3), slow for axe (3.5)
+	var cooldown_time = 0.5 + (float(weight) * 0.2) - (skill_level / 100.0) * 0.2
+	attack_cooldown_timer.wait_time = max(0.2, cooldown_time)
+
+
+# Setup the properties for tool items
+func setup_tool_item_properties(_equippedItem: InventoryItem):
+	refresh_flashlight_visibility()
+	visible = true
+
+
+func refresh_flashlight_visibility():
+	flashlight_spotlight.visible = get_highest_tool_quality("flashlight") > -1
+
+
+# Configure the melee collision shape based on the weapon's reach
+# This creates two triangles on top of each other in front of the player and pointing to the player
+# When an entity enters the boundary of the stacked triangles, it is considered within reach
+# Increasing the reach will extend the shape
+func configure_melee_collision_shape(reach: float):
+	var shape = ConvexPolygonShape3D.new()
+	var points = [
+		Vector3(0, 0, 0.325),  # First point
+		Vector3(0, 0, -0.325),  # Second point
+		Vector3(-reach, -1, 0.325),  # Third point
+		Vector3(-reach, 1, 0.325),  # Fourth point
+		Vector3(-reach, -1, -0.325),  # Fifth point
+		Vector3(-reach, 1, -0.325)  # Sixth point
+	]
+	shape.points = points
+	melee_collision_shape.shape = shape
+
+
+func scale_melee_texture(reach: float):
+	# TODO figure out what this scale should actually be, and offset to a better pivot (or scale from pivot?)
+	self.scale = Vector3(reach, 1.0, 1.0)
+
+
+# Disable the melee collision detection by setting an invalid shape or disabling it
+func disable_melee_collision_shape():
+	melee_collision_shape.disabled = true  # Disable the collision shape
+
+
+# Clear any configurations on the melee collision shape
+func clear_melee_collision_shape():
+	melee_collision_shape.disabled = false  # Ensure it's not disabled when changing weapons
+	melee_collision_shape.shape = null  # Clear the previous shape to reset its configuration
+
+
+# Returns all EquippedItems of the player excluding the one with the given slot_idx
+func get_other_equipped_items() -> Array[EquippedItem]:
+	if not player:
+		print_debug("get_other_equipped_items: No player reference found.")
+		return []
+
+	# Filter out the equipped items that do not match the given slot index
+	var other_equipped_items: Array[EquippedItem] = []
+	for item in player.held_item_slots:
+		if item.slot_idx != slot_idx:
+			other_equipped_items.append(item)
+	return other_equipped_items
+
+
+# Returns the level of the specified tool quality for the equipped item.
+# If the tool does not have the quality, returns -1.
+func get_tool_quality(tool_quality: String) -> int:
+	if not equipped_item:
+		return -1
+	var tool_properties = equipped_item.get_property("Tool", {})
+	return tool_properties.get("tool_qualities", {}).get(tool_quality, -1)
+
+
+# Returns the highest tool quality level among all equipped items.
+# If no equipped item has the given tool quality, returns -1.
+func get_highest_tool_quality(tool_quality: String) -> int:
+	if not player:
+		print_debug("get_highest_tool_quality: No player reference found.")
+		return -1
+	var highest_quality: int = -1
+
+	# Loop over all equipped items and check tool quality
+	for item in player.held_item_slots:
+		var quality_level = item.get_tool_quality(tool_quality)
+		if quality_level > highest_quality:
+			highest_quality = quality_level
+	return highest_quality

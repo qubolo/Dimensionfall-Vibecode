@@ -1,0 +1,1859 @@
+[
+	{
+		"categories": [
+			"Urban",
+			"Livingroom"
+		],
+		"description": "A round wooden table. This weathered relic from a bygone era stands as a testament to a simpler time, a stark contrast to the harsh reality surrounding it.\nThe table's surface bears the scars a history as a dining spot.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "table_round_wood",
+		"moveable": true,
+		"name": "Round wooden table",
+		"sprite": "table_64.png",
+		"weight": 10
+	},
+	{
+		"categories": [
+			"Urban",
+			"Livingroom"
+		],
+		"description": "A simple wooden chair, its construction is basic yet sturdy, a testament to durability in the face of decay. \nWith a rough-hewn seat and a backrest that bears the marks of time, this chair offers a momentary respite from the unforgiving environment.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "chair_wood",
+		"moveable": true,
+		"name": "Wooden chair",
+		"sprite": "chair_32.png",
+		"weight": 2
+	},
+	{
+		"Function": {
+			"container_group": "kitchen_cupboard",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Kitchen",
+			"Indoor"
+		],
+		"construction": {
+			"items": {
+				"plank_2x4": 4,
+				"steel_scrap": 6
+			}
+		},
+		"crafting": {
+			"items": [
+				"cutting_board"
+			]
+		},
+		"description": "One of the central pieces of fruniture that make up a kitchen",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"disassembly": {
+			"group": "disassembled_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "countertop_wood",
+		"moveable": false,
+		"name": "Wooden countertop",
+		"sprite": "countertop_100_52.png",
+		"support_shape": {
+			"color": "8d401bff",
+			"depth_scale": 100,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"Function": {
+			"container_group": "tree_forage",
+			"container_regeneration_time": 10,
+			"container_sprite_mode": "Random",
+			"is_container": true
+		},
+		"categories": [
+			"Nature"
+		],
+		"description": "A common tree",
+		"destruction": {
+			"group": "tree_destroyed",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "Tree_00",
+		"moveable": false,
+		"name": "Tree",
+		"sprite": "Tree_100.png",
+		"support_shape": {
+			"color": "653102ff",
+			"height": 0.5,
+			"radius_scale": 100,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"Function": {
+			"container_group": "tree_forage",
+			"container_regeneration_time": 10,
+			"container_sprite_mode": "Random",
+			"is_container": true
+		},
+		"categories": [
+			"Nature"
+		],
+		"description": "A common pine tree",
+		"destruction": {
+			"group": "tree_destroyed",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "PineTree_00",
+		"moveable": false,
+		"name": "Pine tree",
+		"sprite": "PineTree_100.png",
+		"support_shape": {
+			"color": "9b522fff",
+			"height": 0.5,
+			"radius_scale": 50,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"Function": {
+			"container_group": "tree_forage",
+			"container_regeneration_time": 10,
+			"container_sprite_mode": "Random",
+			"is_container": true
+		},
+		"categories": [
+			"Nature"
+		],
+		"description": "A common willow tree",
+		"destruction": {
+			"group": "tree_destroyed",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "WillowTree_00",
+		"moveable": false,
+		"name": "Willow tree",
+		"sprite": "WillowTree_100.png",
+		"support_shape": {
+			"color": "9e5137ff",
+			"height": 0.5,
+			"radius_scale": 50,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Livingroom"
+		],
+		"description": "A simple wooden bench that can seat multiple people, offering a resting spot or a place for interaction.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bench_wood",
+		"moveable": false,
+		"name": "Wooden bench",
+		"sprite": "bench_wood_100_50.png",
+		"support_shape": {
+			"color": "8d4924ff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Livingroom"
+		],
+		"description": "A small pot holding a green plant, which can be placed indoors to enhance the aesthetics",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "plant_pot_00",
+		"moveable": true,
+		"name": "Potted plant",
+		"sprite": "pot_plant_32_32.png",
+		"weight": 1
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor",
+			"Bedroom"
+		],
+		"description": "A basic wooden bed with a mattress, which could be used to rest",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bed_wood_single_00",
+		"moveable": false,
+		"name": "Wooden bed",
+		"sprite": "bed_wood_100_50.png",
+		"support_shape": {
+			"color": "8d4925ff",
+			"depth_scale": 95,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A storage unit with doors, useful for storing items or resources that you might collect.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "cabinet_wood_00",
+		"moveable": false,
+		"name": "Wooden cabinet",
+		"sprite": "cabinet_wood_100_50.png",
+		"support_shape": {
+			"color": "864100ff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A tall wooden bookcase with multiple shelves",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bookcase_wood_00",
+		"moveable": false,
+		"name": "Wooden bookcase",
+		"sprite": "bookcase_wood_100_50.png",
+		"support_shape": {
+			"color": "96522eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "refrigerator",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Kitchen",
+			"Indoor"
+		],
+		"description": "One of the central pieces of fruniture that make up a kitchen",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "refrigerator_00",
+		"moveable": false,
+		"name": "Refrigerator",
+		"sprite": "refrigerator_50_48.png",
+		"support_shape": {
+			"color": "bfbfbfff",
+			"depth_scale": 95,
+			"height": 0.6,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "Centerpiece of the bathroom",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "toilet_00",
+		"moveable": false,
+		"name": "Toilet",
+		"sprite": "toilet_48.png",
+		"support_shape": {
+			"color": "bdbebdff",
+			"height": 0.2,
+			"radius_scale": 40,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"Function": {
+			"door": "Closed"
+		},
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "It keeps people from passing trough this area. It can be opened and closed",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "door_wood",
+		"moveable": false,
+		"name": "Wooden door",
+		"sprite": "door_100_13.png",
+		"support_shape": {
+			"color": "c7632eff",
+			"depth_scale": 95,
+			"height": 0.9,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Rural",
+			"Outdoor"
+		],
+		"description": "A weathered garden bench, perfect for a short rest amidst the overgrown foliage.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bench_garden",
+		"moveable": false,
+		"name": "Garden bench",
+		"sprite": "bench_garden_90_40.png",
+		"support_shape": {
+			"color": "96522eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "clothing_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A wardrobe, once used for storing clothes.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "wardrobe",
+		"moveable": false,
+		"name": "Wardrobe",
+		"sprite": "wardrobe_80_40.png",
+		"support_shape": {
+			"color": "b75a2eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Rural",
+			"Outdoor"
+		],
+		"description": "A wooden picnic table, often found in parks, now a place for scavengers to rest or eat.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "table_picknic",
+		"moveable": false,
+		"name": "Picnic table",
+		"sprite": "table_picknic_100_50.png",
+		"support_shape": {
+			"color": "8d492eff",
+			"depth_scale": 95,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "An office chair, uncomfortable but still functional for short rests.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "chair_office",
+		"moveable": true,
+		"name": "Office chair",
+		"sprite": "chair_office_50.png",
+		"weight": 1
+	},
+	{
+		"categories": [
+			"Industrial",
+			"Indoor"
+		],
+		"description": "A rusted metal table, sturdy enough to place heavy items or tools on.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "table_metal",
+		"moveable": false,
+		"name": "Metal table",
+		"sprite": "table_metal_100_50.png",
+		"support_shape": {
+			"color": "a7a7a7ff",
+			"depth_scale": 80,
+			"height": 0.3,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A standing lamp that provides faint light, useful for dimly lit areas.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "lamp_standing",
+		"moveable": true,
+		"name": "Standing lamp",
+		"sprite": "lamp_50.png",
+		"weight": 1
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A damaged desk, still usable for placing items or crafting tools.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "desk",
+		"moveable": false,
+		"name": "Desk",
+		"sprite": "desk_100_50.png",
+		"support_shape": {
+			"color": "af5225ff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A cracked bathtub, once luxurious, now a grim reminder of the past.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bathtub",
+		"moveable": false,
+		"name": "Bathtub",
+		"sprite": "bathtub_100_50.png",
+		"support_shape": {
+			"color": "a7a7a7ff",
+			"depth_scale": 80,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Rural",
+			"Indoor"
+		],
+		"description": "A stove, usable for cooking and can be scavenged for metal parts.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "stove",
+		"moveable": false,
+		"name": "Stove",
+		"sprite": "stove_50_48.png",
+		"support_shape": {
+			"color": "aeaeaeff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A standing mirror, reflecting the harsh realities of the world.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "standing_mirror",
+		"moveable": false,
+		"name": "Standing mirror",
+		"sprite": "standing_mirror_50.png",
+		"support_shape": {
+			"color": "8e8e8eff",
+			"height": 0.2,
+			"radius_scale": 20,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A sofa, offering minimal comfort but useful for quick rests.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "sofa",
+		"moveable": false,
+		"name": "Sofa",
+		"sprite": "sofa_100_50.png",
+		"support_shape": {
+			"color": "2d369dff",
+			"depth_scale": 80,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A dilapidated cash register, with some buttons missing but still operational.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "cash_register",
+		"moveable": false,
+		"name": "Cash Register",
+		"sprite": "cash_register_50.png",
+		"support_shape": {
+			"color": "9e9e9eff",
+			"depth_scale": 90,
+			"height": 0.3,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A metal shopping cart, rusted and difficult to push but useful for carrying items.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "shopping_cart",
+		"moveable": true,
+		"name": "Shopping Cart",
+		"sprite": "shopping_cart_90_50.png",
+		"weight": 2
+	},
+	{
+		"Function": {
+			"container_group": "refrigerator",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A broken glass display case, now mostly empty but could hide some useful items.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "display_case",
+		"moveable": false,
+		"name": "Display Case",
+		"sprite": "display_case_100_50.png",
+		"support_shape": {
+			"color": "9f9f9fff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "vending_machine_drinks",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A rusted, old vending machine, with a few snacks still inside.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "South",
+		"id": "vending_machine",
+		"moveable": false,
+		"name": "Vending Machine",
+		"sprite": "vending_machine_50.png",
+		"support_shape": {
+			"color": "bf2e2eff",
+			"depth_scale": 95,
+			"height": 0.6,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "clothing_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A sturdy metal frame with horizontal bars for hanging clothes. It often has wheels for easy mobility and can hold a variety of garments.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "clothing_rack",
+		"moveable": true,
+		"name": "Clothing Rack",
+		"sprite": "clothing_rack_90_50.png",
+		"weight": 5
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A tall shelving unit made of metal, used for displaying merchandise. It has multiple tiers for organizing products.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "store_shelf",
+		"moveable": false,
+		"name": "Store Shelf",
+		"sprite": "store_shelf_90_50.png",
+		"support_shape": {
+			"color": "a7855bff",
+			"depth_scale": 80,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"door": "Closed"
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A tall, narrow gate placed at store entrances and exits to prevent theft. It often has sensors that trigger alarms when unauthorized items pass through.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "security_gate",
+		"moveable": false,
+		"name": "Security Gate",
+		"sprite": "security_gate_100_13.png",
+		"support_shape": {
+			"color": "8b8b8bff",
+			"depth_scale": 80,
+			"height": 0.7,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A container for disposing of waste, commonly found near the entrance or checkout area of a store. It can be made of plastic or metal and often has a lid.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "trash_bin",
+		"moveable": true,
+		"name": "Trash Bin",
+		"sprite": "trash_bin_32.png",
+		"weight": 1
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A shelf mounted on the wall, used for displaying smaller items or merchandise. It's made of wood.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "wall_shelf",
+		"moveable": false,
+		"name": "Wall Shelf",
+		"sprite": "wall_shelf_100_40.png",
+		"support_shape": {
+			"color": "965a25ff",
+			"depth_scale": 90,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban"
+		],
+		"description": "It keeps people from passing trough this area. It is very fragile",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "window_glass",
+		"moveable": false,
+		"name": "Glass window",
+		"sprite": "glass_window.png",
+		"support_shape": {
+			"color": "869bcdff",
+			"depth_scale": 100,
+			"height": 0.98,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 100
+		}
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store"
+		],
+		"description": "A set of shelves with broken planks and missing sections, but still usable for storing a few items.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "damaged_shelves",
+		"moveable": false,
+		"name": "Damaged Shelves",
+		"sprite": "damaged_shelves_90_45.png",
+		"support_shape": {
+			"color": "d76c2eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Outdoor"
+		],
+		"description": "A fence reduced to broken posts, offering little protection but still marking boundaries.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "destroyed_fence",
+		"moveable": false,
+		"name": "Destroyed Fence",
+		"sprite": "fence_destroyed_90_10.png",
+		"support_shape": {
+			"color": "c75a1cff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Rail",
+			"Infrastructure"
+		],
+		"description": "Supporting beams to put in between rail sections",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "railroad_midsection",
+		"moveable": false,
+		"name": "Railroad midsection",
+		"sprite": "railroad_midsection.png",
+		"support_shape": {
+			"color": "a65a2eff",
+			"depth_scale": 100,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Rail",
+			"Infrastructure"
+		],
+		"description": "Supporting beams and a rail for a train to run on",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "railroad_railsection",
+		"moveable": false,
+		"name": "Railroad rail section",
+		"sprite": "railroad_railsection.png",
+		"support_shape": {
+			"color": "a65a2eff",
+			"depth_scale": 100,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store",
+			"Tech"
+		],
+		"description": "A set of equipment racks housing transmitters, receivers, power distribution units, and networking devices. Wires and cables hang loosely, some frayed from years of neglect.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "equipment_rack",
+		"moveable": false,
+		"name": "Equipment Rack",
+		"sprite": "equipmentrack_100_46.png",
+		"support_shape": {
+			"color": "386c2fff",
+			"depth_scale": 100,
+			"height": 0.7,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Store",
+			"Medical"
+		],
+		"description": "Wall-mounted racks holding emergency tools and first-aid kits. The kits are old but still contain useful supplies for survival and quick repairs.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "first_aid_rack",
+		"moveable": false,
+		"name": "First-Aid Rack",
+		"sprite": "first_aid_rack_72_46.png",
+		"support_shape": {
+			"color": "b3b3b3ff",
+			"depth_scale": 50,
+			"height": 0.6,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 60
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Infrastructure"
+		],
+		"description": "A transformer box, reinforced and weatherproof, located near a tower base. It hums quietly, providing power to nearby structures, though it's clear it has been used heavily over the years.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "transformer_box",
+		"moveable": false,
+		"name": "Transformer Box",
+		"sprite": "transformer_box_72_46.png",
+		"support_shape": {
+			"color": "8a8a8aff",
+			"depth_scale": 100,
+			"height": 0.9,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Tech"
+		],
+		"description": "An uninterruptible power supply (UPS), used to keep vital equipment running during power loss. This device is compact but heavy, with a display that shows its battery status.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "ups",
+		"moveable": false,
+		"name": "UPS",
+		"sprite": "ups_20_45.png",
+		"support_shape": {
+			"color": "212121ff",
+			"depth_scale": 100,
+			"height": 0.7,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 50
+		}
+	},
+	{
+		"Function": {
+			"container_group": "tree_forage",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Survival",
+			"Crafting"
+		],
+		"consumption": {
+			"button_text": "Light",
+			"transform_into": "campfire_on"
+		},
+		"description": "A campfire that is not lit. Useful for cooking or staying warm once ignited.",
+		"destruction": {
+			"group": "tree_destroyed"
+		},
+		"edgesnapping": "None",
+		"id": "campfire_off",
+		"moveable": false,
+		"name": "Unlit Campfire",
+		"sprite": "campfire_off_64.png",
+		"support_shape": {
+			"color": "a7491cff",
+			"height": 0.2,
+			"radius_scale": 80,
+			"shape": "Cylinder",
+			"transparent": true
+		}
+	},
+	{
+		"Function": {
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Survival",
+			"Crafting"
+		],
+		"consumption": {
+			"button_text": "Put out",
+			"drain_rate": 30,
+			"items": {
+				"branch": 50,
+				"cutting_board": 100,
+				"kindling_bundle": 25,
+				"leaf": 2,
+				"log": 100,
+				"long_stick": 100,
+				"pine_branch": 60,
+				"plank_2x4": 100,
+				"plant_remnants": 5,
+				"rolling_pin": 100,
+				"small_stick": 10,
+				"stick": 50,
+				"stone_spear": 100,
+				"wood_bundle": 75
+			},
+			"pool": 1000,
+			"transform_into": "campfire_off"
+		},
+		"description": "A lit campfire providing light, warmth, and a way to cook food.",
+		"destruction": {
+			"group": "tree_destroyed"
+		},
+		"edgesnapping": "None",
+		"id": "campfire_on",
+		"moveable": false,
+		"name": "Lit Campfire",
+		"sprite": "campfire_on_64.png",
+		"support_shape": {
+			"color": "ff4500ff",
+			"height": 0.2,
+			"radius_scale": 80,
+			"shape": "Cylinder",
+			"transparent": true
+		}
+	},
+	{
+		"categories": [
+			"Nature",
+			"Burned"
+		],
+		"description": "A tree that has been scorched by fire. Its blackened branches remain brittle and lifeless.",
+		"destruction": {
+			"group": "tree_destroyed"
+		},
+		"edgesnapping": "None",
+		"id": "burned_tree",
+		"moveable": false,
+		"name": "Burned Tree",
+		"sprite": "burned_tree_100.png",
+		"support_shape": {
+			"color": "2d2d2dff",
+			"height": 0.5,
+			"radius_scale": 50,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"categories": [
+			"Nature",
+			"Burned"
+		],
+		"description": "The charred remains of a tree trunk, reduced to a stump. Its surface is brittle and covered in ash.",
+		"destruction": {
+			"group": "tree_destroyed"
+		},
+		"edgesnapping": "None",
+		"id": "burned_tree_stump",
+		"moveable": false,
+		"name": "Burned Tree Stump",
+		"sprite": "burned_tree_stump_64.png",
+		"support_shape": {
+			"color": "3e3e3eff",
+			"height": 0.2,
+			"radius_scale": 40,
+			"shape": "Cylinder",
+			"transparent": false
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Vehicle"
+		],
+		"description": "A wrecked car that is immobile.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "car_00",
+		"moveable": false,
+		"name": "Car wreck",
+		"sprite": "car_01_300_200.png",
+		"support_shape": {
+			"color": "bc7c5aff",
+			"depth_scale": 75,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Vehicle"
+		],
+		"description": "A wrecked car that is immobile.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "car_01",
+		"moveable": false,
+		"name": "Car wreck",
+		"sprite": "car_00_300_200.png",
+		"support_shape": {
+			"color": "bc7c5aff",
+			"depth_scale": 75,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Vehicle"
+		],
+		"description": "A wrecked truck that is immobile.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "truck_wreck_01",
+		"moveable": false,
+		"name": "Truck wreck",
+		"sprite": "truck_00_600_250.png",
+		"support_shape": {
+			"color": "bc7c5aff",
+			"depth_scale": 85,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Vehicle"
+		],
+		"description": "A wrecked tanker that is immobile.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "tanker_wreck_01",
+		"moveable": false,
+		"name": "Tanker wreck",
+		"sprite": "tanker_250_400.png",
+		"support_shape": {
+			"color": "2e52b7ff",
+			"depth_scale": 75,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "An old conveyor that once supported the work of a fabrication chain.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "conveyor",
+		"moveable": false,
+		"name": "Conveyor",
+		"sprite": "conveyor_straight_100.png",
+		"support_shape": {
+			"color": "d76c2eff",
+			"depth_scale": 80,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "An old conveyor that once supported the work of a fabrication chain.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "conveyor_corner",
+		"moveable": false,
+		"name": "Conveyor corner",
+		"sprite": "conveyor_corner_100.png",
+		"support_shape": {
+			"color": "d76c2eff",
+			"depth_scale": 80,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban"
+		],
+		"description": "A wooden crate, once used for storing items.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "crate_wood",
+		"moveable": false,
+		"name": "Wooden crate",
+		"sprite": "wooden_crate_64.png",
+		"support_shape": {
+			"color": "b75a2eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban"
+		],
+		"description": "A wooden crate, once used for storing items.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "crate_wood_long",
+		"moveable": false,
+		"name": "Wooden crate",
+		"sprite": "wooden_crate_48_64.png",
+		"support_shape": {
+			"color": "b75a2eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "An old machine that is connected to a conveyor that once supported the work of a fabrication chain.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "conveyor_machine_mid",
+		"moveable": false,
+		"name": "Machine with conveyor",
+		"sprite": "machine_conveyor_mid_100.png",
+		"support_shape": {
+			"color": "d76c2eff",
+			"depth_scale": 90,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "An old machine that is connected to a conveyor that once supported the work of a fabrication chain.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "conveyor_machine_end",
+		"moveable": false,
+		"name": "Machine with conveyor",
+		"sprite": "machine_conveyor_end_100.png",
+		"support_shape": {
+			"color": "d76c2eff",
+			"depth_scale": 80,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "An old machine that that once supported the work of a fabrication chain.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "light_machinery",
+		"moveable": false,
+		"name": "Light machinery",
+		"sprite": "machine_light_standalone_64.png",
+		"support_shape": {
+			"color": "736861ff",
+			"depth_scale": 95,
+			"height": 0.4,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Industrial",
+			"Indoor"
+		],
+		"description": "A makeshift workbench for crafting, covered in rusted tools and blueprints.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "tool_bench",
+		"moveable": false,
+		"name": "Rusted tool bench",
+		"sprite": "tool_bench_100_45.png",
+		"support_shape": {
+			"color": "d0642eff",
+			"depth_scale": 80,
+			"height": 0.3,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor",
+			"Bedroom"
+		],
+		"description": "Foldable metal cot with thin, stained mattresses.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "military_cot",
+		"moveable": false,
+		"name": "Wooden bed",
+		"sprite": "military_cot_100_45.png",
+		"support_shape": {
+			"color": "a6a6a6ff",
+			"depth_scale": 95,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A worn-out couch, possibly stained with blood or covered in dust.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "tattered_couch",
+		"moveable": false,
+		"name": "Tattered Couch",
+		"sprite": "couch_damaged_100_50.png",
+		"support_shape": {
+			"color": "a66c52ff",
+			"depth_scale": 80,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Infrastructure"
+		],
+		"description": "A series of blinking lights and switches, once used to monitor the facility.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "control_panel",
+		"moveable": false,
+		"name": "Control Panel",
+		"sprite": "control_panel_80_30.png",
+		"support_shape": {
+			"color": "dfc998ff",
+			"depth_scale": 100,
+			"height": 0.9,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Infrastructure"
+		],
+		"description": "Rows of depleted batteries, some still holding a charge for crafting. ",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "battery_bank",
+		"moveable": false,
+		"name": "Battery Bank",
+		"sprite": "battery_bank_80_45.png",
+		"support_shape": {
+			"color": "8a8a8aff",
+			"depth_scale": 100,
+			"height": 0.9,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 100
+		}
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Indoor"
+		],
+		"description": "A cabinet holding vials and containers of unknown substances.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "chemical_rack",
+		"moveable": false,
+		"name": "Chemical rack",
+		"sprite": "chemical_rack_100_45.png",
+		"support_shape": {
+			"color": "dfcf9eff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban"
+		],
+		"description": " Covered in faded memos, evacuation plans, and graffiti.  ",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "bulletin_board",
+		"moveable": false,
+		"name": "Bulletin Board",
+		"sprite": "bullitin_board_80_15.png",
+		"support_shape": {
+			"color": "c75a1cff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "A rusted metal barrel marked with a faded radioactive hazard symbol. A slow, greenish ooze leaks from its seams, pooling around its base and casting an eerie glow in the darkness. Prolonged exposure may be dangerous.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "barrel_radioactive_red",
+		"moveable": true,
+		"name": "Radioactive Barrel",
+		"sprite": "radioactive_barrel_red_32.png",
+		"weight": 10
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "A rusted metal barrel marked with a faded radioactive hazard symbol. A slow, greenish ooze leaks from its seams, pooling around its base and casting an eerie glow in the darkness. Prolonged exposure may be dangerous.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "barrel_radioactive_black",
+		"moveable": true,
+		"name": "Radioactive Barrel",
+		"sprite": "radioactive_barrel_black_32.png",
+		"weight": 10
+	},
+	{
+		"categories": [
+			"Urban",
+			"Industrial"
+		],
+		"description": "A rusted metal barrel marked with a faded radioactive hazard symbol. A slow, greenish ooze leaks from its seams, pooling around its base and casting an eerie glow in the darkness. Prolonged exposure may be dangerous.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "barrel_radioactive_yellow",
+		"moveable": true,
+		"name": "Radioactive Barrel",
+		"sprite": "radioactive_barrel_yellow_32.png",
+		"weight": 10
+	},
+	{
+		"Function": {
+			"container_group": "cabinet_general",
+			"container_sprite_mode": "Hide",
+			"is_container": true
+		},
+		"categories": [
+			"Urban",
+			"Vehicle",
+			"Military"
+		],
+		"description": "A wrecked military car that is immobile.",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "None",
+		"id": "military_car_wreck",
+		"moveable": false,
+		"name": "Military Car wreck",
+		"sprite": "military_car_300_200.png",
+		"support_shape": {
+			"color": "38752fff",
+			"depth_scale": 75,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Outdoor"
+		],
+		"description": "Piles of sandbags, used to keep something out… or in.  ",
+		"destruction": {
+			"group": "destroyed_furniture_medium",
+			"sprite": "wreck_wood_generic_32.png"
+		},
+		"edgesnapping": "North",
+		"id": "sandbag_barricade",
+		"moveable": false,
+		"name": "Sandbag barricade",
+		"sprite": "sandbags_barricade_100_20.png",
+		"support_shape": {
+			"color": "dfc796ff",
+			"depth_scale": 95,
+			"height": 0.5,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 95
+		}
+	},
+	{
+		"categories": [
+			"Urban"
+		],
+		"description": "An old, rusting gas pump. Some still have traces of fuel, but most have been drained dry.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "gas_pump",
+		"moveable": false,
+		"name": "Gas Pump",
+		"sprite": "gas_pump_70_40.png",
+		"support_shape": {
+			"color": "a6a6a6ff",
+			"depth_scale": 90,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Survivor"
+		],
+		"description": "A hastily assembled barricade of wooden planks, metal scraps, and barbed wire.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "makeshift_barricade",
+		"moveable": false,
+		"name": "Makeshift Barricade",
+		"sprite": "makeshift_barricade_100_20.png",
+		"support_shape": {
+			"color": "b8541cff",
+			"depth_scale": 80,
+			"height": 0.2,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 80
+		}
+	},
+	{
+		"categories": [],
+		"description": "An old convenience store fridge, its glass shattered, now used to store scavenged supplies.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "rusted_fridge",
+		"moveable": false,
+		"name": "Rusted Fridge",
+		"sprite": "refridgerator_rusted_50_48.png",
+		"support_shape": {
+			"color": "e0c7b7ff",
+			"depth_scale": 90,
+			"height": 0.8,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Survivor"
+		],
+		"description": "A makeshift cot assembled from salvaged fabric and metal bars, offering a place to rest.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "None",
+		"id": "survivor_cot",
+		"moveable": false,
+		"name": "Survivor Cot",
+		"sprite": "survivor_cot_100_48.png",
+		"support_shape": {
+			"color": "c6b6aeff",
+			"depth_scale": 90,
+			"height": 0.15,
+			"shape": "Box",
+			"transparent": false,
+			"width_scale": 90
+		}
+	},
+	{
+		"categories": [
+			"Urban",
+			"Fence"
+		],
+		"description": "A rusted chain-link fence, once a barrier against trespassers, now sagging in places and riddled with holes. Some sections have been reinforced with scrap metal and barbed wire, while others have been forcibly cut or torn apart, leaving jagged openings.",
+		"destruction": {
+			"group": "destroyed_furniture_medium"
+		},
+		"edgesnapping": "North",
+		"id": "chain_link_fence",
+		"moveable": false,
+		"name": "Chain-Link Fence",
+		"sprite": "chain_link_fence_100_10.png",
+		"support_shape": {
+			"color": "363636ff",
+			"depth_scale": 90,
+			"height": 0.8,
+			"shape": "Box",
+			"transparent": true,
+			"width_scale": 90
+		}
+	}
+]

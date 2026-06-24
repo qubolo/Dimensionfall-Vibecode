@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://y2iul2r3nysx"]
+
+[ext_resource type="Script" uid="uid://b2r4bkruxcbpx" path="res://Scripts/CtrlInventoryStackedCustom.gd" id="1_1pahw"]
+[ext_resource type="PackedScene" uid="uid://bgnxsnv6ltej8" path="res://Scenes/UI/CtrlInventoryStackedListItem.tscn" id="2_woew4"]
+[ext_resource type="PackedScene" uid="uid://dxgl4vkc313we" path="res://Scenes/UI/CtrlInventoryStackedlistHeaderItem.tscn" id="3_svicc"]
+[ext_resource type="AudioStream" uid="uid://dw1cix5bscdep" path="res://Sounds/SFX/Weapons/Reloading/pistol_reload_sound.wav" id="4_rci6u"]
+
+[node name="CtrlInventoryStackedCustom" type="Control" node_paths=PackedStringArray("inventory_grid", "weight_bar", "volume_bar", "context_menu", "reload_audio_player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_1pahw")
+inventory_grid = NodePath("VBoxContainer/ScrollContainer/InventoryGrid")
+weight_bar = NodePath("VBoxContainer/HBoxContainer/WeightBar")
+volume_bar = NodePath("VBoxContainer/HBoxContainer/VolumeBar")
+list_item_container = ExtResource("2_woew4")
+list_header_container = ExtResource("3_svicc")
+context_menu = NodePath("ContextMenu")
+reload_audio_player = NodePath("ReloadAudio")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.278431, 0.278431, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InventoryGrid" type="GridContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.95
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.05
+
+[node name="WeightLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Weight:"
+
+[node name="WeightBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolumeBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContextMenu" type="PopupMenu" parent="."]
+size = Vector2i(123, 116)
+
+[node name="ReloadAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_rci6u")
+
+[connection signal="id_pressed" from="ContextMenu" to="." method="_on_context_menu_item_selected"]

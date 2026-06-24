@@ -1,0 +1,257 @@
+{
+	"M4A1_gun_ammo": {
+		"maps": [
+			"RockyHill_SW",
+			"military_bunker"
+		]
+	},
+	"cabinet_general": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"police_station",
+			"generichouse_end",
+			"military_bunker"
+		]
+	},
+	"clothing_general": {
+		"maps": [
+			"underground_lab"
+		]
+	},
+	"debris_rock": {
+		"maps": [
+			"subway_station",
+			"abandoned_building",
+			"scrap_yard",
+			"warehouse_storage",
+			"military_bunker",
+			"crater_small",
+			"survivor_gas_station",
+			"underground_cave"
+		]
+	},
+	"debris_urban": {
+		"maps": [
+			"subway_station",
+			"abandoned_building",
+			"scrap_yard",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station"
+		]
+	},
+	"destroyed_furniture_medium": {
+		"furnitures": [
+			"gas_pump",
+			"makeshift_barricade",
+			"rusted_fridge",
+			"survivor_cot",
+			"chain_link_fence",
+			"ups",
+			"equipment_rack",
+			"first_aid_rack"
+		],
+		"maps": [
+			"neighborhood_school",
+			"subway_station",
+			"skyscraper",
+			"city_square",
+			"abandoned_building",
+			"forest_camp_00",
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"forest_ruins",
+			"underground_lab"
+		]
+	},
+	"electronics_damaged": {
+		"maps": [
+			"radio_tower",
+			"abandoned_building"
+		]
+	},
+	"electronics_store_medium": {
+		"maps": [
+			"store_electronic_clothing"
+		]
+	},
+	"electronics_store_mixed": {
+		"maps": [
+			"store_electronic_clothing"
+		]
+	},
+	"electronics_store_small": {
+		"maps": [
+			"radio_tower",
+			"store_electronic_clothing"
+		]
+	},
+	"first_aid": {
+		"maps": [
+			"radio_tower",
+			"police_station",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"generic_field_finds": {
+		"maps": [
+			"field_grass_basic_00",
+			"urbanroad",
+			"RockyHill_SE",
+			"urbanroad_cross",
+			"RockyHill_NW",
+			"field_grass_hole_00",
+			"field_grass_flowers_00",
+			"urbanroad_corner",
+			"urbanroad_t",
+			"RockyHill_NE",
+			"police_station",
+			"RockyHill_SW",
+			"field_grass_hill_00",
+			"military_bunker",
+			"crater_small",
+			"survivor_gas_station",
+			"forest_clearing",
+			"forest_ruins"
+		]
+	},
+	"generic_forest_finds": {
+		"maps": [
+			"forest_road_cross",
+			"forest_road_t",
+			"forest_road_straight",
+			"forest_road_corner",
+			"forest_basic_00",
+			"forest_camp_00",
+			"forest_burned_00",
+			"forest_clearing",
+			"forest_ruins"
+		]
+	},
+	"kitchen_cupboard": {
+		"maps": [
+			"store_groceries",
+			"office_building_00"
+		]
+	},
+	"loot_electronic": {
+		"maps": [
+			"radio_tower",
+			"factory_hall"
+		],
+		"mobs": [
+			"venom_crawler",
+			"disruptor_drone",
+			"scavenger_skitter"
+		]
+	},
+	"loot_gas_station": {
+		"maps": [
+			"survivor_gas_station"
+		]
+	},
+	"mob_loot": {
+		"maps": [
+			"military_bunker"
+		],
+		"mobs": [
+			"iron_stalker",
+			"scrapwalker",
+			"rust_sentinel",
+			"outpost_guardian",
+			"spitter_zombie",
+			"bone_thrower"
+		]
+	},
+	"police_station_locker": {
+		"maps": [
+			"police_station",
+			"military_bunker"
+		]
+	},
+	"refrigerator": {
+		"maps": [
+			"store_groceries"
+		]
+	},
+	"tree_destroyed": {
+		"furnitures": [
+			"campfire_off",
+			"campfire_on",
+			"burned_tree_stump",
+			"burned_tree"
+		],
+		"maps": [
+			"forest_ruins"
+		]
+	},
+	"tree_forage": {
+		"furnitures": [
+			"Tree_00",
+			"PineTree_00",
+			"WillowTree_00",
+			"campfire_off"
+		]
+	},
+	"urban_litter": {
+		"maps": [
+			"office_building_00",
+			"subway_station",
+			"skyscraper",
+			"city_square",
+			"parking_garage",
+			"police_station",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"vending_machine_drinks": {
+		"maps": [
+			"store_groceries",
+			"neighborhood_school",
+			"subway_station",
+			"city_square",
+			"police_station",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"factory_hall",
+			"military_bunker",
+			"survivor_gas_station"
+		]
+	},
+	"vending_machine_snacks": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"subway_station",
+			"city_square",
+			"police_station",
+			"industrial_control_center",
+			"factory_hall",
+			"military_bunker",
+			"survivor_gas_station"
+		]
+	},
+	"zombie_loot": {
+		"mobs": [
+			"basic_zombie_1",
+			"basic_zombie_2",
+			"limping_zombie",
+			"skeleton_zombie",
+			"heavy_zombie",
+			"charred_zombie",
+			"rushing_zombie",
+			"bloated_zombie"
+		]
+	}
+}

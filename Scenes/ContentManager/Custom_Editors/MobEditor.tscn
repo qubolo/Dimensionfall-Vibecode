@@ -1,0 +1,348 @@
+[gd_scene load_steps=5 format=3 uid="uid://drby7yfu8t38e"]
+
+[ext_resource type="Script" uid="uid://c0taus0sdkqt0" path="res://Scenes/ContentManager/Custom_Editors/Scripts/MobEditor.gd" id="1_ubw0i"]
+[ext_resource type="Texture2D" uid="uid://c8ragmxitca47" path="res://Scenes/ContentManager/Mapeditor/Images/emptyTile.png" id="2_woy6i"]
+[ext_resource type="PackedScene" uid="uid://d1h1rpwt8f807" path="res://Scenes/ContentManager/Custom_Widgets/Sprite_Selector_Popup.tscn" id="3_847a0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apoql"]
+content_margin_left = 11.0
+content_margin_top = 11.0
+content_margin_right = 11.0
+content_margin_bottom = 11.0
+bg_color = Color(0.358505, 0.289355, 0.48639, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MobEditor" type="Control" node_paths=PackedStringArray("mobImageDisplay", "IDTextLabel", "PathTextLabel", "NameTextEdit", "faction_option_button", "DescriptionTextEdit", "mobSelector", "health_numedit", "moveSpeed_numedit", "idle_move_speed_numedit", "sightRange_numedit", "senseRange_numedit", "hearingRange_numedit", "ItemGroupTextEdit", "dash_check_box", "dash_speed_multiplier_spin_box", "dash_duration_spin_box", "dash_cooldown_spin_box", "attacks_grid_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ubw0i")
+mobImageDisplay = NodePath("VBoxContainer/TabContainer/General/MobImageDisplay")
+IDTextLabel = NodePath("VBoxContainer/TabContainer/General/IDTextLabel")
+PathTextLabel = NodePath("VBoxContainer/TabContainer/General/PathTextLabel")
+NameTextEdit = NodePath("VBoxContainer/TabContainer/General/HBoxContainer/NameTextEdit")
+faction_option_button = NodePath("VBoxContainer/TabContainer/General/HBoxContainer/FactionOptionButton")
+DescriptionTextEdit = NodePath("VBoxContainer/TabContainer/General/DescriptionTextEdit")
+mobSelector = NodePath("Sprite_selector")
+health_numedit = NodePath("VBoxContainer/TabContainer/General/HealthSpinBox")
+moveSpeed_numedit = NodePath("VBoxContainer/TabContainer/General/SpeedHBoxContainer/MoveSpeedSpinBox")
+idle_move_speed_numedit = NodePath("VBoxContainer/TabContainer/General/SpeedHBoxContainer/IdleMoveSpeedSpinBox")
+sightRange_numedit = NodePath("VBoxContainer/TabContainer/General/HBoxContainer2/SightRangeSpinBox")
+senseRange_numedit = NodePath("VBoxContainer/TabContainer/General/HBoxContainer2/SenseRangeSpinbox")
+hearingRange_numedit = NodePath("VBoxContainer/TabContainer/General/HBoxContainer2/HearingRangeSpinbox")
+ItemGroupTextEdit = NodePath("VBoxContainer/TabContainer/General/LootItemgroupHBoxContainer/LootItemGroupTextEdit")
+dash_check_box = NodePath("VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3/DashCheckBox")
+dash_speed_multiplier_spin_box = NodePath("VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3/SpeedMultiplierSpinBox")
+dash_duration_spin_box = NodePath("VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3/DurationSpinBox")
+dash_cooldown_spin_box = NodePath("VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3/CooldownSpinBox")
+attacks_grid_container = NodePath("VBoxContainer/TabContainer/Combat/AttacksHBoxContainer/AttacksPanelContainer/AttacksVBoxContainer/ScrollContainer/AttackGridContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="General" type="GridContainer" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+metadata/_tab_index = 0
+
+[node name="ImageLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Sprite:"
+
+[node name="MobImageDisplay" type="TextureRect" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 0.4
+texture = ExtResource("2_woy6i")
+expand_mode = 3
+
+[node name="PathLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Sprite name"
+
+[node name="PathTextLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="IDLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "ID:"
+
+[node name="IDTextLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/TabContainer/General/HBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="NameTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/General/HBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_next = NodePath("../../DescriptionTextEdit")
+focus_previous = NodePath("../../MobImageDisplay")
+placeholder_text = "Scorpion	"
+
+[node name="FactionLabel" type="Label" parent="VBoxContainer/TabContainer/General/HBoxContainer"]
+layout_mode = 2
+text = "Faction:"
+
+[node name="FactionOptionButton" type="OptionButton" parent="VBoxContainer/TabContainer/General/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Description"
+
+[node name="DescriptionTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+focus_next = NodePath("../HealthSpinBox")
+focus_previous = NodePath("../HBoxContainer/NameTextEdit")
+placeholder_text = "A very dangerous land animal often found in dry climates"
+wrap_mode = 1
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Health"
+
+[node name="HealthSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+max_value = 1000.0
+value = 100.0
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Speed"
+
+[node name="SpeedHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="MoveSpeedLabel" type="Label" parent="VBoxContainer/TabContainer/General/SpeedHBoxContainer"]
+layout_mode = 2
+text = "Move speed"
+
+[node name="MoveSpeedSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/SpeedHBoxContainer"]
+layout_mode = 2
+tooltip_text = "The speed at which it moves"
+step = 0.1
+value = 1.0
+
+[node name="IdleMoveSpeedLabel" type="Label" parent="VBoxContainer/TabContainer/General/SpeedHBoxContainer"]
+layout_mode = 2
+text = "Idle move speed"
+
+[node name="IdleMoveSpeedSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/SpeedHBoxContainer"]
+layout_mode = 2
+tooltip_text = "The speed at which it moves when idle"
+step = 0.1
+value = 0.5
+
+[node name="RangeLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Range"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="SightRangeLabel" type="Label" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+text = "Sight"
+
+[node name="SightRangeSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "The maximum distance it can visually detect other entities"
+max_value = 500.0
+value = 200.0
+
+[node name="SenseRangeLabel" type="Label" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+text = "Sense"
+
+[node name="SenseRangeSpinbox" type="SpinBox" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "The maximum distance at which it can detect entities with senses other then sight and hearing"
+value = 50.0
+
+[node name="HearingRangeLabel" type="Label" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+text = "Hearing"
+
+[node name="HearingRangeSpinbox" type="SpinBox" parent="VBoxContainer/TabContainer/General/HBoxContainer2"]
+layout_mode = 2
+tooltip_text = "The maximum distance at which it can detect entities trough hearing"
+max_value = 5000.0
+value = 1000.0
+
+[node name="LootItemGroupLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Loot itemgroup"
+
+[node name="LootItemgroupHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="LootItemGroupTextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/General/LootItemgroupHBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+tooltip_text = "Drag an itemgroup from the list of itemgroups on the left onto this textbox. When this mob dies, it will drop loot from that group. If no group is specified, the mob will not drop any loot"
+focus_next = NodePath("../../DescriptionTextEdit")
+focus_previous = NodePath("../../MobImageDisplay")
+mouse_filter = 1
+placeholder_text = "Drop an itemgroup here"
+editable = false
+
+[node name="ItemGroupClearButton" type="Button" parent="VBoxContainer/TabContainer/General/LootItemgroupHBoxContainer"]
+layout_mode = 2
+tooltip_text = "Clears the id of the itemgroup"
+text = "Clear itemgroup"
+
+[node name="SpecialMovesLabel" type="Label" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+text = "Special moves"
+
+[node name="SpecialMovesHBoxContainer3" type="HBoxContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 2
+
+[node name="DashCheckBox" type="CheckBox" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+tooltip_text = "Allow this mob to perform the dash move."
+text = "Dash"
+
+[node name="SpeedMultiplierLabel" type="Label" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+text = "Speed multiplier"
+
+[node name="SpeedMultiplierSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+tooltip_text = "The speed multiplier for the dash move. This will multiply the move speed for the specified duration."
+value = 2.0
+
+[node name="DurationLabel" type="Label" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+text = "Duration"
+
+[node name="DurationSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+tooltip_text = "The duration of the dash move in seconds"
+step = 0.1
+value = 0.5
+
+[node name="CooldownLabel" type="Label" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+text = "Cooldown"
+
+[node name="CooldownSpinBox" type="SpinBox" parent="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3"]
+layout_mode = 2
+tooltip_text = "The cooldown for the dash move in seconds."
+value = 5.0
+
+[node name="Combat" type="GridContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 1
+
+[node name="AttackLabel" type="Label" parent="VBoxContainer/TabContainer/Combat"]
+layout_mode = 2
+text = "Hint"
+
+[node name="RangeLabel" type="Label" parent="VBoxContainer/TabContainer/Combat"]
+layout_mode = 2
+text = "Drag attacks from the left to give this mob some attacks"
+
+[node name="AttacksLabel" type="Label" parent="VBoxContainer/TabContainer/Combat"]
+layout_mode = 2
+text = "Attacks:"
+
+[node name="AttacksHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Combat"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AttacksPanelContainer" type="PanelContainer" parent="VBoxContainer/TabContainer/Combat/AttacksHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_apoql")
+
+[node name="AttacksVBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Combat/AttacksHBoxContainer/AttacksPanelContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Combat/AttacksHBoxContainer/AttacksPanelContainer/AttacksVBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+
+[node name="AttackGridContainer" type="GridContainer" parent="VBoxContainer/TabContainer/Combat/AttacksHBoxContainer/AttacksPanelContainer/AttacksVBoxContainer/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "Drag attacks from the list on the left onto this area.
+The mob will attack using the specified attacks.
+When the target enemy is outside any of the melee attacks' range, it will use a ranged attack if possible.
+When the target enemy is inside any of the melee attacks' range, it will use one of the melee attacks.
+When it is decided whether to use a melee or ranged attack, a random one will be picked."
+columns = 4
+
+[node name="Sprite_selector" parent="." instance=ExtResource("3_847a0")]
+visible = false
+
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_button_up"]
+[connection signal="gui_input" from="VBoxContainer/TabContainer/General/MobImageDisplay" to="." method="_on_mob_image_display_gui_input"]
+[connection signal="button_up" from="VBoxContainer/TabContainer/General/LootItemgroupHBoxContainer/ItemGroupClearButton" to="." method="_on_item_group_clear_button_button_up"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/General/SpecialMovesHBoxContainer3/DashCheckBox" to="." method="_on_dash_check_box_toggled"]
+[connection signal="sprite_selected_ok" from="Sprite_selector" to="." method="_on_sprite_selector_sprite_selected_ok"]

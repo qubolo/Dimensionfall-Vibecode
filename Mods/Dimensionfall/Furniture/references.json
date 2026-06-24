@@ -1,0 +1,889 @@
+{
+	"PineTree_00": {
+		"maps": [
+			"forest_road_cross",
+			"field_grass_basic_00",
+			"urbanroad",
+			"RockyHill_SE",
+			"urbanroad_cross",
+			"office_building_00",
+			"RockyHill_NW",
+			"neighborhood_school",
+			"subway_station",
+			"skyscraper",
+			"radio_tower",
+			"forest_road_t",
+			"urbanroad_corner",
+			"city_square",
+			"urbanroad_t",
+			"forest_road_straight",
+			"forest_road_corner",
+			"RockyHill_NE",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"forest_basic_00",
+			"store_electronic_clothing",
+			"forest_camp_00",
+			"forest_burned_00",
+			"military_bunker",
+			"survivor_gas_station",
+			"forest_clearing",
+			"forest_ruins",
+			"field_farmland"
+		]
+	},
+	"Tree_00": {
+		"maps": [
+			"forest_road_cross",
+			"field_grass_basic_00",
+			"urbanroad",
+			"RockyHill_SE",
+			"urbanroad_cross",
+			"office_building_00",
+			"RockyHill_NW",
+			"neighborhood_school",
+			"subway_station",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"forest_road_t",
+			"urbanroad_corner",
+			"city_square",
+			"urbanroad_t",
+			"forest_road_straight",
+			"forest_road_corner",
+			"RockyHill_NE",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"forest_basic_00",
+			"store_electronic_clothing",
+			"forest_camp_00",
+			"forest_burned_00",
+			"military_bunker",
+			"survivor_gas_station",
+			"forest_clearing",
+			"forest_ruins",
+			"field_farmland"
+		]
+	},
+	"WillowTree_00": {
+		"maps": [
+			"forest_road_cross",
+			"field_grass_basic_00",
+			"urbanroad",
+			"RockyHill_SE",
+			"urbanroad_cross",
+			"office_building_00",
+			"RockyHill_NW",
+			"neighborhood_school",
+			"subway_station",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"forest_road_t",
+			"urbanroad_corner",
+			"city_square",
+			"urbanroad_t",
+			"forest_road_straight",
+			"forest_road_corner",
+			"RockyHill_NE",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"forest_basic_00",
+			"store_electronic_clothing",
+			"forest_camp_00",
+			"forest_burned_00",
+			"military_bunker",
+			"survivor_gas_station",
+			"forest_clearing",
+			"forest_ruins"
+		]
+	},
+	"barrel_radioactive_black": {
+		"maps": [
+			"underground_lab"
+		]
+	},
+	"barrel_radioactive_red": {
+		"maps": [
+			"underground_lab"
+		]
+	},
+	"barrel_radioactive_yellow": {
+		"maps": [
+			"underground_lab"
+		]
+	},
+	"bathtub": {
+		"maps": [
+			"generichouse_cross",
+			"Generichouse_00",
+			"two_story_house",
+			"generichouse_t",
+			"military_bunker"
+		]
+	},
+	"battery_bank": {
+		"maps": [
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"bed_wood_single_00": {
+		"maps": [
+			"Generichouse",
+			"generichouse_cross",
+			"Generichouse_00",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"generichouse_t",
+			"field_farmland"
+		]
+	},
+	"bench_garden": {
+		"maps": [
+			"neighborhood_school",
+			"subway_station",
+			"Generichouse",
+			"city_square",
+			"store_electronic_clothing",
+			"field_farmland"
+		]
+	},
+	"bench_wood": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"generichouse_cross",
+			"skyscraper",
+			"two_story_house",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"military_bunker"
+		]
+	},
+	"bookcase_wood_00": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"industrial_control_center",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"bulletin_board": {
+		"maps": [
+			"survivor_gas_station"
+		]
+	},
+	"burned_tree": {
+		"maps": [
+			"forest_burned_00"
+		]
+	},
+	"burned_tree_stump": {
+		"maps": [
+			"forest_burned_00"
+		]
+	},
+	"cabinet_wood_00": {
+		"maps": [
+			"Generichouse",
+			"generichouse_cross",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"generichouse_t",
+			"industrial_control_center",
+			"warehouse_storage",
+			"survivor_gas_station",
+			"field_farmland"
+		]
+	},
+	"campfire_off": {
+		"maps": [
+			"forest_camp_00",
+			"survivor_gas_station"
+		]
+	},
+	"campfire_on": {
+		"maps": [
+			"forest_camp_00"
+		]
+	},
+	"car_00": {
+		"maps": [
+			"scrap_yard",
+			"industrial_control_center",
+			"survivor_gas_station",
+			"generichouse_t",
+			"generichouse_cross",
+			"office_building_00"
+		]
+	},
+	"car_01": {
+		"maps": [
+			"scrap_yard",
+			"generichouse_cross",
+			"office_building_00"
+		]
+	},
+	"cash_register": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"skyscraper",
+			"police_station",
+			"store_electronic_clothing",
+			"survivor_gas_station"
+		]
+	},
+	"chain_link_fence": {
+		"maps": [
+			"survivor_gas_station",
+			"skyscraper"
+		]
+	},
+	"chair_office": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"chair_wood": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"city_square",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"abandoned_building",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"generichouse_t",
+			"forest_camp_00",
+			"industrial_control_center",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"chemical_rack": {
+		"maps": [
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"clothing_rack": {
+		"maps": [
+			"store_electronic_clothing"
+		]
+	},
+	"control_panel": {
+		"maps": [
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"conveyor": {
+		"maps": [
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall",
+			"underground_lab"
+		]
+	},
+	"conveyor_corner": {
+		"maps": [
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall"
+		]
+	},
+	"conveyor_machine_end": {
+		"maps": [
+			"industrial_control_center",
+			"factory_hall"
+		]
+	},
+	"conveyor_machine_mid": {
+		"maps": [
+			"factory_hall",
+			"underground_lab"
+		]
+	},
+	"countertop_wood": {
+		"maps": [
+			"office_building_00",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"two_story_house",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"field_farmland"
+		]
+	},
+	"crate_wood": {
+		"maps": [
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"office_building_00",
+			"abandoned_building",
+			"underground_lab"
+		]
+	},
+	"crate_wood_long": {
+		"maps": [
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"survivor_gas_station",
+			"office_building_00",
+			"underground_lab"
+		]
+	},
+	"damaged_shelves": {
+		"maps": [
+			"radio_tower",
+			"two_story_house",
+			"abandoned_building",
+			"scrap_yard",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"forest_ruins"
+		]
+	},
+	"desk": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"destroyed_fence": {
+		"maps": [
+			"neighborhood_school",
+			"radio_tower",
+			"city_square",
+			"parking_garage",
+			"abandoned_building",
+			"forest_camp_00",
+			"scrap_yard",
+			"generichouse_corner",
+			"forest_ruins",
+			"field_farmland"
+		]
+	},
+	"display_case": {
+		"maps": [
+			"store_groceries",
+			"skyscraper",
+			"store_electronic_clothing",
+			"survivor_gas_station"
+		]
+	},
+	"door_wood": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"equipment_rack": {
+		"maps": [
+			"radio_tower",
+			"police_station",
+			"industrial_control_center",
+			"factory_hall",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"first_aid_rack": {
+		"maps": [
+			"radio_tower",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"gas_pump": {
+		"maps": [
+			"survivor_gas_station"
+		]
+	},
+	"lamp_standing": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"RockyHill_SW",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"factory_hall",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"light_machinery": {
+		"maps": [
+			"scrap_yard",
+			"factory_hall"
+		]
+	},
+	"military_car_wreck": {
+		"maps": [
+			"military_bunker"
+		]
+	},
+	"military_cot": {
+		"maps": [
+			"military_bunker"
+		]
+	},
+	"plant_pot_00": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"city_square",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"factory_hall",
+			"military_bunker",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"railroad_midsection": {
+		"maps": [
+			"subway_station"
+		]
+	},
+	"railroad_railsection": {
+		"maps": [
+			"subway_station"
+		]
+	},
+	"refrigerator_00": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"rusted_fridge": {
+		"maps": [
+			"survivor_gas_station",
+			"generichouse_t"
+		]
+	},
+	"sandbag_barricade": {
+		"maps": [
+			"military_bunker",
+			"survivor_gas_station"
+		]
+	},
+	"security_gate": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"skyscraper",
+			"police_station",
+			"RockyHill_SW",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"shopping_cart": {
+		"maps": [
+			"store_groceries",
+			"store_electronic_clothing",
+			"industrial_control_center"
+		]
+	},
+	"sofa": {
+		"maps": [
+			"office_building_00",
+			"skyscraper",
+			"Generichouse_00",
+			"two_story_house",
+			"industrial_control_center",
+			"factory_hall",
+			"generichouse_t",
+			"generichouse_cross",
+			"field_farmland"
+		]
+	},
+	"standing_mirror": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"factory_hall",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"store_shelf": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"skyscraper",
+			"radio_tower",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"warehouse_storage",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"stove": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"two_story_house",
+			"industrial_control_center",
+			"military_bunker",
+			"field_farmland"
+		]
+	},
+	"survivor_cot": {
+		"maps": [
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"table_metal": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"RockyHill_SW",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"underground_lab"
+		]
+	},
+	"table_picknic": {
+		"maps": [
+			"Generichouse",
+			"forest_camp_00"
+		]
+	},
+	"table_round_wood": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"city_square",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"abandoned_building",
+			"RockyHill_SW",
+			"generichouse_corner",
+			"generichouse_t",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"tanker_wreck_01": {
+		"maps": [
+			"scrap_yard",
+			"generichouse_cross"
+		]
+	},
+	"tattered_couch": {
+		"maps": [
+			"military_bunker",
+			"survivor_gas_station",
+			"generichouse_t",
+			"generichouse_corner",
+			"generichouse_cross",
+			"office_building_00",
+			"abandoned_building",
+			"field_farmland"
+		]
+	},
+	"toilet_00": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"factory_hall",
+			"military_bunker",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"tool_bench": {
+		"maps": [
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"transformer_box": {
+		"maps": [
+			"radio_tower",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"trash_bin": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"subway_station",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"city_square",
+			"two_story_house",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"military_bunker",
+			"survivor_gas_station",
+			"underground_lab",
+			"field_farmland"
+		]
+	},
+	"truck_wreck_01": {
+		"maps": [
+			"scrap_yard",
+			"factory_hall",
+			"generichouse_cross"
+		]
+	},
+	"ups": {
+		"maps": [
+			"radio_tower",
+			"industrial_control_center",
+			"military_bunker",
+			"underground_lab"
+		]
+	},
+	"vending_machine": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"subway_station",
+			"skyscraper",
+			"city_square",
+			"police_station",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"factory_hall",
+			"survivor_gas_station",
+			"underground_lab"
+		]
+	},
+	"wall_shelf": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"skyscraper",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"abandoned_building",
+			"store_electronic_clothing"
+		]
+	},
+	"wardrobe": {
+		"maps": [
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"industrial_control_center"
+		]
+	},
+	"window_glass": {
+		"maps": [
+			"store_groceries",
+			"office_building_00",
+			"neighborhood_school",
+			"Generichouse",
+			"generichouse_cross",
+			"skyscraper",
+			"Generichouse_00",
+			"radio_tower",
+			"two_story_house",
+			"police_station",
+			"generichouse_end",
+			"generichouse_corner",
+			"generichouse_t",
+			"store_electronic_clothing",
+			"industrial_control_center",
+			"military_bunker",
+			"survivor_gas_station",
+			"field_farmland"
+		]
+	}
+}

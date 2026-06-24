@@ -1,0 +1,504 @@
+[gd_scene load_steps=37 format=3 uid="uid://d3001f5xxpup1"]
+
+[ext_resource type="Script" uid="uid://bnbnplaka2cy" path="res://Scenes/ContentManager/Mapeditor/Scripts/mapeditor.gd" id="1_0c7s4"]
+[ext_resource type="PackedScene" uid="uid://bswccbbg6ijep" path="res://Scenes/ContentManager/Mapeditor/Toolbar/mapeditorzoomscroller.tscn" id="1_0ytmu"]
+[ext_resource type="Texture2D" uid="uid://dd700uhgg8oly" path="res://Images/Icons/IconCameraUnchecked.png" id="2_bib5l"]
+[ext_resource type="Script" uid="uid://dprk4d6u26y4y" path="res://Scenes/ContentManager/Mapeditor/Scripts/GridContainer.gd" id="2_sf17m"]
+[ext_resource type="Texture2D" uid="uid://b6m2bbbpmsyik" path="res://Images/Icons/IconRotateRightDark.png" id="3_8q2iq"]
+[ext_resource type="Texture2D" uid="uid://cxhp6hye2ufp2" path="res://Images/Icons/IconRectangleUnchecked.png" id="3_70koh"]
+[ext_resource type="Texture2D" uid="uid://5fsf8rh6w0pb" path="res://Images/Icons/IconRectangleChecked.png" id="3_eu7pp"]
+[ext_resource type="Script" uid="uid://tffvkb6griy1" path="res://Scenes/ContentManager/Mapeditor/Scripts/Levelscroller.gd" id="3_i1qbw"]
+[ext_resource type="PackedScene" uid="uid://3x0kjiu7lqg7" path="res://Scenes/ContentManager/Mapeditor/mapeditortile.tscn" id="4_lqbjy"]
+[ext_resource type="Texture2D" uid="uid://y8tfkphm1nia" path="res://Images/Icons/IconEyeChecked.png" id="4_st61r"]
+[ext_resource type="Texture2D" uid="uid://egvhw3cxrbks" path="res://Images/Icons/IconGroupPaintChecked.png" id="5_7l4v8"]
+[ext_resource type="Script" uid="uid://cvh8rh4ctekky" path="res://Scenes/ContentManager/Mapeditor/Scripts/TilebrushList.gd" id="5_he816"]
+[ext_resource type="Texture2D" uid="uid://d1u77thx3r5so" path="res://Images/Icons/IconCopyChecked.png" id="5_i6bxh"]
+[ext_resource type="Texture2D" uid="uid://7pbgyyv6lna1" path="res://Images/Icons/IconEraserChecked.png" id="5_n3fyt"]
+[ext_resource type="Texture2D" uid="uid://hik7bkdfc51t" path="res://Images/Icons/IconEraserUnchecked.png" id="6_6lnwx"]
+[ext_resource type="Texture2D" uid="uid://dcv751mrp361x" path="res://Images/Icons/IconGroupPaintUnchecked.png" id="6_8fii3"]
+[ext_resource type="Texture2D" uid="uid://bqpbqvxtxey17" path="res://Images/Icons/IconCopyUnchecked.png" id="6_0266o"]
+[ext_resource type="PackedScene" uid="uid://be62h2ytgw2kb" path="res://Scenes/ContentManager/Custom_Widgets/Scrolling_Flow_Container.tscn" id="6_onaby"]
+[ext_resource type="Texture2D" uid="uid://kjsnbbs2o68u" path="res://Images/Icons/IconArrowDownChecked.png" id="7_s4wos"]
+[ext_resource type="PackedScene" uid="uid://cccnrdolr1bfo" path="res://Scenes/ContentManager/Mapeditor/tilebrush.tscn" id="8_o4x7s"]
+[ext_resource type="Texture2D" uid="uid://bsxgq272ca2kw" path="res://Images/Icons/IconArrowDownUnchecked.png" id="8_xcusj"]
+[ext_resource type="Texture2D" uid="uid://dk8cdxff84idk" path="res://Images/Icons/IconArrowUpChecked.png" id="9_etume"]
+[ext_resource type="Texture2D" uid="uid://biircfcjvj7lp" path="res://Images/Icons/IconArrowUpUnchecked.png" id="10_0rhye"]
+[ext_resource type="PackedScene" uid="uid://c80hblyn3jedv" path="res://Scenes/ContentManager/Mapeditor/mapeditor_brushcomposer.tscn" id="18_ov0cf"]
+[ext_resource type="PackedScene" uid="uid://bmkopblan4t1x" path="res://Scenes/ContentManager/Mapeditor/Map_Editor_Preview_Popup.tscn" id="24_6b3wl"]
+[ext_resource type="PackedScene" uid="uid://b8i6wfk3fngy4" path="res://Scenes/ContentManager/Custom_Widgets/Editable_Item_List.tscn" id="25_yq61u"]
+
+[sub_resource type="Gradient" id="Gradient_x1sdl"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1xgu1"]
+gradient = SubResource("Gradient_x1sdl")
+width = 24
+
+[sub_resource type="InputEventKey" id="InputEventKey_nrfa0"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_1tryc"]
+events = [SubResource("InputEventKey_nrfa0")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_40cts"]
+device = -1
+keycode = 67
+unicode = 99
+
+[sub_resource type="Shortcut" id="Shortcut_o4ln1"]
+events = [SubResource("InputEventKey_40cts")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_oh08t"]
+device = -1
+keycode = 87
+unicode = 119
+
+[sub_resource type="Shortcut" id="Shortcut_l87wn"]
+events = [SubResource("InputEventKey_oh08t")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rjlhc"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_jlgdg"]
+events = [SubResource("InputEventKey_rjlhc")]
+
+[node name="mapeditor" type="Control" node_paths=PackedStringArray("panWindow", "mapScrollWindow", "gridContainer", "tileGrid", "map_preview", "name_text_edit", "description_text_edit", "categories_list", "weight_spin_box", "north_check_box", "east_check_box", "south_check_box", "west_check_box")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0c7s4")
+panWindow = NodePath("TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow")
+mapScrollWindow = NodePath("TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow")
+gridContainer = NodePath("TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer")
+tileGrid = NodePath("TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid")
+map_preview = NodePath("Map_Preview")
+name_text_edit = NodePath("TabContainer/Settings/NameTextEdit")
+description_text_edit = NodePath("TabContainer/Settings/DescriptionTextEdit")
+categories_list = NodePath("TabContainer/Settings/CategoriesList")
+weight_spin_box = NodePath("TabContainer/Settings/WeightSpinBox")
+north_check_box = NodePath("TabContainer/Settings/RoadConnectionHBoxContainer/NorthCheckBox")
+east_check_box = NodePath("TabContainer/Settings/RoadConnectionHBoxContainer/EastCheckBox")
+south_check_box = NodePath("TabContainer/Settings/RoadConnectionHBoxContainer/SouthCheckBox")
+west_check_box = NodePath("TabContainer/Settings/RoadConnectionHBoxContainer/WestCheckBox")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Edit Map" type="HSplitContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_icons/grabber = SubResource("GradientTexture2D_1xgu1")
+metadata/_tab_index = 0
+
+[node name="MapeditorContainer" type="VBoxContainer" parent="TabContainer/Edit Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Toolbar" type="HBoxContainer" parent="TabContainer/Edit Map/MapeditorContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_stretch_ratio = 0.05
+
+[node name="CloseButton" type="Button" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+tooltip_text = "Closes the map editor. Make sure to hit the save button or your changes will be lost."
+text = "Close"
+
+[node name="SaveButton" type="Button" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+tooltip_text = "Saves your changes to the map to disk."
+text = "Save"
+
+[node name="SaveAndTestButton" type="Button" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+tooltip_text = "Saves your changes to the map to disk and loads your map
+into the test environment. You will leave the content editor!"
+text = "Save & test"
+
+[node name="CreatePreviewImageButton" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Creates a miniature image of the map in the /mods/core/maps folder. The file name will be the ID of the map + png. "
+theme_override_icons/checked = ExtResource("2_bib5l")
+theme_override_icons/unchecked = ExtResource("2_bib5l")
+
+[node name="RotateMap" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Rotate the map and all levels in it by 90 degrees clockwise. Tiles and furniture will be rotated"
+theme_override_icons/checked = ExtResource("3_8q2iq")
+theme_override_icons/unchecked = ExtResource("3_8q2iq")
+shortcut = SubResource("Shortcut_1tryc")
+
+[node name="PreviewMap" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Only useful if any areas are painted on the map. Previews the map after the generation algorithm has applied the areas to the map. "
+theme_override_icons/checked = ExtResource("4_st61r")
+theme_override_icons/unchecked = ExtResource("4_st61r")
+shortcut = SubResource("Shortcut_1tryc")
+
+[node name="ZoomScroller" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar" instance=ExtResource("1_0ytmu")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RotateRight" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar" node_paths=PackedStringArray("shortcut_context")]
+layout_mode = 2
+tooltip_text = "Rotate the brush to paint with rotation"
+shortcut_context = NodePath("../../../../..")
+theme_override_icons/checked = ExtResource("3_8q2iq")
+theme_override_icons/unchecked = ExtResource("3_8q2iq")
+shortcut = SubResource("Shortcut_1tryc")
+text = "0"
+
+[node name="DrawArea" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Allows you to paint an area onto the map. This area will be applied when the map is generated in-game and will 
+overwrite the base layer based on it's spawn % (see area settings in the brushcomposer to the right). To paint an area, 
+at least one brush has to be present in the brushcomposer. If no existing area is selected, a new one will be created 
+when you start painting the area on the map. To remove tiles from an area, enable this button and the erase button."
+theme_override_icons/checked = ExtResource("5_7l4v8")
+theme_override_icons/unchecked = ExtResource("6_8fii3")
+
+[node name="CopyRectangle" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Copy tiles in a rectangle. Select this tool and draw a rectangle on the grid. The tiles in your selection
+will be copied and can be pasted at a later moment by clicking one of the tiles in the map."
+theme_override_icons/checked = ExtResource("5_i6bxh")
+theme_override_icons/unchecked = ExtResource("6_0266o")
+shortcut = SubResource("Shortcut_o4ln1")
+
+[node name="CopyAllLevels" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+self_modulate = Color(0.745098, 0.92549, 0.552941, 1)
+layout_mode = 2
+tooltip_text = "Copy tiles in a rectangle. All layers will be copied, not just the current one. Select 
+this tool and draw a rectangle on the grid. The tiles in your selection will be copied 
+and can be pasted at a later moment by clicking one of the tiles on the map."
+theme_override_icons/checked = ExtResource("5_i6bxh")
+theme_override_icons/unchecked = ExtResource("6_0266o")
+
+[node name="DrawRectangle" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Paint in a rectangle"
+theme_override_icons/checked = ExtResource("3_eu7pp")
+theme_override_icons/unchecked = ExtResource("3_70koh")
+shortcut = SubResource("Shortcut_l87wn")
+
+[node name="Erase" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Erase tiles on the map
+To erase everything from a tile: Have the brushcomposer be empty
+To erase a tile: Have one tile in the brushcomposer
+To erase furniture: Have one random furniture in the brushcomposer
+To erase mobs: Have one random mob in the brushcomposer
+To erase itemgroups: Have one random itemgroup in the brushcomposer
+To erase an area: Have the paint area button enabled"
+focus_neighbor_left = NodePath("../DrawRectangle")
+focus_neighbor_right = NodePath("../ShowBelow")
+theme_override_icons/checked = ExtResource("5_n3fyt")
+theme_override_icons/unchecked = ExtResource("6_6lnwx")
+shortcut = SubResource("Shortcut_jlgdg")
+
+[node name="ShowBelow" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Show the level below in the mapeditor as a semi-transparent overlay"
+theme_override_icons/checked = ExtResource("7_s4wos")
+theme_override_icons/unchecked = ExtResource("8_xcusj")
+
+[node name="ShowAbove" type="CheckBox" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "Show the level above. A red marker will appear on tiles 
+that have something on them in a level above this one."
+theme_override_icons/checked = ExtResource("9_etume")
+theme_override_icons/unchecked = ExtResource("10_0rhye")
+
+[node name="HelpButton" type="Button" parent="TabContainer/Edit Map/MapeditorContainer/Toolbar"]
+layout_mode = 2
+tooltip_text = "This is the map editor. It allows you to create a map of 32x32x21 blocks. If you need more, you need to make a new map and combine them in a tacticalmap.
+
+You can hover your cursor over the controls to see what they do. Below you can find some general tips to use the map editor.
+
+These are the controls:
+Brushcomposer (Top-right): This area allows you to compose a custom brush with one or more tile brushes. You can add multiple brushes by 
+holding CTRL and clicking another brush. When painting, a random tile will be picked from the composer. It also has a button to enable 
+random rotation. To remove a single brush from the brushcomposer, click it with the left mouse button. You can also drag itemgroups 
+from the left to here and paint furniture or tiles with them to apply the itemgroup. There are also controls for selection and management of areas.
+
+Brush pallette (right): Click to add the selected brush to the brush composer. Hold CTRL and click another brush to add multiple brushes. 
+You can add multiple of the same tile to control the proportions when painting.
+
+Level Scroll Bar (vertical bar on the right): Use this scrollbar to navigate between different levels. The current level is 
+displayed on the scrollbar. ALternatively, hold ALT while using the mouse wheel to switch to a different level.
+
+Zoom Level (top): Use the slider to zoom. Alternatively, use the mouse wheel while holding CTRL to zoom in and out. 
+The current zoom level affects the size of the brush preview and grid tiles.
+"
+theme_override_colors/font_disabled_color = Color(1, 0.374252, 0.322802, 1)
+theme_override_constants/outline_size = 4
+disabled = true
+text = " ? "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Edit Map/MapeditorContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MapScrollWindow" type="ScrollContainer" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.95
+
+[node name="PanWindow" type="ColorRect" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow"]
+layout_mode = 2
+color = Color(0.596078, 0.341176, 0.701961, 1)
+
+[node name="GridContainer" type="ColorRect" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.313726, 0.313726, 1)
+
+[node name="TileGrid" type="GridContainer" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer" node_paths=PackedStringArray("mapEditor", "LevelScrollBar", "levelgrid_below", "levelgrid_above", "mapScrollWindow", "brushPreviewTexture", "buttonRotateRight", "checkboxDrawRectangle", "checkboxCopyRectangle", "checkboxCopyAllLevels", "checkboxDrawarea", "brushcomposer")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+script = ExtResource("2_sf17m")
+tileScene = ExtResource("4_lqbjy")
+mapEditor = NodePath("../../../../../../../..")
+LevelScrollBar = NodePath("../../../../Levelscroller/LevelScrollbar")
+levelgrid_below = NodePath("../Level_Below")
+levelgrid_above = NodePath("../Level_Above")
+mapScrollWindow = NodePath("../../..")
+brushPreviewTexture = NodePath("../../../../../../../../BrushPreviewTexture")
+buttonRotateRight = NodePath("../../../../../Toolbar/RotateRight")
+checkboxDrawRectangle = NodePath("../../../../../Toolbar/DrawRectangle")
+checkboxCopyRectangle = NodePath("../../../../../Toolbar/CopyRectangle")
+checkboxCopyAllLevels = NodePath("../../../../../Toolbar/CopyAllLevels")
+checkboxDrawarea = NodePath("../../../../../Toolbar/DrawArea")
+brushcomposer = NodePath("../../../../../../EntitiesVBoxContainer/CustomBrushComposer")
+
+[node name="Level_Below" type="GridContainer" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer"]
+modulate = Color(1, 1, 1, 0.117647)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+
+[node name="Level_Above" type="GridContainer" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer"]
+modulate = Color(1, 1, 1, 0.776471)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+
+[node name="Levelscroller" type="VBoxContainer" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("3_i1qbw")
+
+[node name="LevelIndicator" type="Control" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Label" type="Label" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller/LevelIndicator"]
+layout_mode = 1
+offset_left = 20.685
+offset_right = 128.685
+offset_bottom = 26.0
+rotation = 1.5708
+theme_override_font_sizes/font_size = 16
+text = "Level: Ground"
+
+[node name="LevelScrollbar" type="VScrollBar" parent="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+size_flags_vertical = 3
+min_value = -10.0
+max_value = 10.0
+step = 1.0
+rounded = true
+
+[node name="EntitiesVBoxContainer" type="VBoxContainer" parent="TabContainer/Edit Map"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="CustomBrushComposer" parent="TabContainer/Edit Map/EntitiesVBoxContainer" node_paths=PackedStringArray("gridContainer") instance=ExtResource("18_ov0cf")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+gridContainer = NodePath("../../MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid")
+
+[node name="SelectMods" type="OptionButton" parent="TabContainer/Edit Map/EntitiesVBoxContainer/CustomBrushComposer"]
+layout_mode = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "Core"
+
+[node name="EntitiesContainer" type="VBoxContainer" parent="TabContainer/Edit Map/EntitiesVBoxContainer" node_paths=PackedStringArray("selectmods")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.8
+script = ExtResource("5_he816")
+selectmods = NodePath("../CustomBrushComposer/SelectMods")
+scrolling_Flow_Container = ExtResource("6_onaby")
+tileBrush = ExtResource("8_o4x7s")
+
+[node name="Settings" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+columns = 2
+metadata/_tab_index = 1
+
+[node name="NameLabel" type="Label" parent="TabContainer/Settings"]
+layout_mode = 2
+text = "Name:"
+
+[node name="NameTextEdit" type="TextEdit" parent="TabContainer/Settings"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Name of the map. Can be useful for in-game observation 
+or when interacting with the map outside the map editor."
+placeholder_text = "Enter a name"
+
+[node name="DescriptionLabel" type="Label" parent="TabContainer/Settings"]
+layout_mode = 2
+text = "Description:"
+
+[node name="DescriptionTextEdit" type="TextEdit" parent="TabContainer/Settings"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Description of the map. Can be useful for in-game observation 
+or when interacting with the map outside the map editor."
+placeholder_text = "Enter a description"
+
+[node name="CategoriesLabel" type="Label" parent="TabContainer/Settings"]
+layout_mode = 2
+text = "Categories:"
+
+[node name="CategoriesList" parent="TabContainer/Settings" instance=ExtResource("25_yq61u")]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+tooltip_text = "Used for separating the map by category. Adding the category \"Field\", \"City\" or 
+\"Forest\" will mark them for random spawning in the world outside the tacticalmap."
+header = "Categories"
+
+[node name="WeightLabel" type="Label" parent="TabContainer/Settings"]
+layout_mode = 2
+text = "Weight"
+
+[node name="WeightSpinBox" type="SpinBox" parent="TabContainer/Settings"]
+layout_mode = 2
+tooltip_text = "The weight used to select this map and not others. The default is 1000. If 
+you have one map with a weight of 1000 and another map with a weight 
+of 500, the map with weight of 1000 will be twice as likely to be picked."
+max_value = 1e+06
+value = 1000.0
+
+[node name="RoadConnectionLabel" type="Label" parent="TabContainer/Settings"]
+layout_mode = 2
+text = "Road connection"
+
+[node name="RoadConnectionHBoxContainer" type="HBoxContainer" parent="TabContainer/Settings"]
+layout_mode = 2
+
+[node name="NorthCheckBox" type="CheckBox" parent="TabContainer/Settings/RoadConnectionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "Toggle this on if the map has a road connection to the north. 
+Toggle this off if the map does not have a road connection to the north."
+text = "North"
+
+[node name="EastCheckBox" type="CheckBox" parent="TabContainer/Settings/RoadConnectionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "Toggle this on if the map has a road connection to the east. 
+Toggle this off if the map does not have a road connection to the east."
+text = "East"
+
+[node name="SouthCheckBox" type="CheckBox" parent="TabContainer/Settings/RoadConnectionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "Toggle this on if the map has a road connection to the south. 
+Toggle this off if the map does not have a road connection to the south."
+text = "South"
+
+[node name="WestCheckBox" type="CheckBox" parent="TabContainer/Settings/RoadConnectionHBoxContainer"]
+layout_mode = 2
+tooltip_text = "Toggle this on if the map has a road connection to the west. 
+Toggle this off if the map does not have a road connection to the west."
+text = "West"
+
+[node name="BrushPreviewTexture" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Map_Preview" parent="." instance=ExtResource("24_6b3wl")]
+title = "Map preview"
+visible = false
+
+[connection signal="ready" from="." to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_mapeditor_ready"]
+[connection signal="zoom_level_changed" from="." to="TabContainer/Edit Map/MapeditorContainer/Toolbar/ZoomScroller" method="_on_mapeditor_zoom_level_changed"]
+[connection signal="zoom_level_changed" from="." to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_zoom_level_changed"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/CloseButton" to="." method="_on_close_button_button_up"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/SaveButton" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="save_map_json_file"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/SaveAndTestButton" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_save_and_test_button_button_up"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/CreatePreviewImageButton" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_create_preview_image_button_button_up"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/RotateMap" to="." method="_on_rotate_map_button_up"]
+[connection signal="button_up" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/PreviewMap" to="." method="_on_preview_map_button_up"]
+[connection signal="zoom_level_changed" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/ZoomScroller" to="." method="_on_zoom_scroller_zoom_level_changed"]
+[connection signal="pressed" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/RotateRight" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_rotate_right_pressed"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/DrawArea" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_draw_area_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/CopyRectangle" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_copy_rectangle_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/CopyAllLevels" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_copy_all_levels_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/DrawRectangle" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_draw_rectangle_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/Erase" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_erase_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/ShowBelow" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_show_below_toggled"]
+[connection signal="toggled" from="TabContainer/Edit Map/MapeditorContainer/Toolbar/ShowAbove" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_show_above_toggled"]
+[connection signal="ready" from="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow" to="." method="_on_map_scroll_window_ready"]
+[connection signal="zoom_level_changed" from="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" to="." method="_on_tile_grid_zoom_level_changed"]
+[connection signal="value_changed" from="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller/LevelScrollbar" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_level_scrollbar_value_changed"]
+[connection signal="value_changed" from="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller/LevelScrollbar" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/Levelscroller" method="_on_level_scrollbar_value_changed"]
+[connection signal="item_selected" from="TabContainer/Edit Map/EntitiesVBoxContainer/CustomBrushComposer/SelectMods" to="TabContainer/Edit Map/EntitiesVBoxContainer/EntitiesContainer" method="_on_select_mods_item_selected"]
+[connection signal="tile_brush_selection_change" from="TabContainer/Edit Map/EntitiesVBoxContainer/EntitiesContainer" to="TabContainer/Edit Map/MapeditorContainer/HBoxContainer/MapScrollWindow/PanWindow/GridContainer/TileGrid" method="_on_tilebrush_list_tile_brush_selection_change"]

@@ -1,0 +1,935 @@
+{
+	"acorn": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"adjustable_wrench": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"adrenaline_shot": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
+	"antiseptic_wipes": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
+	"apple": {
+		"itemgroups": [
+			"refrigerator",
+			"starting_items"
+		]
+	},
+	"backpack": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"bag_bacon": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"bandage_basic": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"cabinet_general",
+			"starting_items",
+			"police_station_locker",
+			"first_aid"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"battery_small": {
+		"itemgroups": [
+			"cabinet_general",
+			"electronics_store_small",
+			"electronics_store_mixed",
+			"loot_electronic"
+		]
+	},
+	"berries_wild": {
+		"itemgroups": [
+			"generic_forest_finds"
+		],
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"bird_egg": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"blender": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"book_novel": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"boots": {
+		"itemgroups": [
+			"cabinet_general",
+			"clothing_general",
+			"zombie_loot",
+			"police_station_locker"
+		]
+	},
+	"bottle_antibiotics": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"starting_items",
+			"first_aid"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"bottle_antidote": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"test_items",
+			"first_aid"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"bottle_disinfectant": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"first_aid"
+		]
+	},
+	"bottle_plastic_empty": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"urban_litter",
+			"zombie_loot"
+		],
+		"items": [
+			"screwdriver"
+		]
+	},
+	"bottle_plastic_water": {
+		"itemgroups": [
+			"refrigerator",
+			"kitchen_cupboard",
+			"cabinet_general",
+			"vending_machine_drinks",
+			"starting_items",
+			"zombie_loot"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"bottle_yogurt": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"branch": {
+		"itemgroups": [
+			"tree_destroyed",
+			"generic_forest_finds",
+			"tree_forage"
+		]
+	},
+	"bread": {
+		"itemgroups": [
+			"starting_items"
+		]
+	},
+	"bread_maker": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"bullet_9mm": {
+		"itemgroups": [
+			"mob_loot",
+			"cabinet_general",
+			"M4A1_gun_ammo",
+			"test_items",
+			"police_station_locker"
+		],
+		"items": [
+			"pistol_magazine"
+		]
+	},
+	"butter": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"can_beer": {
+		"itemgroups": [
+			"refrigerator",
+			"kitchen_cupboard",
+			"vending_machine_drinks",
+			"zombie_loot"
+		]
+	},
+	"can_energydrink": {
+		"itemgroups": [
+			"refrigerator",
+			"vending_machine_drinks",
+			"zombie_loot"
+		]
+	},
+	"can_oil": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"can_soda": {
+		"itemgroups": [
+			"refrigerator",
+			"vending_machine_drinks",
+			"starting_items",
+			"zombie_loot",
+			"loot_gas_station"
+		]
+	},
+	"canned_food": {
+		"itemgroups": [
+			"kitchen_cupboard"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"carrot": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"cement_bag": {
+		"itemgroups": [
+			"loot_gas_station"
+		]
+	},
+	"ceramic_fragments": {
+		"itemgroups": [
+			"debris_urban"
+		]
+	},
+	"cheese": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"chocolate": {
+		"itemgroups": [
+			"vending_machine_snacks",
+			"zombie_loot"
+		]
+	},
+	"chugunov_mpap": {
+		"itemgroups": [
+			"police_station_locker"
+		]
+	},
+	"chugunov_mpap_magazine": {
+		"itemgroups": [
+			"police_station_locker"
+		]
+	},
+	"circuit_board": {
+		"itemgroups": [
+			"electronics_store_small",
+			"loot_electronic"
+		],
+		"items": [
+			"transmitter"
+		],
+		"quests": [
+			"quest_radio_signal_01"
+		]
+	},
+	"coffee_maker": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"combat_knife": {
+		"itemgroups": [
+			"cabinet_general",
+			"kitchen_cupboard"
+		]
+	},
+	"compass": {
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"crowbar": {
+		"itemgroups": [
+			"cabinet_general",
+			"debris_urban",
+			"loot_gas_station"
+		]
+	},
+	"cutting_board": {
+		"furnitures": [
+			"countertop_wood"
+		]
+	},
+	"damaged_concrete_slab": {
+		"itemgroups": [
+			"debris_urban",
+			"loot_gas_station"
+		]
+	},
+	"damaged_transmitter": {
+		"itemgroups": [
+			"electronics_damaged"
+		],
+		"items": [
+			"transmitter"
+		],
+		"quests": [
+			"quest_radio_signal_01"
+		]
+	},
+	"dried_fruit_mix": {
+		"itemgroups": [
+			"kitchen_cupboard"
+		]
+	},
+	"eggs": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"electrical_components": {
+		"itemgroups": [
+			"electronics_store_small",
+			"electronics_store_mixed",
+			"electronics_damaged",
+			"loot_electronic"
+		],
+		"items": [
+			"transmitter"
+		]
+	},
+	"epipen": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"fire_axe": {
+		"itemgroups": [
+			"cabinet_general",
+			"police_station_locker",
+			"starting_items"
+		]
+	},
+	"flashlight_basic": {
+		"itemgroups": [
+			"cabinet_general",
+			"electronics_store_small",
+			"electronics_store_mixed",
+			"police_station_locker",
+			"test_items"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"flower_wild": {
+		"itemgroups": [
+			"generic_field_finds"
+		]
+	},
+	"gas_mask": {
+		"itemgroups": [
+			"police_station_locker",
+			"loot_gas_station"
+		]
+	},
+	"glass_shards": {
+		"itemgroups": [
+			"urban_litter",
+			"debris_urban"
+		]
+	},
+	"gloves_leather": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot",
+			"police_station_locker"
+		]
+	},
+	"gravel": {
+		"itemgroups": [
+			"debris_urban",
+			"debris_rock"
+		]
+	},
+	"guide_survival_basic": {
+		"itemgroups": [
+			"urban_litter"
+		]
+	},
+	"hammer": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"hat_baseball": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"herbs_wild": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"hunting_rifle": {
+		"itemgroups": [
+			"cabinet_general",
+			"police_station_locker"
+		]
+	},
+	"hunting_rifle_magazine": {
+		"itemgroups": [
+			"police_station_locker"
+		]
+	},
+	"industrial_lubricant": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"insulin": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"jacket": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"jar_honey": {
+		"itemgroups": [
+			"kitchen_cupboard"
+		]
+	},
+	"jeans": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"jerrycan_gasoline": {
+		"itemgroups": [
+			"loot_gas_station"
+		]
+	},
+	"kiwi": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"large_rock": {
+		"itemgroups": [
+			"debris_rock",
+			"loot_gas_station"
+		]
+	},
+	"leaf": {
+		"itemgroups": [
+			"tree_destroyed",
+			"generic_forest_finds",
+			"generic_field_finds",
+			"tree_forage"
+		]
+	},
+	"lettuce": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"log": {
+		"itemgroups": [
+			"tree_destroyed",
+			"generic_forest_finds"
+		]
+	},
+	"long_stick": {
+		"itemgroups": [
+			"tree_destroyed",
+			"test_items",
+			"generic_forest_finds",
+			"tree_forage"
+		],
+		"items": [
+			"stone_spear"
+		],
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"mailbag": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"meat_jerky": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"medium_rock": {
+		"itemgroups": [
+			"generic_field_finds",
+			"debris_urban",
+			"debris_rock",
+			"loot_gas_station"
+		]
+	},
+	"metal_parts": {
+		"itemgroups": [
+			"electronics_damaged",
+			"urban_litter",
+			"debris_urban",
+			"loot_electronic",
+			"loot_gas_station"
+		]
+	},
+	"microwave_oven": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"multi_tool": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"mushrooms_forest": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"nails": {
+		"itemgroups": [
+			"debris_urban"
+		]
+	},
+	"pack_cigarettes": {
+		"itemgroups": [
+			"vending_machine_snacks",
+			"urban_litter",
+			"zombie_loot"
+		]
+	},
+	"painkiller": {
+		"itemgroups": [
+			"zombie_loot",
+			"first_aid"
+		],
+		"quests": [
+			"quest_holy_crusade_01"
+		]
+	},
+	"pebble": {
+		"itemgroups": [
+			"generic_forest_finds",
+			"generic_field_finds",
+			"urban_litter",
+			"debris_rock"
+		]
+	},
+	"pine_branch": {
+		"itemgroups": [
+			"generic_forest_finds",
+			"tree_forage"
+		]
+	},
+	"pinecone": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"pistol_9mm": {
+		"itemgroups": [
+			"cabinet_general",
+			"test_items",
+			"police_station_locker"
+		]
+	},
+	"pistol_magazine": {
+		"itemgroups": [
+			"mob_loot",
+			"cabinet_general",
+			"M4A1_gun_ammo",
+			"test_items",
+			"police_station_locker"
+		],
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"plank_2x4": {
+		"furnitures": [
+			"countertop_wood"
+		],
+		"itemgroups": [
+			"mob_loot",
+			"destroyed_furniture_medium",
+			"disassembled_furniture_medium",
+			"debris_urban",
+			"test_items"
+		],
+		"items": [
+			"cutting_board",
+			"rolling_pin"
+		]
+	},
+	"plant_remnants": {
+		"itemgroups": [
+			"tree_destroyed",
+			"generic_forest_finds",
+			"generic_field_finds"
+		]
+	},
+	"plastic_parts": {
+		"itemgroups": [
+			"electronics_damaged",
+			"urban_litter",
+			"debris_urban",
+			"loot_electronic"
+		],
+		"items": [
+			"transmitter"
+		]
+	},
+	"pressure_cooker": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"pump_shotgun": {
+		"itemgroups": [
+			"loot_gas_station",
+			"police_station_locker",
+			"starting_items"
+		]
+	},
+	"radio_handheld": {
+		"itemgroups": [
+			"electronics_store_small",
+			"electronics_store_mixed"
+		]
+	},
+	"radio_two_way": {
+		"itemgroups": [
+			"electronics_store_small",
+			"electronics_store_mixed",
+			"police_station_locker"
+		]
+	},
+	"rifle_m4a1": {
+		"itemgroups": [
+			"M4A1_gun_ammo",
+			"police_station_locker"
+		],
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"river_reed": {
+		"itemgroups": [
+			"generic_field_finds"
+		]
+	},
+	"rope_coil": {
+		"itemgroups": [
+			"cabinet_general",
+			"loot_gas_station"
+		]
+	},
+	"rotten_flesh_chunk": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"round_308": {
+		"itemgroups": [
+			"police_station_locker"
+		],
+		"items": [
+			"hunting_rifle_magazine"
+		]
+	},
+	"rusted_metal_sheets": {
+		"itemgroups": [
+			"debris_urban",
+			"loot_gas_station"
+		]
+	},
+	"safety_helmet": {
+		"itemgroups": [
+			"clothing_general"
+		]
+	},
+	"scarf": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"screw": {
+		"itemgroups": [
+			"debris_urban"
+		]
+	},
+	"screwdriver": {
+		"itemgroups": [
+			"kitchen_cupboard",
+			"cabinet_general",
+			"electronics_store_small",
+			"electronics_store_mixed"
+		]
+	},
+	"sharp_stone": {
+		"itemgroups": [
+			"test_items",
+			"generic_field_finds"
+		],
+		"items": [
+			"stone_spear"
+		],
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"shell_12gauge": {
+		"itemgroups": [
+			"loot_gas_station",
+			"police_station_locker",
+			"starting_items"
+		],
+		"items": [
+			"shotgun_tube"
+		]
+	},
+	"shorts": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"shotgun_tube": {
+		"itemgroups": [
+			"police_station_locker",
+			"starting_items"
+		]
+	},
+	"slice_of_pizza": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"small_rock": {
+		"itemgroups": [
+			"generic_forest_finds",
+			"generic_field_finds",
+			"debris_rock",
+			"loot_gas_station"
+		]
+	},
+	"small_stick": {
+		"itemgroups": [
+			"generic_forest_finds"
+		]
+	},
+	"socks": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"solar_panel": {
+		"quests": [
+			"quest_radio_signal_01"
+		]
+	},
+	"spray_paint": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"stale_bread": {
+		"itemgroups": [
+			"urban_litter"
+		]
+	},
+	"steel_rebar": {
+		"itemgroups": [
+			"loot_gas_station"
+		]
+	},
+	"steel_scrap": {
+		"furnitures": [
+			"countertop_wood"
+		],
+		"itemgroups": [
+			"mob_loot",
+			"cabinet_general",
+			"destroyed_furniture_medium",
+			"disassembled_furniture_medium",
+			"debris_urban",
+			"loot_electronic",
+			"test_items"
+		],
+		"items": [
+			"pistol_magazine",
+			"screwdriver"
+		]
+	},
+	"stick": {
+		"itemgroups": [
+			"destroyed_furniture_medium",
+			"generic_forest_finds",
+			"tree_forage"
+		]
+	},
+	"stone_spear": {
+		"quests": [
+			"starter_tutorial_00"
+		]
+	},
+	"sweater": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"syringe": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"thermal_blanket": {
+		"itemgroups": [
+			"first_aid"
+		]
+	},
+	"toaster": {
+		"itemgroups": [
+			"electronics_store_medium",
+			"electronics_store_mixed"
+		]
+	},
+	"tofu": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"tomato": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"transmitter": {
+		"quests": [
+			"quest_radio_signal_01"
+		]
+	},
+	"tree_sap": {
+		"itemgroups": [
+			"cabinet_general"
+		]
+	},
+	"tshirt": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"uncooked_meat": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"vacuum_sealed_fish": {
+		"itemgroups": [
+			"refrigerator"
+		]
+	},
+	"vest_ballistic": {
+		"itemgroups": [
+			"police_station_locker"
+		]
+	},
+	"waistbag": {
+		"itemgroups": [
+			"clothing_general",
+			"zombie_loot"
+		]
+	},
+	"wallet": {
+		"itemgroups": [
+			"zombie_loot",
+			"loot_gas_station"
+		]
+	},
+	"water_filter_straw": {
+		"itemgroups": [
+			"loot_gas_station"
+		]
+	},
+	"water_purification_tablets": {
+		"itemgroups": [
+			"cabinet_general",
+			"kitchen_cupboard",
+			"loot_gas_station"
+		]
+	},
+	"wrist_watch": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"zombie_bone": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"zombie_eye": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	},
+	"zombie_organ": {
+		"itemgroups": [
+			"zombie_loot"
+		]
+	}
+}
